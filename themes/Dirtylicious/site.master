@@ -1,0 +1,87 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+<%@ Register Src="~/admin/menu.ascx" TagName="menu" TagPrefix="uc1" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server" profile="http://gmpg.org/xfn/11">
+    <link rel="stylesheet" href="default.css" type="text/css" />
+    <link rel="shortcut icon" href="~/pics/blogengine.ico" type="image/x-icon"/>
+</head>
+
+<body>
+    <form id="Form1" runat="server">
+    <div class="outer-container">
+        <div class="inner-container">
+	        <div class="header">
+	            <div class="title">
+	                <span class="sitename"><a href="~/" runat="server"><%=BlogSettings.Instance.Name %></a></span>
+	                <div class="slogan"><%=BlogSettings.Instance.Description %></div>
+                </div>
+            </div>
+            
+            <div class="path">
+			      <asp:HyperLink ID="HlHome" NavigateUrl="~/default.aspx" runat="server">Home</asp:HyperLink>
+			      <ul>
+			        <li class="page_item"><asp:HyperLink ID="HlArchive" NavigateUrl="~/archive.aspx" runat="server">Archive</asp:HyperLink></li>
+			        <li class="page_item"><asp:HyperLink ID="hlContact" NavigateUrl="~/contact.aspx" runat="server">Contact</asp:HyperLink></li>
+              <li class="page_item"><a href="<%=Utils.FeedUrl %>">Feed</a></li>
+              <li class="page_item"><asp:LoginStatus runat="Server" LoginText="Sign in" LogoutText="Sign out" EnableViewState="false" /></li>
+            </ul>
+	        </div>
+            
+            <div class="main">
+		        <div class="content">
+                    <blog:SearchOnSearch ID="SearchOnSearch1" runat="server" MaxResults="3" Headline="You searched for" Text="Here are some results for the search term on this website" />
+                    <asp:ContentPlaceHolder ID="cphBody" runat="server" />
+                </div>
+                <div class="navigation">
+                    <h2>Search</h2>
+                    <ul>
+                        <li>
+                            <blog:SearchBox ID="SearchBox1" runat="server"  />
+                        </li>
+                    </ul>
+                    
+                     <% if (Utils.IsAuthenticated){ %>
+                    <h2>Administration</h2>
+                    <uc1:menu ID="Menu1" runat="server" />
+                    <%} %>
+                                        
+                    <h2>Tags</h2>
+                    <ul>
+                        <li>
+                            <blog:TagCloud ID="TagCloud1" runat="server" />
+                        </li>
+                    </ul>
+
+                    <h2>Categories</h2>
+                    <blog:CategoryList ID="CategoryList1" ShowRssIcon="false" runat="Server" /><br />
+                    
+                    <h2>Blogroll</h2>
+                    <blog:Blogroll runat="server" />
+                    
+                    <h2>Disclaimer</h2>
+                    <ul>
+                        <li>
+                            <p>The opinions expressed herein are my own personal opinions and do not represent my employer's view in anyway.</p>
+                            <p>&copy; Copyright <%=DateTime.Now.Year %></p>
+                        </li>
+                    </ul>
+                  
+                </div>
+                <div class="clearer">&nbsp;</div>  
+            </div>
+                  
+            <div class="footer">
+                <span class="left">
+                    Powered by <a href="http://www.dotnetblogengine.net/" target="_blank">BlogEngine.NET</a> <%=BlogSettings.Instance.Version() %> | 
+                    Original Design by <a href="http://arcsin.se">Arcsin</a>, Adapted by <a href="http://www.nyveldt.com/blog/">RazorAnt</a>
+                </span>
+                <div class="clearer"></div>
+            </div>
+        </div>
+    </div>
+    </form>   
+</body>
+</html>

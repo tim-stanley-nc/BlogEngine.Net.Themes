@@ -1,0 +1,415 @@
+﻿/* 
+===========================================================================
+Author:     Thomas A. Bosscher
+Website:    http://www.thomasbosscher.com
+Email:      administrator@thomasbosscher.com
+===========================================================================
+
+Theme: StableStart
+Version: 1.0
+Compatibility: BlogEngine.Net 1.4.5.0
+
+---------------------------------------------------------------------------
+Updates:
+
+
+---------------------------------------------------------------------------
+ToDo's:
+
+
+---------------------------------------------------------------------------
+Special Thanks To:
+
+
+===========================================================================
+*/
+
+
+
+body {	font : normal 70% Verdana, Tahoma, arial, sans-serif;	background : #bcbcbc url('images/bg_image.jpg') repeat-x;	background-position:top;	/*margin: 0 auto;*/margin: 0 0 100px 0;}
+
+h1 { 	font : normal 1.6em Arial, Sans-Serif;	color : #333333;	background-color:#F0F0F0;	border : 1px dotted #c8c8c8;	margin-bottom : 10px;padding-left:4px;}
+h1 a { 	padding-left:5px;	color:#444444; }
+h2 {font : bold 1.2em Arial, Sans-Serif;	color : #444444;} 
+h3 {font : bold 1.1em Arial, Sans-Serif;	color : #444444;} 
+h4 {font : bold 1.1em Arial, Sans-Serif;	border-top : 1px solid #cccccc;	border-bottom : 1px solid #cccccc;	color : #444444;} 
+h5 {font : normal 1.1em Arial, Sans-Serif;	border-top : 1px dotted #cccccc;	border-bottom : 1px dotted #cccccc;	color : #444444;} 
+h6 {font : normal 1.1em Arial, Sans-Serif;} 
+a {	color:#996600;	text-decoration:none;}
+
+a:hover { color : #ff9900;}
+a img { border : none;} 
+img {	border: none;}
+small { padding-left : 0;} 
+p { line-height : 1.4em;	text-align : justify;	margin: 10px 0;}
+blockquote {background-color:transparent;	color:#888888;	margin:0 48px;	font-style:italic;}
+
+.loginbox{	margin: 0 auto;}
+
+
+
+/*==== Wrapper ===========================================================*/
+#wrapper {}
+
+/*==== Container =========================================================*/
+#container { background : #FFFFFF;	border : 1px solid #E0E0E0;	text-align : left;	width : 900px;	margin : 55px auto;	padding : 3px;} 
+
+/*==== Header ============================================================*/
+#header { 	background : #222 url('images/header.gif') no-repeat;	height : 150px;	margin-bottom : 1px;	border-bottom : 4px solid #aaaaaa;} 
+#header .title { 	padding-top : 40px;	text-align : right;} 
+#header .title .sitename a { 	border-bottom : 1px dashed #657382;	color : #ffffff;	font : normal 34px arial;	padding-bottom : 2px;	text-decoration : none;	margin-right : 20px;	background-color : transparent;} 
+#header .title a:hover { 	border-color : #f60;} 
+#header .title .slogan { 	font : normal 1.1em Verdana, sans-serif;	padding-top : 6px;	margin : 0 20px 10px 0;	color : #ffffff;	background-color : transparent;} 
+#headimg1 { border : 1px solid #cccccc;	height : 100px;	width : 80px;	float : left;	margin : 8px;	background : transparent url('images/image1.gif') no-repeat;} 
+#headimg2 { border : 1px solid #cccccc;	height : 100px;	width : 80px;	float : left;	margin : 8px;	background : transparent url('images/image2.gif') no-repeat;} 
+#headimg3 { border : 1px solid #cccccc;	height : 100px;	width : 80px;	float : left;	margin : 8px;	background : transparent url('images/image3.gif') no-repeat;} 
+#headimg4 { border : 1px solid #cccccc;	height : 100px;	width : 80px;	float : left;	margin : 8px;	background : transparent url('images/image4.gif') no-repeat;} 
+#headimg5 { height : 100px;	width : 80px;	float : left;	margin : 8px;	background : transparent url('images/image5.gif') no-repeat bottom;	opacity:.50;filter:alpha(opacity='50');} 
+
+/*==== MAIN Menu =========================================================*/
+
+
+#navbar { float : left;	padding : 3px 0 3px 0;text-align : left;	width : 100%;	border-top : 1px solid #dddddd;	border-bottom : 1px solid #dddddd;	background : transparent url('images/bg_menu.gif');}
+#menu{}
+#menu a {	font-size: 110%;	font-weight: bold;	border-right : 1px solid #888888;	background-color : transparent;	color : #ffffff;	text-decoration:none;}
+#menu a:hover { color : #ff9900;}
+#menu a.apmlfilter{	float:right;	margin-right: 10px; 	background:url(../../pics/apml.png) no-repeat left 1px; 	padding-left:16px}
+#menu a.subscribefeed{	float:right;	margin-right: 10px; 	background:url(images/icon_rssbutton.gif) no-repeat left 1px; 	padding-left:16px}
+#menu ul{	list-style: none;	margin: 0;	padding: 0;}
+#menu ul li{	display:inline;}
+#menu ul li a{	padding: 2px 10px 2px 10px; }
+#menu ul li a.feed img{	margin-right: 3px;	margin-bottom: -2px;}
+
+/*==== Disclaimer ========================================================*/
+#disclaimer { color : #484848;background : #f0f0f0;	clear : left;	border : 1px dashed #c8c8c8;	width : 180px;	font : normal 0.9em Tahoma, sans-serif;	padding : 5px 5px 5px 5px;	margin : 0px 5px 15px 10px;} 
+
+/*==== ADMIN Menu ========================================================*/
+#adminmenu { 	padding : 3px 0 3px 78px;	text-align : left;	margin: 0 0 0 0;	background : #eeeeee url('images/icon_admin.gif') no-repeat;	border-bottom : 3px solid #666666;} 
+#adminmenu ul {margin:0px;padding:0px;}
+#adminmenu li {	margin:0px;	display : inline;} 
+#adminmenu a { 	color : #333333;	padding : 3px 10px;	border-left : 1px dotted #bbbbbb;} 
+#adminmenu a:hover { 	color : #ff9900;} 
+
+
+/*==== Content ==========================================================*/
+#content {	background : #ffffff;	float : right;	width : 695px;color : #333333;}
+
+#postnavigation{	margin-bottom: 10px;	text-align: center;	background : #F7F7F7;line-height:22px;font-size: 80%;border-bottom: 1px dotted #c8c8c8;}
+
+
+/*==== Side Menu (widgetbar) ============================================*/
+#sidepanel {color:#555555;	background : #F7F7F7;	float : left;	width : 200px;	padding : 5px 3px 20px 1px;	border-right : 1px solid #dddddd;	border-bottom : 1px solid #dddddd;	margin-bottom: 15px;}
+
+/*==== Footer ===========================================================*/
+#footer { background : #f5f5f5;	border : 1px solid #e3e4e4;	clear : both;	width : 100%;	text-align : center;	padding : 3px 0 3px 0;}
+
+
+
+
+/*==== WIDGETS ===========================================================*/
+div#widgetzone {	padding:0; background: none;}
+div#widgetzone h4 {	font: bold 1.1em Arial, Sans-Serif;	border : 1px dotted #c8c8c8; margin: 0 0 4px 0;}
+div#widgetzone .clear{clear: left;}
+div.widget{	margin-bottom: 10px;	z-index: 1;	min-width: 1px;}
+div.widget .content{line-height: 16px;color: #666666;padding: 0 5px 0 5px;}
+div.widget h4 {}
+div.widget a.edit{font-size: 10px;	font-weight: normal;	float: right;	z-index: 1;	margin-top:3px;}
+div.widget a.delete{font-weight: normal;	font-size:8px;color: #996600;	float: right;	margin: 3px 3px 0 5px;	padding: 0 2px 0 2px;	z-index: 1;	text-decoration: none;	border: solid 1px #cccccc;}
+div.widget a.delete:hover{	color: #ff9900;}
+#widgetzone .widget ul {	list-style-type: none;	margin: 0;	padding: 0;	text-transform: capitalize;}
+#widgetzone .widget ul li {	margin-bottom: 3px;}
+#widgetzone div.search{	background: none;	border: none;	padding-left: 10px;}
+#widgetzone img.rssButton {	margin-right: 3px;}
+
+/* Administration ------------------------------*/
+.administration h4 {padding-left:18px; background : #F0F0F0 url('images/icon_administration.gif') no-repeat scroll 0 0px;}
+
+/* BlogRoll ------------------------------------*/
+.blogroll h4 {padding-left:18px;background : #F0F0F0 url('images/icon_blogroll.gif') no-repeat scroll 0 0px;}
+.blogroll content {padding: 0 5px 0 0px;}
+#blogroll ul {list-style-type: none;}
+#blogroll ul li {}
+#blogroll ul li ul li a {	margin-left: 5px;	color: #666666;font-size: 10px;}
+#blogroll ul li a img {	margin-right: 3px;}
+
+/* Calendar ------------------------------------*/
+#calendarContainer {	text-transform: capitalize;	margin: 0 auto;	width:100%;	border: 1px solid #cccccc;}
+.calendar h4 {padding-left:18px; background : #F0F0F0 url('images/icon_calendar.gif') no-repeat scroll 0 0px;}
+.calendar {	border: none;	margin: 0 auto;	width:100%}
+.calendar .weekend {	background-color: #e8e8e8;}
+.calendar .other {	color: #989898;}
+.calendar a.exist {	display: block;	font-weight: bold;	background-color: #F1F1F1;}
+.calendar td {	vertical-align: top;	background: white;	border : 2px solid #f7f7f2;	padding-top : 2px;}
+.calendar tr { 	background : #eaeada;}
+
+/* Category List -------------------------------*/
+.categorylist h4 {padding-left:18px;background : #F0F0F0 url('images/icon_categories.gif') no-repeat scroll 0 0px;}
+#categorylist ul {margin:0px;}
+#categorylist li {list-style-type : none;	border-bottom : 1px dashed #dddddd;	line-height : 10px;	padding : 4px 0 4px 14px;	margin : 0 5px 0 0px;
+	background : transparent url('images/icon_arrow.gif') no-repeat scroll 0 3px;} 
+div.categorylist .rssButton {float:right;}
+
+/* Link List -----------------------------------*/
+.linklist h4 {padding-left:18px; background : #F0F0F0 url('images/icon_links.gif') no-repeat scroll 0 0px;}
+.linklist ul {margin:0px;}
+.linklist li {list-style-type : none;	/*border-bottom : 1px dashed #dddddd;*/	line-height : 5px;	padding : 4px 0 4px 14px;	margin : 0 5px 0 0px;	background : transparent url('images/mini_link.gif') no-repeat scroll 0 1px;} 
+
+/* Month List ----------------------------------*/
+.monthlist h4 {padding-left:18px; background : #F0F0F0 url('images/icon_months.gif') no-repeat scroll 0 0px;}
+ul#monthList{font-weight: normal;}
+ul#monthList ul li{	margin-left: 10px;	font-weight: normal;	line-height: 10px;}
+ul#monthList li.year{  cursor: pointer;}
+ul#monthList ul{display: none;}
+ul#monthList ul.open{	display: block;}
+
+/* Most Comments -------------------------------*/
+.mostcomments td {}
+.mostcomments h4 {padding-left:18px;background : #F0F0F0 url('images/icon_mostcomments.gif') no-repeat scroll 0 0px;}
+.mostcomments img {}
+.mostcomments .vcard {font-size: 10px;}
+
+/* Newsletter ----------------------------------*/
+.newsletter {}
+.newsletter h4 {padding-left:18px;background : #F0F0F0 url('images/icon_newsletter.gif') no-repeat scroll 0 0px;}
+.newsletter .content{background : #eaeada;padding:4px;border : 1px dotted #c8c8c8;}
+#newsletterform {}
+#newsletterform p {	margin-top:0px;	margin-bottom:10px;	font-size:90%;	}
+#newsletterform label {	font-size:90%;	margin-top:0px;}
+#newsletterform input {	color : #333333;	font-family : verdana, helvetica, sans-serif;	font-size : 90%;	font-weight : normal;	border : 1px solid #aaaaaa; margin-right:4px;}
+
+/* Page List -----------------------------------*/
+.pagelist h4 {padding-left:18px;background : #F0F0F0 url('images/icon_pagelist.gif') no-repeat scroll 0 0px;}
+#pagelist ul {margin:0px;}
+#pagelist li {	list-style-type : none;	border-bottom : 1px dashed #dddddd;	line-height : 10px;	padding : 4px 0 4px 14px;	margin : 0 5px 0 0px;	background : transparent url('images/icon_page.gif') no-repeat scroll 0 3px;} 
+
+/* Recent Comments -----------------------------*/
+.recentcomments {}
+.recentcomments h4 {padding-left:18px;background : #F0F0F0 url('images/icon_recentcomments.gif') no-repeat scroll 0 0px;}
+ul.recentComments li{	padding-bottom: 5px;	text-transform: none;font-size: 10px;}
+ul.recentComments li a.postTitle{	font-weight: normal; }
+ul.recentComments li a.moreLink{color:#444444;}
+
+/* Recent Posts --------------------------------*/
+.recentposts {overflow:hidden;}
+.recentposts h4 {padding-left:18px;background : #F0F0F0 url('images/icon_recentposts.gif') no-repeat scroll 0 0px;}
+.recentposts .content {margin-right:5px;}
+ul.recentPosts {}
+ul.recentPosts li{padding-bottom: 10px; list-style-type : none;}
+ul.recentPosts li a{font-weight: normal;white-space:nowrap;	display:block;}
+ul.recentPosts li span{text-indent: 0px;text-transform: none;	margin-right:10px;}
+
+/* Search --------------------------------------*/
+#searchbox {margin-top: 5px;	font-size: 10px;}
+#searchbox input {font-size: 10px;}
+#searchbox #searchbutton {	margin-left: 5px;}
+#searchbox #searchfield {	width: 180px;}
+
+/* Tag Cloud -----------------------------------*/
+.tagcloud h4 {padding-left:18px;background : #F0F0F0 url('images/icon_tagcloud.gif') no-repeat scroll 0 0px;}
+.tagcloud {	margin-bottom: 10px;	white-space: normal;	text-align : justify;}
+.tagcloud li {	display: inline;}
+.tagcloud a {	margin-right: 3px;	display: inline;}
+.tagcloud a:hover{	color : #ff9900;}
+.tagcloud a.biggest {	font-size: 11px;	font-weight:bold;	color:#000000;}
+.tagcloud a.big {	font-size: 11px;	color:#000000;}
+.tagcloud a.medium {	font-size: 11px;	color:#333333;}
+.tagcloud a.small {	font-size: 10px;	color:#666666;}
+.tagcloud a.smallest {	font-size: 10px;	color:#999999;}
+
+/* TextBox -------------------------------------*/
+.textbox h4 {padding-left:18px;background : #F0F0F0 url('images/icon_textbox.gif') no-repeat scroll 0 0px;}
+
+/* Twitter -------------------------------------*/
+.twitter h4 {padding-left:18px;background : #F0F0F0 url('images/icon_twitter.gif') no-repeat scroll 0 0px;}
+
+
+
+
+
+
+
+
+/*==== POSTS =============================================================*/
+div.post, .mceContentBody {	padding: 3px 10px;	margin-bottom: 20px;}
+div.post h1, .mceContentBody h1 {}
+div.post h1 {padding-left:24px;background : #F0F0F0 url('images/h_post.gif') no-repeat scroll 0 0px;margin:10px 0 2px 0;}
+
+div.post .author {	color: #666666;	font-size: 11px;	float: left;	text-transform: capitalize;}
+div.post .pubDate {	color: #666666;	font-size: 11px;	float: right;}
+div.post .text {	margin-top: 30px;}
+div.post .text h2 {	margin-bottom: -10px;}
+div.post .text h3 {	font-size: 11px;	margin-bottom: -10px;	padding: 0;}
+div.post .footer {	text-align: right;	border-top: 1px dashed silver;	padding-top: 4px;	padding-bottom: 2px;}
+div.post .bottom {	margin-bottom: 45px;}
+div.post .categories {	margin-bottom: 5px;	float: right;}
+div.post .tags {	float: left;	margin-bottom: 5px;}
+div.post .text a[href^="http:"] {	background: url(../../pics/remote.gif) right top no-repeat;	padding-right: 10px;  white-space: nowrap;}
+
+/* Related Posts -----------------------------------*/
+#relatedPosts div {	margin: 0 5px 20px 5px;padding: 3px 10px;}
+#relatedPosts h1 { font : bold 1.1em Arial, Sans-Serif;margin: 0 5px 0 5px;padding-left:18px;background : #F0F0F0 url('images/icon_recentposts.gif') no-repeat scroll 0 0px;}
+#relatedPosts a {	display: block;	margin-top: 5px;}
+#relatedPosts span {}
+
+/* Bookmarks --------------------------------------*/
+.bookmarks {	float: left;}
+
+/* Comments -----------------------------------*/
+h1#comment { font : bold 1.1em Arial, Sans-Serif;margin: 0 5px 0 5px;padding-left:18px;background : #F0F0F0 url('images/icon_recentcomments.gif') no-repeat scroll 0 0px;}
+#comments { background-color : #f8f8f8;	margin : 5px 5px 0px 5px;	border : 1px dotted #d8d8d8;	padding : 5px;	min-height : 100px;	height:auto !important;	height:100px;}
+#commentheader {margin-bottom:10px;border-bottom: 1px dotted #d8d8d8;height:10px;padding-bottom:3px;background-color:#F4F4F4;}
+#commentauthor { 	float : left;	width : 50%;} 
+#commentcontent {text-align:justify;padding:0 5px 10px 5px;}
+#commentdate { 	float : right;	width : 40%;	text-align : right;} 
+#commentgravatar { 	margin : 2px 10px 4px 4px;	float : left;		border: 1px dotted #CCCCCC;}
+#commentadmin { text-align : right;	background-color : #f8f8f8;	padding:2px 5px 2px 5px;	min-width:100px;	float:right;	border-bottom: 1px dotted #d8d8d8;	border-left: 1px dotted #d8d8d8;	border-right: 1px dotted #d8d8d8;margin: 0 5px 0 0 ;} 
+
+
+
+
+.commentForm h1{ font : bold 1.1em Arial, Sans-Serif;margin: 20px 0 10px 0;padding-left:18px;background : #F0F0F0 url('images/icon_recentcomments.gif') no-repeat scroll 0 0px;}
+.commentForm {	padding: 5px;}
+.commentForm label {	float: left;	display: block;	width: 80px;	margin-top: 4px;}
+.commentForm input {}
+.commentForm textarea {	width: 100%;	height: 150px;	border:1px solid silver;}
+#commentMenu{	padding: 0;	margin:0;	clear:both;}
+#commentMenu li{	float:left;	border:1px solid silver;	border-bottom: transparent;	margin:0;	list-style:none;	margin-right:5px;	padding: 3px 8px;		cursor:pointer;	position:relative;	top: 2px;	background:#d8d8d8;}
+#commentMenu li.selected{	background:white;	border-bottom:1px solid white;}
+#commentPreview{	display:none;	clear:both;	min-height: 150px;}
+.success {color: green;	font-weight: bold;}
+.commentForm .bbcode {font-size:10px; float:right; position:relative; top:20px; padding: 3px;}
+.bbcode a {margin: 1px; padding: 1px 3px 1px 3px; background: #fff; border: 1px solid #ccc;}
+
+
+/* Archive -----------------------------------*/
+#archive {padding: 10px;}
+#archive h1 {padding-left:24px;background : #F0F0F0 url('images/h_archive.gif') no-repeat scroll 0 0px; margin-top:0px;}
+#archive h2 { border : 1px dotted #c8c8c8;	background : #f0f0f0;	font : bold 1.1em Arial, Sans-Serif;	padding : 0 0 0 3px;	margin-bottom : 5px;}
+#archive h2 img { margin-right : 5px;	margin-top : 3px;} 
+#archive ul {margin:0px 0px 20px 15px;}
+#archive li { list-style-type : none;	line-height : 10px;	margin : 0 5px 0 2px;	background : transparent url('images/icon_arrow.gif') no-repeat scroll 0 3px;	padding : 3px 0 2px 12px;}
+
+#archive table{	width: 100%;		border-collapse: collapse;}
+#archive table td, #archive table th{	text-align:left;}
+#archive table td{	text-align:left;	border-bottom: 1px solid #D8D8D8;	padding: 2px 0;}
+#archive .date{	width: 70px;}
+#archive .comments{	width: 70px;	text-align: center;}
+#archive .rating{	width: 70px;	text-align: center;}
+#archive .date {padding-right:5px;}
+
+#archive #totals {font-weight:bold;}
+
+
+
+
+/* Search on Search-----------------------------------*/
+#searchonsearch {	background: white;	padding: 5px 10px;	margin-bottom: 20px;	border: 1px solid silver;}
+#searchonsearch h3 {}
+#searchonsearch ol li {	margin: 2px 0;}
+
+
+/*==== POSTS =============================================================*/
+#page {	padding: 10px;}
+#page h1 {padding-left:24px;background : #F0F0F0 url('images/h_page.gif') no-repeat scroll 0 0px;margin:5px 0 2px 0;}
+#page #admin {	border-top: 1px solid silver;	margin-top: 10px;	padding: 5px 0;}
+
+
+
+/*==== Calendar Page =====================================================*/
+#content table.calendar td {border:solid 1px #d4d4d4;}
+#content table.calendar th { font-weight:bold;  height:20px;border: solid 1px #d4d4d4; }
+#content table.calendar td { text-align:left;vertical-align:top; padding-top:0px; }
+#content table.calendar td.other  { height:20px; text-align:left; vertical-align:top; }
+#content table.calendar td.weekend { height:50px; text-align:left; vertical-align:top; }
+#content table.calendar td a {font : normal 0.9em Tahoma, sans-serif;}
+#content table.calendar tr td tr td { text-align:center;  vertical-align:middle; border:none; height:30px; background-color:#f0f0f0; padding:0; font : bold 1.2em Arial, Sans-Serif;    }
+
+
+/*==== Star Rating =======================================================*/
+.rating{	margin-bottom: 10px;}
+.rating p{	display: inline;	position: relative;	top: 14px;	left: 55px;}
+.star-rating {	position: relative;	width: 125px;	height: 25px;	overflow: hidden;	list-style: none;	margin: 0;	padding: 0;	background-position: left top;}
+.star-rating li {	display: inline;}
+.star-rating a, .star-rating .current-rating {	position: absolute;	top: 0;	left: 0;	text-indent: -1000em;	height: 25px;	line-height: 25px;	outline: none;	overflow: hidden;	border: none;}
+.star-rating a:hover, .star-rating a:active, .star-rating a:focus {	background-position: left bottom;}
+.star-rating a.one-star {	width: 20%;	z-index: 6;}
+.star-rating a.two-stars {width: 40%;	z-index: 5;}
+.star-rating a.three-stars {width: 60%;	z-index: 4;}
+.star-rating a.four-stars {width: 80%;	z-index: 3;}
+.star-rating a.five-stars {width: 100%;	z-index: 2;}
+.star-rating .current-rating {z-index: 1;	background-position: left center;}
+.small-star {	width: 50px;	height: 10px;}
+.small-star, .small-star a:hover, .small-star a:active, .small-star a:focus, .small-star .current-rating {
+	background-image: url(../../pics/star_small.gif);	line-height: 10px;	height: 10px;}
+
+/*==== Search Page =====================================================*/
+
+.searchpage ul.paging { list-style-type : none;	margin : 0;	margin-bottom : 20px;	padding : 0;} 
+.searchpage ul.paging li { 	display : inline;	border : 1px solid gray;	background : #f1f1f1;	margin-right : 5px;} 
+.searchpage ul.paging li a { 	padding : 5px 8px;} 
+.searchpage ul.paging li.active { background : #f1f1f1;	border : 1px solid black;}
+.searchresult {border-bottom: 1px dotted #d8d8d8;padding-bottom:5px; }
+#searchpage {margin-bottom:10px;}
+#searchpage input  { 	color : #333333;	font-family : verdana, helvetica, sans-serif;	font-size : 90%;
+	font-weight : normal;	background-color : #eeeeee;	border : 1px solid #aaaaaa;}
+#searchpage input#q  { 	border : 1px solid #bbbbbb;	width : 130px;	margin-left : 0px;	font : normal 1em Tahoma, sans-serif;	padding : 1px 0 1px 2px;	color : #444444;	background-color : #ffffff;} 
+#searchpage input#comment  { 	border : 1px solid #ffffff;	padding-top : 5px;	font : normal 1em Tahoma, sans-serif;
+	padding : 1px 0 1px 2px;	color : #444444;	background-color : #ffffff;} 
+.searchresult {	margin-bottom : 10px;} 
+.searchresult a { font-weight : bold;} 
+.searchresult span.text { clear : both;	display : block;	margin : 3px 0;} 
+.searchresult span.type { display : block;color:#666666;	line-height:1.2;} 
+.searchresult span.url { 	color : gray;line-height:20px;} 
+.searchresult strong {font-weight:normal; color:#000000;}
+
+
+/*==== Contact Page =====================================================*/
+#contact{	padding: 10px;}
+#contact h1 {padding-left:24px;background : #F0F0F0 url('images/h_contact.gif') no-repeat scroll 0 0px;margin-top:0px;}
+#contact label{	display: block;	padding-top: 5px;	}
+#contact input.field{	width: 200px;}
+#contact textarea{	display: block;		overflow: auto;	width: 75%;	height: 150px;	margin: 0;}
+
+/*==== Syntax Highlighter ================================================*/
+.code{	font-size: 12px;	color: black;	font-family: Consolas, "Courier New", Courier, Monospace;	background-color: #F1F1F1;  line-height: normal;}
+.code p{	padding: 5px;}
+.code .rem { color: #008000; }
+.code .kwrd { color: #0000ff; }
+.code .str { color: #006080; }
+.code .op { color: #0000c0; }
+.code .preproc { color: #0000ff; }
+.code .asp { background-color: #ffff00; }
+.code .html { color: #800000; }
+.code .attr { color: #ff0000; }
+.code .alt {	background-color: #f4f4f4; }
+.code .lnum { color: #606060;}
+
+
+/* XFN Tags -----------------------------------*/
+div.post .text a[rel] {	padding-right:11px;	background-repeat: no-repeat;	background-position: right center;}
+div.post .text a[rel="me"] {background-image:url('../../pics/xfn/me.gif');}
+/*-------- [ These should cascade to pick the correct icon for the contact ]--*/
+/*-------- [ Normal contacts ]--*/
+div.post .text a[rel~="contact"] ,
+div.post .text a[rel~="acquaintance"],
+div.post .text a[rel~="friend"] {	background-image:url('../../pics/xfn/contact.gif');}
+/*-------- [ Normal contacts youve met ]--*/
+div.post .text a[rel~="contact"][rel~="met"] ,
+div.post .text a[rel~="acquaintance"][rel~="met"] ,
+div.post .text a[rel~="friend"][rel~="met"] {	background-image:url('../../pics/xfn/contactMet.gif');}
+/*-------- [ Colleague and co worker icon more important than contact ]--*/
+div.post .text a[rel~="colleague"] ,
+div.post .text a[rel~="co-worker"] {	background-image:url('../../pics/xfn/colleague.gif');}
+/*-------- [ Colleague and co worker icon when met ]--*/
+div.post .text a[rel~="colleague"][rel~="met"] ,
+div.post .text a[rel~="co-worker"][rel~="met"] {	background-image:url('../../pics/xfn/colleagueMet.gif');}
+/*-------- [ Sweethearts are more important than work!!! ]--*/
+div.post .text a[rel~="muse"] ,
+div.post .text a[rel~="crush"] ,  
+div.post .text a[rel~="date"] ,
+a[rel~="sweetheart"] {	background-image:url('../../pics/xfn/sweet.gif');}
+/*-------- [ ...and if youve met them thats even better ]--*/
+div.post .text a[rel~="muse"][rel~="met"] ,
+div.post .text a[rel~="crush"][rel~="met"] ,  
+div.post .text a[rel~="date"][rel~="met"] ,
+div.post .text a[rel~="sweetheart"][rel~="met"] {	background-image:url('../../pics/xfn/sweetMet.gif');}

@@ -1,0 +1,105 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+<%@ Register Src="~/admin/menu.ascx" TagName="menu" TagPrefix="uc1" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server" profile="http://gmpg.org/xfn/11">
+    <link rel="stylesheet" href="stablestart.css" type="text/css" />
+    <link rel="shortcut icon" href="~/themes/Thumper/images/theme_icon.ico" type="image/x-icon"/>
+</head>
+
+<body>
+    <form id="Form1" runat="server">
+    <div id="container">
+        <div id="header">
+            <div id="headimg1"></div>
+            <div id="headimg2"></div>
+            <div id="headimg3"></div>
+            <div id="headimg4"></div>
+            <div id="headimg5"></div>
+            <div class="title">
+	            <span class="sitename"><a id="A1" href="~/"><%=BlogSettings.Instance.Name %></a></span>
+	            <div class="slogan"><%=BlogSettings.Instance.Description %></div>
+            </div>
+        <div id="navigation" class="navigation">
+            <div id="menu">
+                <asp:HyperLink ID="HyperLink1" NavigateUrl="~/default.aspx" runat="server">Home</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink2" NavigateUrl="~/archive.aspx" runat="server">Archive</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink3" NavigateUrl="~/contact.aspx" runat="server">Contact</asp:HyperLink>
+                <asp:LoginStatus ID="LoginStatus" runat="Server" LoginText="Sign in" LogoutText="Sign out" EnableViewState="false" />
+            </div>
+            <div id="subscription">
+                <a href="<%=Utils.FeedUrl %>" target="_blank">Subscribe to My Feed<asp:Image ID="imgsubscribe" runat="Server" ImageUrl="~/themes/thumper/images/icon_rssbutton.gif" AlternateText="RSS comment feed"  Height="" Width=""/></a>
+            </div>
+        </div>
+
+        </div>
+        <% if (Page.User.Identity.IsAuthenticated) { %>
+	        <div id="adminmenu">
+	            <uc1:menu ID="Menu" runat="server" />
+	        </div>
+	    <%} %>
+		<div id="wrapper">
+            <div id="content">
+                <blog:SearchOnSearch ID="SearchOnSearch1" runat="server" MaxResults="3" Headline="You searched for" Text="Here are some results for the search term on this website" />
+                <asp:ContentPlaceHolder ID="cphBody" runat="server" />
+            </div>
+        </div>
+        <div id="left">
+            <div id="categories">
+                <h3>Categories</h3>
+                <blog:CategoryList ID="CategoryList" ShowRssIcon="false" runat="Server" />
+            </div>
+            <div id="pages">
+                <h3>Page List</h3>
+                <blog:PageList ID="PageList" runat="Server" />
+            </div>
+            <div id="calendar">
+                <h3>Calendar</h3>
+                <blog:PostCalendar ID="PostCalendar" runat="Server" NextMonthText="&raquo;" DayNameFormat="FirstTwoLetters" FirstDayOfWeek="monday" PrevMonthText="&laquo;" CssClass="calendar" BorderWidth="1" WeekendDayStyle-CssClass="weekend" OtherMonthDayStyle-CssClass="other" UseAccessibleHeader="true" EnableViewState="false" />
+                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/?calendar=show" Text="View posts in large calendar" EnableViewState="false" />
+            </div>
+            <div id="blogsearch">
+                <!--<h3>Search Blog</h3>-->
+                <blog:SearchBox ID="SearchBox" runat="server" />
+            </div>
+            <div id="tags">
+				<h3>Tag Cloud</h3>
+				<blog:TagCloud ID="TagCloud" runat="server" />
+			</div>
+            <div id="blogroll">
+                <h3>Blog Roll</h3>
+                <blog:Blogroll ID="Blogroll" runat="server" />
+                <a href="opml.axd" class="opml" title="Download OPML file" ><asp:Image ID="opmlImage" runat="server" ImageUrl="~/pics/opml.png" AlternateText="OPML"  Height="" Width=""/>Download OPML file</a>
+            </div>
+            <div id="authors">
+                <h3>Authors</h3>
+                <blog:AuthorList ID="AuthorList" runat="Server" />
+            </div>
+            <div id="months">
+                <h3>Month List</h3>
+                <blog:MonthList ID="MonthList" runat="server" />
+            </div>
+            <div id="recentposts">
+                <h3>Recent Posts</h3>
+                <blog:RecentPosts ID="RecentPosts" runat="Server" />
+            </div>
+            <div id="recentcomments">
+                <h3>Recent Comments</h3>
+                <blog:RecentComments ID="RecentComments" runat="Server" />
+            </div>
+            <div id="banners">
+                <h3>Banners</h3>
+                <a href="http://www.thomasbosscher.com/thomas_bosscher/page/Theme-Grabber.aspx"><asp:Image ID="ThemeGrabber" runat="server" ImageUrl="~/themes/thumper/images/theme_grabber.gif" AlternateText="Theme Grabber" Height="" Width=""  /></a>
+            </div>     
+        </div>
+        <div id="disclaimer">
+            <strong>Disclaimer</strong><br />The opinions expressed herein are my own personal opinions and do not represent my employer's view in anyway.<br /><br />&copy; Copyright <%=DateTime.Now.Year %> <%=BlogSettings.Instance.Name %> 
+        </div>
+        <div id="footer">Powered by: <a href="http://www.dotnetblogengine.net/" target="_blank">BlogEngine.NET</a> <%=BlogSettings.Instance.Version() %> | Theme: <%=BlogSettings.Instance.Theme%> | Design by: <a href="http://www.thomasbosscher.com">Thomas A. Bosscher</a></div>
+    </div>
+    <!--<div id="pagestats"><asp:Image ID="icon_blogengine" runat="Server" ImageUrl="~/themes/thumper/images/icon_blogengine.gif" AlternateText="RSS comment feed"  Height="" Width=""/></div>-->
+    </form>   
+</body>
+</html>

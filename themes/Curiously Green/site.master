@@ -1,0 +1,72 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="themes_curiouslygreen_site" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+<%@ Register Src="~/admin/menu.ascx" TagName="menu" TagPrefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <link rel="stylesheet" href="default.css" type="text/css" />
+    <link rel="shortcut icon" href="~/pics/blogengine.ico" type="image/x-icon"/>
+</head>
+<body>
+<form id="form1" runat="server">
+
+<div id="header">
+	<div id="header_inner">
+		<h1><%=BlogSettings.Instance.Name %></h1>
+		<div id="slogan"><%=BlogSettings.Instance.Description %></div>
+	</div>
+</div>
+
+<div id="main">
+
+	<div id="lcol">
+		<div id="menu">
+			<ul>
+				<li><asp:HyperLink ID="HyperLink1" NavigateUrl="~/default.aspx" runat="server">Home<span></span></asp:HyperLink></li>
+				<li><asp:HyperLink ID="HyperLink2" NavigateUrl="#" runat="server">About Me<span></span></asp:HyperLink></li>
+				<li><asp:HyperLink ID="HyperLink3" NavigateUrl="~/archive.aspx" runat="server">Blog Archive<span></span></asp:HyperLink></li>
+				<li><asp:HyperLink ID="HyperLink4" NavigateUrl="~/contact.aspx" runat="server">Contact Me<span></span></asp:HyperLink></li>
+				<li><asp:LoginStatus ID="LoginStatus1" runat="Server" LoginText="Sign in<span></span>" LogoutText="Sign out<span></span>" EnableViewState="false" /></li>
+				<li><a href="<%=Utils.FeedUrl %>">Subscribe<span></span></a></li>
+			</ul>
+		</div>
+		<div id="menu_end"></div>
+
+		<div id="lcontent">
+			<h3 class="first">Categories</h3>
+			<blog:CategoryList ID="CategoryList1" ShowRssIcon="false" runat="Server" />
+		
+			<h3>Tags</h3>
+            <blog:TagCloud ID="TagCloud1" runat="server" />
+            
+            <% if (Utils.IsAuthenticated){ %>
+                    <h3>Administration</h3>
+                    <uc1:menu ID="Menu1" runat="server" />
+            <%} %>
+            
+		</div>
+
+	</div>
+
+	<div id="rcol">
+		<div id="rcontent">
+		    <div class="content">
+                <blog:SearchOnSearch ID="SearchOnSearch1" runat="server" MaxResults="3" Headline="You searched for" Text="Here are some results for the search term on this website" />
+                <asp:ContentPlaceHolder ID="cphBody" runat="server" />
+            </div>
+		</div>
+	</div>
+
+</div>
+
+<div id="footer">
+    Powered by <a href="http://www.dotnetblogengine.net/" target="_blank">BlogEngine.NET</a> <%=BlogSettings.Instance.Version() %> 
+	    | Design by <a href="http://www.nodethirtythree.com/">NodeThirtyThree</a> 
+	    | Adapted by <a href="http://www.nyveldt.com/blog/">RazorAnt</a>
+</div>
+    
+</form>
+</body>
+</html>

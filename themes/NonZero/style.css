@@ -1,0 +1,703 @@
+﻿/*
+
+	Nonzero1.0 by nodethirtythree design
+	http://www.nodethirtythree.com
+	missing in a maze
+
+*/
+
+/*KORAYEM:*/
+#ctl00_ctl02_ulBlogroll ul {
+	margin-left: 8px;
+	padding-left: 8px;
+	font-size: 0.8em;
+}
+.postcontent
+{
+	overflow:hidden;
+}
+
+/* This controls the width of the fluid width layouts */
+
+div.fluid
+{
+width: 90% !important;
+}
+
+/* This controls the width of the fixed width layouts */
+
+div.fixed
+{
+width: 950px !important;
+}
+
+/* Basic Stuff */
+
+*
+{
+margin: 0em;
+padding: 0em;
+}
+
+body
+{
+background-color: #fff;
+color: #585858;
+font-size: 14px;
+font-family: "trebuchet ms", verdana,  helvetica, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+font-weight: normal;
+letter-spacing: -1px;
+}
+
+h3,h4,h5,h6
+{
+color: #184366;
+}
+
+h1 span
+{
+font-weight: bold;
+}
+
+h3 span
+{
+font-weight: bold;
+}
+
+h4 span
+{
+font-weight: bold;
+}
+
+br.clear
+{
+clear: both;
+}
+/*----------------------------
+					 Blogroll
+----------------------------*/
+
+#blogroll ul {
+	list-style-type: none;
+	margin: 0 0 3px 0;
+	padding: 0px;
+	font-weight: bold;
+}
+
+#blogroll ul li ul li a {
+	margin-left: 25px;
+	font-weight: normal;
+}
+
+#blogroll ul li a img {
+	border: none;
+	margin-right: 3px;
+}
+/*----------------------------
+			Related Posts
+----------------------------*/
+
+#relatedPosts {
+	padding: 5px 10px 10px 10px;
+}
+
+#relatedPosts h1 {
+	margin: 0px;
+}
+
+#relatedPosts a {
+	display: block;
+	margin-top: 5px;
+}
+
+#relatedPosts span {
+	text-indent: 10px;
+	font-size: 12px;
+}
+/*----------------------------
+				Recent posts
+----------------------------*/
+
+ul.recentPosts li{
+	padding-bottom: 10px;
+}
+
+ul.recentPosts li a{
+	font-size: 15px;
+	/*font-weight: bold;*/
+	white-space: normal;
+}
+
+
+ul.recentPosts li span{
+	display: block;
+	text-indent: 10px;
+	text-transform: none;
+}
+
+/*----------------------------
+			Recent comments
+----------------------------*/
+
+ul.recentComments li{
+	padding-bottom: 10px;
+	text-transform: none;
+	white-space: normal;
+	font-size: 12px;
+}
+
+ul.recentComments li a.postTitle{
+		font-size: 15px;
+	/*font-weight: bold;*/
+	white-space: normal;
+}
+
+
+/*----------------------------
+					Comments
+----------------------------*/
+
+.comment .gravatar {
+	float: left;
+	clear: both;
+	margin: 5px 10px 5px 0;
+}
+
+.comment .gravatar img {
+	height: 80px;
+	width: 80px;
+}
+
+.comment .content {
+	min-height: 85px;
+	margin: 5px;
+}
+
+.comment img.flag {
+	position: relative;
+	top: 2px;
+}
+
+
+.success {
+	color: green;
+	font-weight: bold;
+}
+/* korayem */
+
+img
+{
+border:0px;
+/*
+padding: 3px;
+border: solid 1px #e1e1e1;
+*/
+}
+
+img.floatTL
+{
+float: left;
+margin-right: 1.5em;
+margin-bottom: 1.5em;
+margin-top: 0.5em;
+}
+
+a
+{
+text-decoration: none;
+color: #F16C00;
+}
+
+a:hover
+{
+text-decoration: none;
+}
+
+ul.links
+{
+list-style: none;
+}
+
+/*----------------------------
+				Month list
+----------------------------*/
+
+ul#monthList{
+	font-weight: bold;
+}
+
+ul#monthList ul li{
+	margin-left: 20px;
+	font-weight: normal;
+}
+
+ul#monthList li.year{
+  cursor: pointer;
+}
+
+ul#monthList ul{
+	display: none;
+}
+
+ul#monthList ul.open{
+	display: block;
+}
+
+/*----------------------------
+				 Tag cloud
+----------------------------*/
+#tagcloud li
+{
+display:inline;
+}
+
+#tagcloud li a :hover
+{
+font-weight: bold;
+}
+
+
+
+ul.links li
+{
+line-height: 2em;
+list-style: none;
+}
+
+
+
+
+
+
+.sidenav li
+ {
+/*line-height: 2em;*/
+list-style: none;
+white-space:nowrap;
+overflow: hidden;
+}
+.sidenav li ul li a
+ {
+padding-left: 13px;
+}
+
+ 
+ul.links li.first
+{
+}
+
+p
+{
+line-height: 1.2em;
+}
+
+/* Header */
+#header
+{
+width:100%;
+height:122px;
+background: #1E517C url('images/n1.gif') repeat-x;
+}
+
+#header_inner
+{
+position: relative;
+width: 950px;
+height:122px;
+margin: 0 auto;
+}
+
+/*----------------------------
+					Star rater
+----------------------------*/
+
+.rating{
+	margin-bottom: 10px;
+}
+
+.rating p{
+	display: inline;
+	position: relative;
+	top: 14px;
+	left: 55px;
+}
+
+.star-rating {
+	position: relative;
+	width: 125px;
+	height: 25px;
+	overflow: hidden;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background-position: left top;
+}
+
+.star-rating li {
+	display: inline;
+}
+
+.star-rating a, .star-rating .current-rating {
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-indent: -1000em;
+	height: 25px;
+	line-height: 25px;
+	outline: none;
+	overflow: hidden;
+	border: none;
+}
+
+.star-rating a:hover, .star-rating a:active, .star-rating a:focus {
+	background-position: left bottom;
+}
+
+.star-rating a.one-star {
+	width: 20%;
+	z-index: 6;
+}
+
+.star-rating a.two-stars {
+	width: 40%;
+	z-index: 5;
+}
+
+.star-rating a.three-stars {
+	width: 60%;
+	z-index: 4;
+}
+.star-rating a.four-stars {
+	width: 80%;
+	z-index: 3;
+}
+.star-rating a.five-stars {
+	width: 100%;
+	z-index: 2;
+}
+.star-rating .current-rating {
+	z-index: 1;
+	background-position: left center;
+}
+
+/* smaller star */
+.small-star {
+	width: 50px;
+	height: 10px;
+}
+.small-star, .small-star a:hover, .small-star a:active, .small-star a:focus, .small-star .current-rating {
+	background-image: url(../../pics/star_small.gif);
+	line-height: 10px;
+	height: 10px;
+}
+/* Logo */
+
+#logo
+{
+position: absolute;
+bottom: 0.6em;
+}
+
+#logo h1
+{
+display: inline;
+color: #fff;
+font-size:4em;
+}
+
+#logo h2
+{
+margin-left: 3em;
+padding-left: 0.5em;
+color: #D2DCE5;
+font-size: 1.6em;
+}
+
+/* Menu */
+
+#menu
+{
+position: absolute;
+right: 0em;
+bottom: 0em;
+}
+
+#menu ul
+{
+list-style: none;
+}
+
+#menu li
+{
+float: left;
+}
+
+#menu li a
+{
+margin-left: 0.5em;
+display: block;
+padding: 1.1em 1.4em 1.0em 1.4em;
+background: #fff url('images/n4.gif') repeat-x;
+border: solid 1px #fff;
+color: #616161;
+font-weight: bold;
+font-size: 1.0em;
+text-transform: lowercase;
+text-decoration: none;
+}
+
+#menu li a.active
+{
+background: #FF790B url('images/n3.gif') repeat-x;
+color: #fff;
+border: solid 1px #DB7623;
+}
+
+/* Main */
+
+#main
+{
+background: #fff url('images/n2.gif') 0px 1px repeat-x;
+}
+
+#main_inner p
+{
+text-align: justify;
+margin-bottom: 2.0em;
+}
+
+
+#main_inner
+{
+position: relative;
+width: 950px;
+margin: 0 auto;
+padding-top: 3.5em;
+}
+
+
+
+#main_inner h4
+{
+	border-bottom: dotted 1px #E1E1E1;
+	position:relative;
+	font-size: 1.2em;
+	padding-bottom: 0.175em;
+	margin-bottom: 1.4em;
+	margin-top: 0.95em;
+}
+
+#main_inner .post
+{
+position: relative;
+}
+#main_inner div.postheader
+{
+	border-bottom:1px dotted #E1E1E1;
+	padding-bottom: 0.5em;
+	margin-bottom: 2.0em;
+}
+#main_inner .postheader h3
+{
+	font-family:Georgia,sans-serif;
+	font-size: 1.8em;
+}
+
+#main_inner .postheader ul.post_info
+{
+list-style: none;
+font-size: 0.8em;
+}
+
+#main_inner .post ul.post_info li
+{
+background-position: 0em 0.2em;
+background-repeat: no-repeat;
+display: inline;
+padding-left: 18px;
+}
+
+#main_inner .post ul.post_info li.date
+{
+background-image: url('images/n5.gif');
+}
+
+#main_inner .post ul.post_info li.comments
+{
+background-image: url('images/n6.gif');
+margin-left: 1.1em;
+}
+
+/* Footer */
+
+
+/*KORAYEM*/
+#footer
+{
+background:#FFFFFF url(images/n2_flipped.gif) repeat-x scroll 0px 1px; 
+height:70px;
+padding-top:7px
+
+width:100%;
+text-align: center;
+
+}
+#footer_bottom
+{
+text-align: center;
+color: #FFFFFF;
+height:122px;
+width:100%;
+background:#1E517C url(images/n1_flipped.gif) repeat-x scroll 0%;
+}
+/* Search */
+
+input.button
+{
+background: #FF790B url('images/n3.gif') repeat-x;
+color: #fff;
+border: solid 1px #DB7623;
+font-weight: bold;
+text-transform: lowercase;
+font-size: 0.8em;
+height: 2.0em;
+}
+
+input.text
+{
+border: solid 1px #F1F1F1;
+font-size: 1.0em;
+padding: 0.25em 0.25em 0.25em 0.25em;
+}
+
+#search
+{
+position: relative;
+width: 100%;
+margin-bottom: 2.0em;
+}
+
+#search input.text
+{
+position: absolute;
+top: 0em;
+left: 0em;
+width: 9.5em;
+}
+
+#search input.button
+{
+position: absolute;
+top: 0em;
+right: 0em;
+min-width: 2.0em;
+max-width: 2.5em;
+}
+
+/* LAYOUT - 3 COLUMNS */
+
+	/* Primary content */
+	
+	#primaryContent_3columns
+	{
+	position: relative;
+	margin-right: 18em; /*Korayem: was 34em with 2 columns */
+	}
+	
+	
+	#primaryContent_3columns p
+	{
+	margin-bottom: 1.0em;
+	}
+
+
+	#primaryContent_3columns p > img, #primaryContent_3columns p > a > img
+	{
+	margin: 1.0em;
+	}
+
+	
+	#columnA_3columns
+	{
+	position: relative;
+	float: left;
+	width: 100%;
+	margin-right: -34em;
+	padding-right: 2em;
+	}
+	
+	/* Secondary Content */
+	
+	#secondaryContent_3columns
+	{
+	float: right;
+	}
+	
+	#columnB_3columns
+	{
+	width: 130px;
+	float: left;
+	padding: 0em 1em 0.5em 1em;
+	border-left: dotted 1px #E1E1E1;
+	}
+	
+	#columnC_3columns
+	{
+	width: 200px;
+	float: left;
+	padding: 0em 1em 0.5em 1em;
+	border-left: dotted 1px #E1E1E1;
+	}
+	
+/* LAYOUT - 2 COLUMNS */
+
+	/* Primary content */
+	
+	#primaryContent_2columns
+	{
+	position: relative;
+	margin-right: 17em;
+	}
+	
+	#columnA_2columns
+	{
+	position: relative;
+	float: left;
+	width: 100%;
+	margin-right: -17em;
+	padding-right: 2em;
+	}
+	
+	/* Secondary Content */
+	
+	#secondaryContent_2columns
+	{
+	float: right;
+	}
+	
+	#columnC_2columns
+	{
+	width: 13.0em;
+	float: left;
+	padding: 0em 0em 0.5em 2em;
+	border-left: dotted 1px #E1E1E1;
+	}
+
+/* LAYOUT - COLUMNLESS */
+
+	/* Primary content */
+	
+	#primaryContent_columnless
+	{
+	position: relative;
+	}
+	
+	#columnA_columnless
+	{
+	position: relative;
+	width: 100%;
+	}

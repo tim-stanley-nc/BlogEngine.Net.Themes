@@ -1,0 +1,100 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+<%@ Register Src="~/admin/menu.ascx" TagName="menu" TagPrefix="uc1" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+<%--
+        Name:  Natural Essence 1.0
+        Date:  2008.01.24
+      Author:  Jesse Foster | jf26028 (http://www.gravitycube.net/)
+ Description:  Soft and natural two-column template.
+     License:  Originally released under the Creative Commons Attribution 2.5 by Arcsin (http://templates.arcsin.se/license/).
+               Enhancements released by GravityCube.net under the BSD license - Copyright (c) 2008, http://www.gravitycube.net/.
+               See License.txt for full license.
+     Credits:  Original theme based on Natural Essence by Arcsin(http://templates.arcsin.se/natural-essence-website-template/) under the Creative Commons Attribution 2.5 license.
+--%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head runat="server">
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<link rel="shortcut icon" href="~/pics/blogengine.ico" type="image/x-icon" />
+	</head>
+	<body>
+		<form id="Form1" runat="server">
+			<div id="container">
+				<div id="header">
+					<div class="style">
+						<h1 id="sitename"><a href="~/" runat="server"><%=BlogSettings.Instance.Name %></a></h1>
+						<div id="slogan"><%=BlogSettings.Instance.Description %></div>
+					</div>
+				</div>
+				
+				<div id="menu" class="menuGeneric">
+					<ul>
+						<li class="home"><asp:HyperLink ID="HlHome" NavigateUrl="~/default.aspx" CssClass="home" runat="server">Home</asp:HyperLink></li>
+						<li class="archive"><asp:HyperLink ID="HlArchive" NavigateUrl="~/archive.aspx" CssClass="archive" runat="server">Archive</asp:HyperLink></li>
+						<li class="contact"><asp:HyperLink ID="hlContact" NavigateUrl="~/contact.aspx" CssClass="contact" runat="server">Contact</asp:HyperLink></li>
+						<li class="rss"><a class="rss" href='<%=Utils.FeedUrl %>'>RSS Feed</a></li>
+						<li class="user"><asp:LoginStatus ID="LoginStatus2" runat="Server" LoginText="Sign in" LogoutText="Sign out" EnableViewState="false" CssClass="user" /></li>
+					</ul>
+				</div>
+
+				<% if (Utils.IsAuthenticated) { %>
+				<div id="adminMenu" class="menuGeneric">
+					<uc1:menu ID="Menu2" runat="server" />
+				</div>
+				<%} %>
+				
+				<div id="wrapper">
+					<div id="content">
+						<!-- jes - style this up -->
+						<blog:SearchOnSearch ID="SearchOnSearch1" runat="server" MaxResults="3" Headline="You searched for" Text="Here are some results for the search term on this website" />
+						<asp:ContentPlaceHolder ID="cphBody" runat="server" />
+					</div>
+				</div>
+
+				<div id="sidebarOne" class="sidebar">
+					<div id="boxSearch" class="box">
+						<h2>Search</h2>
+						<blog:SearchBox ID="SearchBox1" runat="server" />
+					</div>
+					
+					<div id="boxTags" class="box">
+						<h2>Tags</h2>
+						<blog:TagCloud ID="TagCloud1" runat="server" />
+					</div>
+
+					<div id="boxCategories" class="box">
+						<h2>Categories</h2>
+						<blog:CategoryList ID="CategoryList1" ShowRssIcon="true" runat="Server" />
+					</div>
+					
+					<div id="boxPages" class="box">
+						<h2>Pages</h2>
+						<blog:PageList ID="PageList1" runat="Server" />
+					</div>					
+				</div>
+
+				<div id="sidebarTwo" class="sidebar">
+					<div id="boxArchive" class="box">
+						<h2>Archive</h2>
+						<blog:MonthList ID="MonthList1" runat="Server" />
+					</div>
+					
+					<div id="boxBlogroll" class="box">
+						<h2>Blogroll</h2>
+						<blog:Blogroll ID="Blogroll1" runat="server" />
+					</div>
+					
+					<div id="boxDisclaimer" class="box">
+						<h2>Disclaimer</h2>
+						<p>The opinions expressed herein are my own personal opinions and do not represent my employer's view in anyway.</p>
+						<p>&copy; Copyright <%=DateTime.Now.Year %></p>
+					</div>
+				</div>
+
+				<div id="footer">
+					Powered by <a href="http://www.dotnetblogengine.net/" target="_blank">BlogEngine.NET</a> | Based on design by <a href="http://templates.arcsin.se/natural-essence-website-template/" target="_blank">Arcsin</a> | Enhanced by <a href="http://www.gravitycube.net/blog/" target="_blank">GravityCube.net</a>
+				</div>
+			</div>
+		</form>
+	</body>
+</html>

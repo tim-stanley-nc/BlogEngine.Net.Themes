@@ -1,0 +1,510 @@
+/*
+        Name:  Envision
+        Date:  2008.01.23
+      Author:  Jesse Foster | jf26028 (http://www.gravitycube.net/)
+ Description:  2 column light layout.
+     License:  Originally released under the Creative Commons Attribution 2.5 by Erwin Aligam.
+               Enhancements released by GravityCube.net under the BSD license - Copyright (c) 2008, http://www.gravitycube.net/.
+               See License.txt for full license.
+     Credits:  Original theme based on Envision by Erwin Aligam (http://www.styleshout.com/) under the Creative Commons Attribution 2.5 license.
+*/
+ 
+/********************************************
+   HTML ELEMENTS
+********************************************/ 
+
+/* Top Elements */
+* { margin: 0; padding: 0; outline: 0 }
+
+body {
+	background: #CCC;
+	font: 70%/1.5em Verdana, Tahoma, arial, sans-serif;
+	color: #555; 
+	text-align: center;
+}
+
+/* links */
+a, a:visited {
+	text-decoration: none;
+	color: #2180BC;
+	background: inherit;
+}
+a:hover {
+	color: #88ac0b;
+	background: inherit;
+	text-decoration: underline;
+}
+
+/* headers */
+h1, h2, h3 {
+	font-family: 'Trebuchet MS', Tahoma, Sans-serif;	 		
+}
+h1 {
+	font-size: 150%;	
+	font-weight: normal;
+	color: #006699;
+}
+h2 {
+	font-size: 140%;
+	text-transform: uppercase;
+	color: #88ac0b;
+}
+h3 {
+	font-size: 120%;
+	color: #666666; 
+}
+
+/* images */
+img {
+	background: #FAFAFA;
+   border: 1px solid #E5E5E5;
+	padding: 5px;
+}
+img.float-right {
+  margin: 5px 0px 10px 10px;  
+}
+img.float-left {
+  margin: 5px 10px 10px 0px;
+}
+
+h1, h2, h3, p {
+	padding: 10px;		
+	margin: 0;
+}
+ul, ol {
+	margin: 5px 20px;
+	padding: 0 20px;
+}
+
+li { list-style: none; margin: 0; list-style: 0; }
+
+code {
+  margin: 5px 0;
+  padding: 10px;
+  text-align: left;
+  display: block;
+  overflow: auto;  
+  font: 500 1em/1.5em 'Lucida Console', 'courier new', monospace ;
+  /* white-space: pre; */
+  background: #FAFAFA;
+  border: 1px solid #f2f2f2;  
+}
+acronym {
+  cursor: help;
+  border-bottom: 1px dotted #777;
+}
+blockquote {
+	margin: 10px;
+ 	padding: 0 0 0 28px;  
+   border: 1px solid #f2f2f2; 
+  	background: #FAFAFA url(images/quote.gif) no-repeat 5px 5px;    
+}
+
+/* form elements */
+label {
+	display:block;
+	font-weight:bold;
+	margin:5px 0;
+}
+input {
+	padding:2px;
+	border:1px solid #eee;
+	font: normal 1em Verdana, sans-serif;
+	color:#777;
+}
+textarea {
+	width:400px;
+	padding:2px;
+	font: normal 1em Verdana, sans-serif;
+	border:1px solid #eee;
+	height:100px;
+	display:block;
+	color:#777;
+}
+#searchbutton, #btnSave { 
+	font: bold 12px Arial, Sans-serif; 
+	height: 24px;
+	margin: 0;
+	padding: 2px 3px; 
+	color: #FFF;
+	background: #8EB50C url(images/button-bg.jpg) repeat-x 0 0;
+	border: none;
+}
+
+/********************************************
+   LAYOUT
+********************************************/ 
+
+
+/*
+div#container{width:900px;margin:0 auto}
+div#content{float:left;width:700px}
+div#sidebarOne{float:right;width:200px}
+div#sidebarTwo{float:right;clear:right;width:200px}
+div#footer{clear:both;width:100%}
+*/
+
+div#sidebarOne{float:right;width:26%; margin-right: 25px; }
+div#sidebarTwo{float:right;clear:right;width:26%; margin-right: 25px; }
+
+#container {
+	width: 820px;
+	background: #CCC url(images/content.jpg) repeat-y center top;
+	margin: 0 auto;
+	text-align: left;
+}
+#header {
+	position: relative;
+	height: 103px;
+	background: #CCC url(images/header.jpg) no-repeat center top;
+	padding: 0;	
+	color: #FFF;	
+}
+#header h1#sitename a {
+	position: absolute;
+	margin: 0; padding: 0;
+	font: bolder 44px 'Trebuchet MS', Arial, Sans-serif;
+	letter-spacing: -2px;
+	color: #FFF;
+	text-transform: none;
+	text-decoration: none;
+	background: transparent;
+	
+	/* change the values of top and left to adjust the position of the logo*/
+	top: 25px; left: 47px;	
+}
+#header div#slogan {
+	position: absolute;
+	margin: 0; padding: 0;
+	font: normal 12px 'Trebuchet MS', Arial, Sans-serif;
+	text-transform: none;
+	color: #FFF;
+	
+	/* change the values of top and left to adjust the position of the slogan*/
+	top: 70px; left: 55px;		
+}
+
+#header div#layoutSelection { float: right; margin-top: 30px; margin-right: 50px; }
+
+/* header links */
+#header #header-links {
+	position: absolute;
+	top: 20px; right: 30px;	
+	color: #C6DDEE;
+	font-size: 10px;	
+}
+#header #header-links a {	
+	color: #FFF;
+	text-decoration: none;	
+}
+#header #header-links a:hover {
+	color: #D4E59F;	
+}
+
+/* Menu */
+#menu,
+#adminmenu {
+	clear: both;	
+	margin: 0 auto; padding: 0;
+	background: url(images/menu.jpg) repeat-x 0 0;	
+	font: bold 12px/37px Verdana, Arial, Tahoma, Sans-serif;
+	height: 37px;
+	width: 780px;	
+}
+
+#adminmenu { font-size: 80%; }
+
+#menu ul, 
+#adminmenu ul {
+	float: right;
+	list-style: none;
+	margin:0; padding: 0;
+}
+#menu ul li, 
+#adminmenu ul li {
+	display: inline;
+}
+#menu ul li a, 
+#adminmenu ul li a {
+	display: block;
+	float: left;
+	padding: 0 12px;
+	color: #FFF;	
+	text-decoration: none;
+}
+#menu ul li.last a, 
+#adminmenu ul li.last a {
+	padding-right: 20px;	
+}
+#menu ul li a:hover, 
+#adminmenu ul li a:hover {
+	color: #D4E59F;	
+}
+#menu ul li#current a, 
+#adminmenu ul li#current a {	
+	color: #D4E59F;
+}
+
+/* Main Column */
+#content {
+	float: left;
+	width: 66%;
+	padding: 0;
+	margin: 5px 0 0 5px;
+	display: inline;
+	margin-left: 30px;
+}
+#content h2 {
+	margin-top: 10px;
+	font: Bold 140% 'Trebuchet MS', Tahoma, Sans-serif;
+	color: #88ac0b; 
+	padding: 5px 0 5px 25px; 	
+	border-bottom: 1px solid #EFF0F1;
+	background: #FFF url(images/square-green.png) no-repeat 3px 50%;	
+	text-transform: none;
+}
+#content h2 a {
+	background: none;
+	color: #88ac0b;
+	text-decoration: none;
+}
+
+#content ul li {
+	list-style-image: url(images/bullet.gif);
+}
+
+/* Sidebar */	
+.sidebar h3 {
+	margin-top: 10px;
+	padding: 5px 5px; 
+	font: bold 1.4em 'Trebuchet MS', Tahoma, Sans-serif;
+	color: #728D26;	
+}
+.sidebar ul 
+{
+	list-style: none;
+	text-align: left;
+	margin: 7px 4px 8px 0; padding: 0;
+	text-decoration: none;
+}
+.sidebar ul li {
+	list-style: none;
+	padding: 4px 0 4px 5px;
+	margin: 0 2px;	
+	color: #68774A;	
+	border-bottom: dashed 1px #728D26;
+}
+* html body .sidebar ul li {
+	height: 1%;
+}
+.sidebar ul li a {
+	text-decoration: none;	
+	background-image: none;	
+	color: #666666;			
+}
+.sidebar ul li a:hover {	
+	color: #1773BC;	
+}
+.sidebar ul ul { margin: 0 0 0 5px; padding: 0; }
+.sidebar ul ul li { background: none; }
+
+
+/* Footer */	
+#footer {
+	color: #C6DDEE;
+	background: #CCC url(images/footer.jpg) no-repeat center top;
+	clear: both;
+	width: 820px;
+	height: 65px;
+	text-align: center;	
+	font-size: 92%;	
+}
+#footer a { 
+	color: #FFF;
+	text-decoration: none; 
+}
+
+/* alignment classes */
+.float-left  { float: left; }
+.float-right { float: right; }
+.align-left  { text-align: left; }
+.align-right { text-align: right; }
+
+/* display and additional classes */
+.clear { clear: both; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* search */
+#searchbox { font-size: 11px; }
+#searchbutton { height: 21px; font-size: 12px; }
+#searchfield { width: 110px; }
+#searchcomments { }
+
+/* tag cloud */
+#tagcloud { margin-bottom: 10px; white-space: normal; }
+#tagcloud li { display: inline; }
+#tagcloud a { margin-right: 4px; display: inline; text-decoration: none; }
+#tagcloud a:hover { }
+#tagcloud a.biggest { font-size: 16px; }
+#tagcloud a.big { font-size: 14px; }
+#tagcloud a.medium { font-size: 12px; }
+#tagcloud a.small { font-size: 10px; }
+#tagcloud a.smallest { font-size: 9px; }
+
+/* archive */
+#archive { padding: 10px; }
+#archive h1 { margin: 0; padding-bottom: 9px; }
+#archive h2 { background: none; padding: 5px 5px 0px 5px; font-size: 12px; margin-bottom: 0px; }
+#archive h2 img { margin-right: 3px; }
+#archive ul { list-style-type: square; margin: 0 10px; padding: 10px; }
+#archive ul li { margin-right: 20px; }
+#archive table { width: 100%; border-collapse: collapse; margin-bottom: 20px;}
+#archive table td, #archive table th { text-align: left; }
+#archive table td { text-align: left; padding: 2px 0; }
+#archive .date { width: 90px; }
+#archive .comments { width: 70px; text-align: center; }
+#archive .rating { width: 70px; text-align: center; }
+
+/* related posts */
+#relatedPosts a { display: block; margin-top: 5px; margin-left: 15px; margin-bottom: 5px; font-size: 1.2em; }
+
+/* comments */
+.comment { border: solid 1px #e0d0b0; padding: 5px; padding-right: 0px; margin: 2px 2px 5px 2px; }
+.comment .date { text-align: left; margin: 0; padding: 3px 0px; }
+.comment .author { margin: 0; text-align: left; padding-top: 3px; margin: 5px 0px 3px 0px; clear: both; }
+.self { }
+.comment .gravatar { float: right; width: 80px; margin: 5px 15px 5px 5px; padding-left: 5px; }
+.comment .gravatar img { height: 80px; width: 80px; }
+.comment .content { float:left; min-height: 85px; width: 390px; margin: 5px 0 0 0px; }
+.commentForm { padding: 5px; }
+.commentForm label { float: left; display: block; width: 80px; clear: both;}
+.commentForm input { width: 130px; }
+.commentForm textarea { width: 100%; height: 150px; }
+
+/* posts */
+.post .info{ background: #eeeeee; border: solid 1px #cccccc; }
+.post .info table tr td a img { padding: 0; }
+
+/* star rating */
+.rating p { display: inline; position: relative; top: 14px; left: 55px; }
+.star-rating { position: relative; width: 125px; height: 25px; overflow: hidden; list-style: none; margin: 0 0 20px 0; padding: 0; background-position: left top; }
+.star-rating li { display: inline; }
+.star-rating a, .star-rating .current-rating { position: absolute; top: 0; left: 0; text-indent: -1000em; height: 25px; line-height: 25px; outline: none; overflow: hidden; border: none; }
+.star-rating a:hover, .star-rating a:active, .star-rating a:focus { background-position: left bottom; }
+.star-rating a.one-star { width: 20%; z-index: 6; }
+.star-rating a.two-stars { width: 40%; z-index: 5; }
+.star-rating a.three-stars { width: 60%; z-index: 4; }
+.star-rating a.four-stars { width: 80%; z-index: 3; }
+.star-rating a.five-stars { width: 100%; z-index: 2; }
+.star-rating .current-rating { z-index: 1; background-position: left center; margin: 0px; }
+
+/* smaller star */
+.small-star { width: 50px; height: 10px; }
+.small-star, .small-star a:hover, .small-star a:active, .small-star a:focus, .small-star .current-rating { background-image: url(../../pics/star_small.gif); line-height: 10px; height: 10px; }
+
+/* Search page */
+.searchresult { margin-bottom: 20px; }
+.searchresult a { font-weight: bold; }
+.searchresult span.text { clear: both; display: block; margin: 3px 0; }
+.searchresult span.type { display: block; }
+.searchresult span.url { }
+.searchpage { padding: 2px; }
+.searchpage ul.paging { list-style-type: none; margin:0px; margin-bottom: 20px; padding:0px; }
+.searchpage ul.paging li { display: inline; margin-right: 5px; }
+.searchpage ul.paging li a { padding: 5px 8px; }
+.searchpage ul.paging li.active { }
+
+/* contact */
+#contact { padding: 10px; }
+#contact h1 { margin-top: 0; }
+#contact label { display: block; padding-top: 5px; }
+#contact input.field { width: 200px; }
+#contact textarea { display: block; overflow: auto; width: 75%; height: 150px; margin: 0; }
+
+/* page */
+#page { padding: 10px; }
+#page h1 { margin-top: 0; }
+
+/* code styles for CodeFormatter Extension*/
+.csharpcode, .csharpcode pre { background-color: #ffffff; /*white-space: pre;*/ }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt { background-color: #f4f4f4; width: 100%; margin: 0em; }
+.csharpcode .lnum { color: #606060; }
+
+/* syntax highlighter */
+.code { color: black; background-color: #F1F1F1; }
+.code .rem { color: #008000; }
+.code .kwrd { color: #0000ff; }
+.code .str { color: #006080; }
+.code .op { color: #0000c0; }
+.code .preproc { color: #0000ff; }
+.code .asp { background-color: #ffff00; }
+.code .html { color: #800000; }
+.code .attr { color: #ff0000; }
+.code .alt { background-color: #f4f4f4; }
+.code .lnum { color: #606060;}
+
+div#footer { padding-top: 15px; }
+
+div#boxCategories img, 
+div#boxBlogroll img { margin-right: 2px; padding: 2px; }
+
+div#boxTags ul li { border: none; }
+
+div#boxArchive ul li, 
+div#boxBlogroll ul li { border: none; }
+
+div#boxArchive ul li ul li, 
+div#boxBlogroll ul li ul li { border-bottom: dashed 1px #728D26; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

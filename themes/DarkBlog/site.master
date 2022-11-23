@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="themes_Cogitation_site" %>
+<%@ Register Src="~/admin/menu.ascx" TagName="menu" TagPrefix="uc1" %>
+<%@ Register Src="SidePanel.ascx" TagName="InfoBox" TagPrefix="uc2" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head runat="server">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="print.css" media="print" />
+    <link rel="shortcut icon" href="~/pics/blogengine.ico" type="image/x-icon"/>
+    <script type="text/javascript">
+        function buildsubmenus_horizontal(){
+          var ultags=document.getElementById("navmenu").getElementsByTagName("ul");
+          for (var i=0; i<ultags.length; i++){
+            ultags[i].parentNode.onmouseover=function(){
+              this.getElementsByTagName("ul")[0].style.visibility="visible"
+            }
+            ultags[i].parentNode.onmouseout=function(){
+              this.getElementsByTagName("ul")[0].style.visibility="hidden"
+            }
+          }
+        }
+        if (window.addEventListener)
+            window.addEventListener("load", buildsubmenus_horizontal, false)
+        else if (window.attachEvent)
+            window.attachEvent("onload", buildsubmenus_horizontal)
+    </script>
+    <!--[if IE]> <style type="text/css">@import "ie.css";</style> <![endif]-->
+</head>
+<body>
+<form id="form1" runat="server" >
+    
+<div id="topbar">
+	<div class="content">
+		<div id="icons">
+			<a href="~/default.aspx" title="Home page" runat="server"><img src="~/themes/darkblog/images/home.gif" runat="server" alt="Home" /></a>
+			<a href="~/contact.aspx" title="Contact us" runat="server"><img src="~/themes/darkblog/images/contact.gif" runat="server" alt="Contact" /></a>
+		</div>
+		<div class="url">
+			<asp:LoginStatus ID="LoginStatus1" runat="Server" LoginText="Login" LogoutText="Logout" EnableViewState="false" />
+		</div>
+	</div>
+</div>
+	
+<div style="clear:both; width:100%;">&nbsp;</div>
+	
+<div class="content">
+	<div id="main">			
+		<div class="side_bar">
+			<div class="pad">
+				<uc2:InfoBox ID="InfoBox1" runat="server" />			
+			</div>
+		</div>
+		
+		<div id="left_side">
+		    <div class="pad">
+		        <asp:contentplaceholder id="cphBody" runat="server" ></asp:contentplaceholder>
+		    </div>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="right">
+		    Theme Design: <a href="http://www.free-css-templates.com">Free Css Templates</a>
+		    Adopted by: <a href="http://rtur.net">Rtur.net</a>
+		</div>
+		&copy; Copyright <%=DateTime.Now.Year %> RTUR.net
+		Powered by: <a href="http://www.dotnetblogengine.net">BlogEngine.NET</a> <%=BlogSettings.Instance.Version() %>
+	</div>
+</div>
+
+<div id="top">
+	<div class="content">
+	    <div id="navmenubox">
+	        <blog:PageMenu ID="PageMenu1" runat="Server" />&nbsp;&nbsp;
+   		<a id="A2" href="~/syndication.axd" title="Contact us" runat="server"><img id="Img1" src="~/themes/darkblog/images/rss.gif" width="22" height="22" runat="server" alt="Rss" /></a>
+	    </div>
+		<h1><a id="A1" href="~/" runat="server"><%=BlogSettings.Instance.Name %></a></h1>
+        <h2><%=BlogSettings.Instance.Description %></h2>
+	</div>
+</div>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,177 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="themes_Fresh_site" %>
+
+<%@ Import Namespace="BlogEngine.Core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <meta name="author" content="AntonioWells.com" />
+    <!-- leave this for stats -->
+    <link rel="stylesheet" href="standard.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!--[if IE 6]>
+    <link rel="stylesheet" href="ie.css" type="text/css" media="screen" />
+    <![endif]-->
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="Wrapper">
+        <div id="Header">
+            <div id="BlogTitle">
+                <h1>
+                    <a href="<%=Utils.AbsoluteWebRoot %>" title="<%=BlogSettings.Instance.Name %>">
+                        <%=BlogSettings.Instance.Name %></a></h1>
+                <span class="Description">
+                    <%=BlogSettings.Instance.Description %></span></div>
+            <div id="SearchBox">
+                <%--<form method="get" id="searchform" action="#">
+                <input type="text" class="SearchField" value="Search Posts" name="s" id="s" onfocus="javascript:if(this.value=='Search Posts') this.value='';"
+                    onblur="javascript:if(this.value=='') this.value='Search Posts';" /><input name="Submit"
+                        type="submit" class="SearchButton" value="" />
+                </form>--%>
+                <blog:SearchOnSearch ID="SearchOnSearch1" runat="server" MaxResults="3" Headline="You searched for"
+                    Text="Here are some results for the search term on this website" />
+            </div>
+            <div class="Clear">
+            </div>
+            <div id="NavPanel">
+                <div class="Menu">
+                    <ul>
+                        <li class="page_item current"><a href="<%=Utils.AbsoluteWebRoot %>" title="Home"
+                            rel="home">Home</a></li>
+                        <%--<li><a href="<%=Utils.AbsoluteWebRoot %>about.aspx">
+                            <%=Resources.labels.about %></a></li>--%>
+                        <!-- Use this as a template to add your header links
+                             <li><a href="<%=Utils.AbsoluteWebRoot %>page.aspx"><%=Resources.labels.page %></a></li> -->
+                    </ul>
+                </div>
+                <div class="RSS">
+                    <a href="<%=Utils.FeedUrl %>">Subscribe to RSS</a></div>
+                <div class="Clear">
+                </div>
+            </div>
+            <div class="Clear">
+            </div>
+        </div>
+        <p>
+        </p>
+        <div id="Body">
+            <div class="LeftContent">
+                <div class="CommonPanel">
+                    <!-- Start Article Posts -->
+                    <div class="Article">
+                        <asp:ContentPlaceHolder ID="cphBody" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    <!-- End Article Posts -->
+                    <p>
+                        &nbsp;</p>
+                </div>
+            </div>
+            <div class="Sidebar">
+                <div class="CommonPanel">
+                    <h2>
+                        Advertisements</h2>
+                    <div class="Ads">
+                        <p>
+                            <%--Place your manual Ads here. I recommend using the Widget feature of WordPress--%>
+                            <a href="http://www.namynot.com" target="_blank">
+                                <img src="<%=Utils.AbsoluteWebRoot %>themes/Fresh/images/ad_nmi.gif" alt="NAMYnot Multimedia Inc. Custom Web Design" /></a>
+                             <a href="http://www.androidtapp.com" target="_blank">
+                                <img src="<%=Utils.AbsoluteWebRoot %>themes/Fresh/images/ad_androidtapp_125x125.jpg"
+                                    alt="Android Tapp. Android App Reviews &amp; Showcase Just a Tapp Away" /></a>
+                        </p>
+
+                        <script type="text/javascript"><!--
+                        google_ad_client = "pub-2873892966714049";
+                        /* Fresh BlogEngine.Net Theme, 250x250 */
+                        google_ad_slot = "1887430047";
+                        google_ad_width = 250;
+                        google_ad_height = 250;
+                        //-->
+                        </script>
+
+                        <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                        </script>
+
+                    </div>
+                </div>
+                <div class="CommonPanel">
+                    <blog:WidgetZone runat="server" ID="rightzone" />
+                </div>
+                <div class="LeftSideBar">
+                    <div class="CommonPanel">
+                        <h2>
+                            Join The Movement</h2>
+                        <ul>
+                            <li>Content Here</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="RightSideBar">
+                    <div class="CommonPanel">
+                        <h2>
+                            Custom Header</h2>
+                        <ul>
+                            <li>Content Here</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="Clear">
+            </div>
+        </div>
+        <div id="Footer">
+            <div class="LeftContent">
+                <div class="CommonPanel">
+                    <span>Powered by <a href="http://www.dotnetblogengine.net" target="_blank">BlogEngine.NET</a>
+                        v<%=BlogSettings.Instance.Version() %>
+                        | <a href="<%=Utils.FeedUrl %>">Subscribe (RSS)</a><%-- and <a href="<%=CommentFeed %>">
+                            Comment (RSS)</a>--%></span>
+                    <p>
+                        Copyright &copy; 2008. All right reserved.<br />
+                        <a href="http://www.antoniowells.com/2008/11/11/fresh-theme-for-blogenginenet/"
+                            target="_blank">Fresh</a> Theme for BlogEngine.Net by <a href="http://www.antoniowells.com"
+                                target="_blank">Antonio Wells.com</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="Sidebar">
+                <div class="LeftSideBar">
+                    <div class="CommonPanel">
+                        <h2>
+                            Blog Roll</h2>
+                        <ul>
+                            <li><a href="http://www.namynot.com" target="_blank">Custom Web Design &amp; Development</a></li>
+                            <li><a href="http://www.antoniowells.com" target="_blank">Web Design Tips, Tricks, Training
+                                &amp; Advise</a></li>
+                            <li><a href="http://www.androidtapp.com" target="_blank">Android Tapp. Android App Reviews
+                                &amp; Showcase Just a Tapp Away</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="RightSideBar">
+                    <div class="CommonPanel">
+                        <h2>
+                            Meta</h2>
+                        <ul>
+                            <li><a href="javascript:void(filterByAPML())" class="apmlfilter">
+                                <%=Resources.labels.filterByApml %></a></li>
+                            <li><a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional">
+                                Valid
+                                <abbr title="eXtensible HyperText Markup Language">
+                                    XHTML</abbr></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="Clear">
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

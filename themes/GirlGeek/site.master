@@ -1,0 +1,112 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+<%@ Register Src="~/admin/menu.ascx" TagName="menu" TagPrefix="uc1" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+
+<%--
+#########################################################################
+Name:			GirlGeek (for BlogEngine.NET)
+Date:			2007-07-13
+Description:	A girly, butterfly bannered, pink two-column template.
+Author:			Michael Sivers *
+URL:			http://michael.sivers.co.uk
+
+* Notice: This theme is loosly based on the Dirtylicious theme by
+Viktor Persson (http://templates.arcsin.se) which was ported to
+BlogEngine.NET by RazorAnt (http://www.nyveldt.com/blog).
+
+Feel free to use and modify but please provide credits.
+#########################################################################
+--%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head runat="server" profile="http://gmpg.org/xfn/11">
+	<link rel="stylesheet" href="default.css" type="text/css" />
+	<link rel="shortcut icon" href="~/pics/blogengine.ico" type="image/x-icon" />
+</head>
+
+<body>
+	<form id="Form1" runat="server">
+		<div class="outerouter">
+			<div class="outer-container">
+				<div class="inner-container">
+					<div class="header">
+						<div class="title">
+							<div class="sitename"><a href="~/" runat="server"><%=BlogSettings.Instance.Name %></a></div>
+							<div class="sitenameshadow"><%=BlogSettings.Instance.Name %></div>
+							<div class="slogan"><%=BlogSettings.Instance.Description %></div>
+						</div>
+					</div>
+					<div class="path">
+						<div class="left">							
+							<ul>
+							  <li><asp:HyperLink ID="HlHome" NavigateUrl="~/default.aspx" runat="server">Home</asp:HyperLink></li>
+								<li class="page_item"><asp:HyperLink ID="HlArchive" NavigateUrl="~/archive.aspx" runat="server">Archive</asp:HyperLink></li>
+								<li class="page_item"><asp:HyperLink ID="hlContact" NavigateUrl="~/contact.aspx" runat="server">Contact</asp:HyperLink></li>
+							</ul>
+						</div>
+						<div class="right">
+							<a href="<%=Utils.FeedUrl %>">Subscribe to My Feed<asp:Image ID="RssIconImage1" runat="Server" Width="24px" Height="24px" AlternateText="RSS Feed" Style="margin: 0 0 -6px 10px" /></a>
+						</div>
+						<div class="clearer"></div>
+					</div>
+					<% if (Utils.IsAuthenticated) { %>
+					<div class="adminpath">
+						
+						<uc1:menu ID="Menu1" runat="server" />
+					</div>
+					<%} %>
+					<div class="main">
+						<div class="content">
+							<asp:ContentPlaceHolder ID="cphBody" runat="server" />
+						</div>
+						<div class="navigation">
+							<blog:SearchOnSearch ID="SearchOnSearch1" runat="server" MaxResults="3" Headline="You searched for" Text="Here are some results for the search term on this website" />
+							<div class="block">
+								<h2>Search</h2>
+								<blog:SearchBox ID="SearchBox1" runat="server" />
+							</div>
+							<div class="block">
+								<h2>Tags</h2>
+								<blog:TagCloud ID="TagCloud1" runat="server" />
+							</div>
+							<div class="block">
+								<h2>Categories</h2>
+								<blog:CategoryList ID="CategoryList1" ShowRssIcon="true" runat="Server" />
+							</div>
+							<div class="block">
+								<h2>Archive</h2>
+								<blog:MonthList ID="MonthList1" runat="Server" />
+							</div>
+							<div class="block">
+								<h2>Blogroll</h2>
+								<blog:Blogroll ID="Blogroll1" runat="server" />
+							</div>
+							<div class="block">
+								<h2>Disclaimer</h2>
+								<p>The opinions expressed herein are my own personal opinions and do not represent my employer's view in anyway.</p>
+								<p>&copy; Copyright <%=DateTime.Now.Year %></p>
+							</div>
+						</div>
+						<div class="clearer">&nbsp;</div>
+					</div>
+					<div class="footer">
+						<div class="left">
+							<div>
+								Powered by <a href="http://www.dotnetblogengine.net/" target="_blank">BlogEngine.NET</a> <%=BlogSettings.Instance.Version() %>
+								 |
+								Design by <a href="http://michael.sivers.co.uk">Michael Sivers</a>
+							</div>
+						</div>
+						<div class="right">
+							<asp:LoginStatus ID="LoginStatus1" runat="Server" LoginText="Sign in" LogoutText="Sign out" EnableViewState="false" />
+						</div>
+						<div class="clearer"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+<%@ Register Src="~/admin/menu.ascx" TagName="menu" TagPrefix="uc1" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server" profile="http://gmpg.org/xfn/11">
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="shortcut icon" href="~/pics/blogengine.ico" type="image/x-icon"/>
+</head>
+<body>
+<div id="wrap"><form id="Form1" runat="Server">
+	<div id="leftcol">
+		<div id="navbar">
+			<a id="A1" href="~/" runat="server" rel="home"><%=Resources.labels.home %></a> | <a id="A2" href="~/archive.aspx" runat="server"><%=Resources.labels.archive %></a> | <a id="A3" href="~/contact.aspx" runat="server"><%=Resources.labels.contact %></a> | <a href="<%=Utils.FeedUrl %>" class="feed"><img src="<%=Utils.RelativeWebRoot %>pics/rssbutton.gif" alt="Feed" /><%=Resources.labels.subscribe %></a>
+		</div>
+		<div id="header">
+			<div id="introtext">
+				<h1><%=BlogSettings.Instance.Name %></h1>
+				<h2><%=BlogSettings.Instance.Description %></h2>
+			</div>
+		</div>
+		<div id="spotlight">
+			<blog:SearchOnSearch runat="server" MaxResults="3" Headline="You searched for" Text="Here are some results for the search term on this website" />
+		</div>
+		<div id="maincontent">
+			<asp:ContentPlaceHolder ID="cphBody" runat="server" />		
+		</div>
+	</div>
+	<div id="rightcol">
+		<div class="rblock">
+			<h3>About the author</h3>
+			<table summary="About the author">
+			<tr>
+				<td><img id="Img1" src="~/themes/standard/noavatar.jpg" runat="server" alt="Name of author" /></td>
+				<td style="vertical-align:top">
+				Author name<br />
+				Something about me and what I do.
+				<br /><br />
+				<!-- Email -->
+				<asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/contact.aspx" style="float:right;clear:both">
+				E-mail me <img id="Img2" src="~/pics/mail.gif" alt="Send mail" runat="server" style="width:16px" />
+				</asp:HyperLink>
+				</td>
+			</tr>
+			</table>  
+		</div>
+		<blog:SearchBox ID="SearchBox1" runat="server" /><br />
+		<% if (Utils.IsAuthenticated){ %>
+		<div class="rblock">
+			<h3>Administration</h3>
+			<uc1:menu ID="Menu1" runat="server" />
+		</div>
+		<%} %>
+		<div class="rblock">
+			<h3>Calendar</h3>
+			<div style="text-align:center">
+			<blog:PostCalendar runat="Server" NextMonthText=">>" DayNameFormat="FirstTwoLetters" FirstDayOfWeek="monday" PrevMonthText="<<" CssClass="calendar" BorderWidth="0" WeekendDayStyle-CssClass="weekend" OtherMonthDayStyle-CssClass="other" UseAccessibleHeader="true" EnableViewState="false" />
+			<br />
+			<asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/?calendar=show" Text="View posts in large calendar" EnableViewState="false" />
+			</div>
+		</div>
+		<div class="rblock">
+			<h3><%=Resources.labels.pages %></h3>
+			<blog:PageList runat="Server" />
+		</div>
+		<div class="rblock">
+			<h3><%=Resources.labels.recentPosts %></h3>
+			<blog:RecentPosts runat="Server" />
+		</div>
+		<div class="rblock">
+			<h3><%=Resources.labels.recentComments %></h3>
+			<blog:RecentComments runat="Server" />
+		</div>
+		<div class="rblock">
+			<h3><%=Resources.labels.archive %></h3>
+			<blog:MonthList runat="server" />
+		</div>
+		<div class="rblock">
+			<h3>Authors</h3>
+			<blog:AuthorList runat="Server" />
+		</div>
+		<div class="rblock">
+			<h3>Tags</h3>
+			<blog:TagCloud runat="server" />
+		</div>
+		<div class="rblock">
+			<h3><%=Resources.labels.categories %></h3>
+			<blog:CategoryList runat="Server" /><br />
+		</div>
+		<div class="rblock">
+			<h3><%=Resources.labels.blogroll %></h3>   
+			<blog:Blogroll runat="server" />
+			<a href="opml.axd" style="display:block;text-align:right" title="Download OPML file" >Download OPML file <asp:Image ID="Image1" runat="server" ImageUrl="~/pics/opml.png" AlternateText="OPML" /></a>
+		</div>
+		<div class="rblock">
+			<h3>Disclaimer</h3>
+			<p>The opinions expressed herein are my own personal opinions and do not represent my employer's view in anyway.<br /><br />
+			&copy; Copyright <%=DateTime.Now.Year %><br /><br />
+			<asp:LoginStatus ID="LoginStatus1" runat="Server" LoginText="Sign in" LogoutText="Sign out" EnableViewState="false" />
+			</p>
+		</div>
+	</div>
+</form></div>
+<div id="footer">
+	<div id="footertext"><p>Powered by <a href="http://www.dotnetblogengine.net/">BlogEngine.NET</a> <%=BlogSettings.Instance.Version() %> | Original Design by <a href="http://mywebresource.com" title="Design By MyWebResource">MyWebResource</a>, Adapted by <a href="http://strivinglife.com/">James Skemp</a>.</p></div>
+</div>
+</body>
+</html>

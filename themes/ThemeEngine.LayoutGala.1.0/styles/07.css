@@ -1,0 +1,7 @@
+div#container{ width: 900px; margin: 0px auto }
+div#header {}
+div#wrapper{ float:left; width:100%; }
+div#content{ margin: 0px 150px }
+div#sidebarOne{ float:left; width:150px; margin-left:-900px }
+div#sidebarTwo{ float:left; width:150px; margin-left:-150px }
+div#footer{ clear:left; width:100% }

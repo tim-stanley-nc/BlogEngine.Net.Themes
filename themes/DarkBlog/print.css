@@ -1,0 +1,28 @@
+﻿#body {
+background: #fff;
+color:#000;
+padding:0;
+margin:0;
+}
+#left_side {
+width: 99%;
+padding: 0;
+margin:0;
+}
+.side_bar { height: 1px; width: 1px; display: none; }
+#topbar { display: none; }
+#footer { display: none; }
+.commentForm { display:none; }
+.rating { display:none; }
+.postFoot { display:none; }
+#main { padding:0; margin:0;}
+#top { display: none; }
+#left_side .pad { padding:0; margin:0;}
+*html #relatedPosts { height:1%; }
+*html .addComment { width: 99%; }
+*html .commentForm { width: 99%; }
+*html .comment img.flag { position: relative; }
+*html .comment .content { height: 100px; }
+*html div.post h1, .mceContentBody h1 { margin-left: 0; }
+*html .star-rating { margin-left: 0;}
+*html .rating p { margin-left: 100px; }

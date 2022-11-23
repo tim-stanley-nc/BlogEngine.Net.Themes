@@ -1,0 +1,151 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+<%@ Register Src="~/admin/menu.ascx" TagName="menu" TagPrefix="uc1" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+ <meta name="robots" content="all" />
+  <link rel="stylesheet" href="style.css" type="text/css" />
+   <title runat="server"></title>
+</head>
+
+<body>
+    <form id="Form1" runat="Server">
+<div id="header">
+
+	<div id="header_inner" class="fluid">
+
+		<div id="logo">
+			<h1><a href="~/" runat="server">
+			<%=BlogSettings.Instance.Name %>
+			</a></h1>
+	        <h2><%=BlogSettings.Instance.Description %></h2>
+		</div>
+		
+		<div id="menu">
+			<ul>
+				<li><a href="~/" runat="server" class="active">Blog</a></li>
+			</ul>
+		</div>
+		
+	</div>
+</div>
+
+<div id="main">
+
+	<div id="main_inner" class="fluid">
+
+		<div id="primaryContent_3columns">
+
+			<div id="columnA_3columns">
+		
+                <blog:SearchOnSearch ID="SearchOnSearch1" runat="server" MaxResults="3" Headline="You searched for" Text="Here are some results for the search term on this website" />
+                <asp:ContentPlaceHolder ID="cphBody" runat="server" />
+			
+
+		
+			</div>
+	
+		</div>
+		
+		<div id="secondaryContent_3columns">
+		
+			
+			
+			<div id="columnC_3columns" class="sidenav">
+		
+				<h4><span>Search</span></h4>
+				
+				<blog:SearchBox ID="SearchBox1" runat="server" />
+				
+				
+                
+				<% if (Utils.IsAuthenticated){ %>
+                <h4><span>Admin</span>istration</h4>
+				<uc1:menu ID="Menu1" runat="server" />
+                <%} %>
+
+				
+
+				
+				<h4><span>About</span> Me</h4>
+				<p>I love blogging!
+				
+				
+				<asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/contact.aspx" style="float:right;clear:both">Email him</asp:HyperLink>
+				
+				</p>
+                
+				
+				<br />
+				
+				<h4><span>Cale</span>ndar</h4>
+                <p>
+					<blog:PostCalendar runat="Server" NextMonthText=">>" DayNameFormat="FirstTwoLetters" FirstDayOfWeek="monday" PrevMonthText="<<" CssClass="calendar" BorderWidth="0" WeekendDayStyle-CssClass="weekend" OtherMonthDayStyle-CssClass="other" UseAccessibleHeader="true" EnableViewState="false" />
+				    <br />
+					<asp:HyperLink runat="server" NavigateUrl="~/?calendar=show" Text="View posts in large calendar" EnableViewState="false" />
+				</p>
+
+				<h4><span>Auth</span>ors</h4>
+                <p><blog:AuthorList ID="AuthorList1" runat="Server" /></p>
+
+				
+				<h4><span>Arch</span>ive</h4>
+                <p><blog:MonthList runat="Server" /></p>
+				
+				
+                <h4><span>Tags</span></h4>
+                <p><blog:TagCloud ID="TagCloud1" runat="server" /></p>
+
+                <h4><span>Categ</span>ories</h4>
+                <p><blog:CategoryList ID="CategoryList1" ShowRssIcon="false" runat="Server" /></p>
+                
+                
+                <h4><span>Blog</span>roll</h4>
+                <p>
+				<blog:Blogroll ID="Blogroll1" runat="server" />
+                <a href="opml.axd" style="display:block;text-align:right" title="Download OPML file" >
+					OPML file
+					<asp:Image ID="Image1" runat="server" ImageUrl="~/pics/opml.png" AlternateText="OPML" />
+				</a>
+                </p>
+                
+				<h4><span>Pag</span>es</h4>
+				<p><blog:PageList runat="Server" /></p>
+				
+				<h4><span>Recent</span>Posts</h4>
+				<p><blog:RecentPosts runat="Server" /></p>
+				
+				<h4><span>Recent</span>Comments</h4>
+				<p><blog:RecentComments runat="Server" /></p>
+
+				
+				<p><asp:LoginStatus runat="Server" LoginText="Sign in" LogoutText="Sign out" EnableViewState="false" /></p>
+
+
+			</div>
+		</div>
+
+		<br class="clear" />
+
+	</div>
+
+</div>
+
+<div id="footer">
+	Powered by <a href="http://www.dotnetblogengine.net">BlogEngine.NET</a> <%=BlogSettings.Instance.Version() %>
+	<br />
+	Original Design by <a href="http://www.nodethirtythree.com/">NodeThirtyThree Design</a>, Adapted and Edited by <a href="http://korayem.net/">Korayem</a>
+	<br />
+	&copy; Copyright <%=DateTime.Now.Year %>
+
+</div>
+
+<div id="footer_bottom">
+</div>
+
+</form>
+</body>
+</html>

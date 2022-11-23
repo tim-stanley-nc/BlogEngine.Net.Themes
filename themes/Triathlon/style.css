@@ -1,0 +1,183 @@
+/*  
+Theme Name: Triathlon
+Theme URI: http://www.templatepanic.com/
+Description: Sport related Wordpress theme.
+Author: Effi
+Author URI: http://www.EffiHaryanti.com/
+
+Terms of Use:
+- DO NOT REMOVE any of the links in the footer!
+- You are free to share, to copy, distribute and transmit this theme.
+- This theme is distributed for free. You are not allowed to sell this theme.
+Thanks for using this theme.
+*/
+
+
+/* -------------------- GENERAL -------------------- */
+
+
+body { font-family: Arial, Verdana, Helvetica; font-size: 13px; background: #7da7d8 url(images/bg.jpg) repeat-y top center; }
+
+#box { width: 942px; background: #fff; margin: 0 auto; padding: 10px; }
+
+#top { width: 942px; background: url(images/header.jpg) no-repeat top center; height: 114px; margin: 0px; padding: 0; }
+
+a, a:link { text-decoration: none; color: #0072bc; }
+a:hover { text-decoration: underline; color: #003471; }
+
+hr { border: none; border-top: 1px solid #ccc; }
+
+
+/* -------------------- HEADER -------------------- */
+
+
+#header { float: left; margin: 20px 0 0 10px; padding: 0; }
+#header h1 { font-family: Georgia, Tahoma, Verdana; margin: 0; padding: 0; color: #c2c2c2; font-size: 32px; font-weight: normal; font-style: italic; clear: both; }
+#header h1 a, #header h1 a:link { color: #c2c2c2; }
+#header h1 a:hover { color: #c2c2c2; text-decoration: none; }
+#description { font-family: Georgia, Tahoma, Verdana; color: #c2c2c2; font-size: 12px; margin: 10px 0 0 10px; padding: 0; clear: both; }
+
+#feed { text-align: right; margin: 0px 0 10px 0; font-size: 90%; }
+
+
+/* -------------------- SEARCH -------------------- */
+
+
+#searchform { height: 25px; line-height: 25px; padding: 0 5px 20px 0; margin: 0; }
+#searchform #s { font-size: 8pt; width: 160px; }
+#searchform #submit { font-size: 8pt; }
+
+input#s { font-family: Arial, Verdana; color: #222; border: 1px solid #ccc; background: #fdc689; }
+
+
+/* -------------------- NAV -------------------- */
+
+
+#navbox { background: url(images/nav.jpg) no-repeat top center; height: 28px; margin: 10px 0 0 0; padding-top: 7px; }
+
+#nav { width: 510px; height: 28px; float: left; padding: 0; }
+
+ul.nav { float: left; list-style: none; font-size: 10px; text-transform: uppercase; margin: 0; padding: 0; }
+
+ul.nav li { float: left !important; list-style-type: none; margin: 0; padding: 0; }
+ul.nav li ul { float: left; margin: 0; padding: 0; }
+
+ul.nav li a, ul.nav li a:link, ul.nav li a:visited { border-left: 0; color: #f1f1f1; float: left; display: block; text-decoration: none; padding: 0 10px; }
+ul.nav li a:hover, ul.nav li a:active { color: #f7941d; text-decoration: none; }
+
+ul.nav li.current_page_item a { text-decoration: none; color: #f7941d; }
+
+
+/* -------------------- POST -------------------- */
+
+
+.post { width: 520px; float: left; color: #000; margin: 5px auto; padding: 10px; }
+.post img { border: none; padding: 5px; }
+
+h2 { font-size: 22px; font-weight: normal; padding: 0px; margin: 0px; }
+
+#content { width: 545px; float: left; margin: 5px auto; padding: 0; }
+
+.posthead { position: relative; clear: left; padding-bottom: 10px; }
+.posthead h2 { font-size: 22px; font-weight: normal; padding: 0px 0px 0px 0px; margin: 0px; }
+.posthead h2 a { color: #f26522; }
+.posthead h2 a:hover { color: #9d0a0e; text-decoration: none; }	
+
+.postauthor { padding: 0px 0px 0 0px; margin: 0px; font-size: 10px; color:#666; }
+.postdate { margin: 0px; position: absolute; top: 0px; left: 0px; text-align: center; padding: 0px 10px 6px 10px;}
+.postdate small { font-size: 9px; color:#666; }
+
+.navigation { width: 510px; float: left; color: #666; padding: 5px 6px 10px; }
+
+.relatedposts { width: 520px; float: left; color: #666; margin: 5px auto; padding: 0 5px 5px 5px; font-size: 10px; }
+
+h1, h3 { padding: 0 10px 0 0; font-family: Georgia, Verdana; }
+
+img.wp-smiley { border: 0; padding: 0; }
+
+
+/* -------------------- SIDEBAR -------------------- */
+
+
+#sidebar { width: 382px; float: right; font-size: 11px; margin-top: 5px; padding: 0; }
+
+#sidebar img, .lsidebar img { border: none; }
+
+.alignright { float: right; margin-top: 10px; }
+.alignleft { float: left; margin-top: 10px; }
+
+.rsidebar { width: 166px; float: right; color: #666; margin: 0 auto; padding: 0 10px 5px; }
+.rsidebar, .lsidebar img { border: none; }
+
+.lsidebar { width: 166px; float: left; color: #666; margin: 0 auto; padding: 0 10px 5px; }
+
+.rsidebar h2, .lsidebar h2 { font-size: 14px; text-transform: uppercase; font-weight: bold; border-bottom: #ccc 5px solid; margin: 0 0 10px; padding: 5px 0; }
+.rsidebar ul, .lsidebar ul { list-style-type: none; margin: 0; padding: 0; }
+.rsidebar ul li, .lsidebar ul li { list-style-type: none; margin: 0 0 25px; padding: 0; }
+.rsidebar ul li ul, .lsidebar ul li ul { list-style-type: square; margin: 0; padding: 0 0 0 5px; }
+.rsidebar ul li ul li, .lsidebar ul li ul li { list-style-type: circle; margin: 4px 0 4px 10px; padding: 0 0 0 5px; background: url(images/border-bottom.png) repeat-x bottom left; }
+.rsidebar p, .lsidebar p { padding: 0 5px; }
+
+
+/* -------------------- FOOTER -------------------- */
+
+
+#footer { width: 942px; background: url(images/footer.png) no-repeat top center; height: 51px; clear: both; color: #ccc; font-size: 10px; margin: 0; text-align: center; }
+
+#footer p { padding: 10px 10px 0 0; }
+
+#footer a, .footer a:link { text-decoration: none; color: #f7941d; }
+#footer a:hover { text-decoration: none; color: #ccc; }
+
+
+/*-------------------- Comment --------------------*/
+
+
+.commentsbox { width: 520px; border: 1px solid #fff; float: left; color: #333; margin: 5px auto; }
+
+.commentsbox p { margin: 0; padding: 0; }
+.commentsbox img { border: 1px solid #666; margin: 3px; }
+
+#commentlist ol { margin: 0; padding: 0; }
+#commentlist li { list-style-position: outside; list-style-type: decimal; padding: 10px; border-bottom: 1px solid #ccc; }
+.alt { background-color: #fff !important; background-image: none !important; }
+
+.comment-title { margin: 0 0 0 0px; font-size: 10px; color: #666; }
+.comment-title a:link { color: #0072bc; }
+.comment-title a:hover { color: #f7941d; }
+
+.comment-text { }
+
+h2.postcomment { margin: 0; font-size: 20px; font-weight: normal; }
+
+.postcomment { clear: both; margin: 20px 0 0 0; padding: 20px; }
+
+.postcomment input, .postcomment textarea { border: 1px dotted #aaa; background: #f5f5f5; }
+.postcomment input:hover, .postcomment textarea:hover { border: 1px dotted #ccc; background: #fff; }
+.postcomment input#author, .postcomment input#email, .postcomment input#url { width: 100% !important; width: 456px; /* IE hack */ height: 18px; }
+
+.postcomment textarea#comment { width: 100% !important; /* IE hack */ height: 200px; }
+
+.postcomment input#submit { width: auto; height: 25px; padding: 2px 10px 3px 10px; background: #f5f5f5; }
+.postcomment input#submit:hover { background: #fff; }	
+
+
+/*-------------------- Bottom --------------------*/
+
+
+#bottom { clear: both; width: 942px; height: 100%; margin: 0 0 5px 0; padding: 10px 0 0 0; text-align: center; color: #ccc; font-size: 10px; border-top: 5px solid #111; }
+#bottom-divs { clear: both; margin: 0 auto; padding: 20px; }
+
+#bottom-left { width: 30%; padding: 20px 0 20px 30px; float: left; }
+#bottom-mid, #bottom-right { width: 30%; padding: 20px 0 20px 20px; float: left; }
+
+#bottom h2 { margin: 0 0 10px 0; padding: 0 8px; font-size: 14px; color: #f2f2f2; }
+
+#bottom h3 { margin: 0; padding: 10px 10px; font-size: 12px; color: #999; text-align: center; }
+#bottom h3:hover { color: #f2f2f2; }
+
+#bottom ul { margin: 0; padding: 0; list-style-type: none; border-top: 1px solid #666; }
+#bottom ul li { line-height: 20px; border-bottom: 1px solid #666; }
+#bottom ul li a { display: block; padding: 0 10px; color: #fff; text-decoration: none; }
+#bottom ul li a:hover { background: #111; border-bottom: 2px solid #0072bc; }
+#bottom-sep { clear: both; }

@@ -1,0 +1,208 @@
+/*
+        Name:  Natural Essence 1.0
+        Date:  2008.01.24
+      Author:  Jesse Foster | jf26028 (http://www.gravitycube.net/)
+ Description:  Soft and natural two-column template.
+     License:  Originally released under the Creative Commons Attribution 2.5 by Arcsin (http://templates.arcsin.se/license/).
+               Enhancements released by GravityCube.net under the BSD license - Copyright (c) 2008, http://www.gravitycube.net/.
+               See License.txt for full license.
+     Credits:  Original theme based on Natural Essence by Arcsin(http://templates.arcsin.se/natural-essence-website-template/) under the Creative Commons Attribution 2.5 license.
+*/
+/* generic elements */
+html { min-height: 100%; }
+* { margin: 0; padding: 0; }
+a { }
+a:hover { }
+a img { border: none; }
+body { font: normal 72.5% Tahoma, sans-serif; }
+p, code, ul { padding-bottom: .8em; }
+li { list-style: none; }
+h1 { font: normal 1.7em Tahoma, sans-serif; }
+h2 { font: bold 1.5em Tahoma, sans-serif; }
+h3 { font: bold 1.2em Tahoma, sans-serif; }
+h4 { font: bold 0.9em Tahoma, sans-serif; }
+h5 { font: normal 0.8em Tahoma, sans-serif; }
+form,input { margin: 0; padding: 0; display: inline; }
+code { display: block; font: normal 1em Courier New, sans-serif; line-height: 1.6em; margin-bottom: 12px; padding: 8px 10px; white-space: pre; }
+blockquote { display: block; font-weight: bold; padding-left: 28px; }
+h1,h2,h3,h4,h5 { padding-top: 6px; margin-bottom: 4px; }
+div { margin: 0; padding: 0; }
+
+/* base design */
+body { background: #7C6F5C url(images/bg.jpg); color: #222; }
+a { color: #663300; }
+a:hover { color: #996633; }
+
+/* layout */
+#container{ width: 762px; margin: 20px auto; }
+#content{ float: left; width: 63%; }
+#sidebarOne{ float: right; width: 35%; }
+#sidebarTwo{ float: right; clear: right; width: 35%; }
+#footer{ clear: both; width: 100%; }
+
+/* design */
+#wrapper { }
+
+#container { border: solid 5px #343321;  background: #332 url(images/two-columns.gif); }
+
+#header { }
+#header .style { background: #343321 url(images/header.jpg) no-repeat right bottom; height: 220px; display: block; height: 280px; }
+#header .style h1#sitename { margin: 0px 0 0 0px; padding: 10px; background: #e2ded4 url(images/title.jpg); }
+#header .style h1#sitename a { text-decoration: none; }
+#header .style #slogan { color: #e2ded4; float: left; margin: 10px; padding-right: 10px; }
+#header .style #layoutSelection { float: right; margin-right: 10px; position: relative; top: -10px; }
+#header .style #layoutSelection .ddlThemeEngineSelection { font-size: 90%; }
+
+.menuGeneric { background: #DED9D0 url(images/nav.gif) repeat-x; height: 41px; line-height: 41px; border-top: 1px solid #996; }
+.menuGeneric li,.menuGeneric ul { display: inline; }
+.menuGeneric a { background: #FFF url(images/nav.gif) repeat-x; border-right: 1px solid #C9C6B3; color: #553; float: left; font: bold 1em Tahoma,sans-serif; padding: 0 24px 0 24px; line-height: 41px; text-align: center; text-decoration: none; margin: 0px; }
+.menuGeneric a:hover { background-position: left bottom; color: #331; }
+
+#menu {}
+
+/*
+#menu ul li a.home { background: url(icons/home.gif) no-repeat left; padding-left: 20px; }
+#menu ul li a.archive { background: url(icons/archive.gif) no-repeat left; padding-left: 20px; }
+#menu ul li a.contact { background: url(icons/contact.gif) no-repeat left; padding-left: 20px; }
+#menu ul li a.donate { background: url(icons/donate.png) no-repeat left; padding-left: 20px; }
+#menu ul li a.rss { background: url(icons/rss.png) no-repeat left; padding-left: 20px; }
+#menu ul li a.user { background: url(icons/user.png) no-repeat left; padding-left: 20px; }
+*/
+
+#adminMenu { font-size: .8em; vertical-align: middle; line-height: 35px;  }
+#adminMenu a { margin: 0; padding: 0 14px 0 14px; }
+
+#content { margin-left: 10px; }
+#content div.post { margin: 2px 8px 38px -2px; }
+#content div.post h1.title { font-weight: bold; padding: 5px; }
+#content div.post h1.title a { text-decoration: none; }
+#content div.post div.descr { background: #e2ded4; border: solid 1px #e0d0b0; padding: 4px 0 4px 10px; }
+#content div.post p { margin: 10px 10px 10px 10px; }
+#content div.post div.rating { margin: 10px; }
+#content div.post div.info { background: #e2ded4; border: solid 1px #e0d0b0; padding: 4px 0 4px 10px; }
+#content div.post div.socialBookmarksContainer { margin: 10px; }
+#postPaging { margin: 2px 2px 10px 2px; padding: 2px 2px 10px 2px; }
+
+.sidebar { background: #ffffff; }
+
+#sidebarOne div.box, 
+#sidebarTwo div.box  { margin: 2px 8px 18px 8px; padding: 5px; }
+#sidebarOne div.box h2, 
+#sidebarTwo div.box h2 { border-bottom: solid 1px #e0d0b0; margin: -5px -5px 5px -5px; padding: 5px; }
+
+/* search */
+#searchbox { font-size: 11px; }
+#searchbutton { height: 21px; font-size: 12px; }
+#searchfield { width: 110px; }
+#searchcomments { }
+
+/* tag cloud */
+#tagcloud { margin-bottom: 10px; white-space: normal; }
+#tagcloud li { display: inline; }
+#tagcloud a { margin-right: 4px; display: inline; text-decoration: none; }
+#tagcloud a:hover { }
+#tagcloud a.biggest { font-size: 16px; }
+#tagcloud a.big { font-size: 14px; }
+#tagcloud a.medium { font-size: 12px; }
+#tagcloud a.small { font-size: 10px; }
+#tagcloud a.smallest { font-size: 9px; }
+
+/* archive */
+#archive { padding: 10px; }
+#archive h1 { margin: 0; padding-bottom: 9px; }
+#archive h2 { padding-bottom: 0px; font-size: 12px; margin-bottom: 0px; }
+#archive h2 img { margin-right: 3px; }
+#archive ul { list-style-type: square; margin: 0 10px; padding: 10px; }
+#archive ul li { margin-right: 20px; }
+#archive table { width: 100%; border-collapse: collapse; margin-bottom: 20px;}
+#archive table td, #archive table th { text-align: left; }
+#archive table td { text-align: left; padding: 2px 0; }
+#archive .date { width: 90px; }
+#archive .comments { width: 70px; text-align: center; }
+#archive .rating { width: 70px; text-align: center; }
+
+/* related posts */
+#relatedPosts a { display: block; margin-top: 5px; margin-left: 15px; margin-bottom: 5px; font-size: 1.2em; }
+
+/* comments */
+.comment { border: solid 1px #e0d0b0; padding: 5px; padding-right: 0px; margin: 2px 8px 38px 8px; }
+.comment .date { text-align: left; margin: 0; padding: 3px 0px; }
+.comment .author { margin: 0; text-align: left; padding-top: 3px; margin: 5px 0px 3px 0px; clear: both; }
+.self { }
+.comment .gravatar { float: right; width: 80px; margin: 5px 5px 5px 5px; }
+.comment .gravatar img { height: 80px; width: 80px; }
+.comment .content { float:left; min-height: 85px; width: 350px; margin: 5px 0 0 0px; }
+.commentForm { padding: 5px; }
+.commentForm label { float: left; display: block; width: 80px; }
+.commentForm input { width: 130px; }
+.commentForm textarea { width: 100%; height: 150px; }
+
+/* star rating */
+.rating p { display: inline; position: relative; top: 14px; left: 55px; }
+.star-rating { position: relative; width: 125px; height: 25px; overflow: hidden; list-style: none; margin: 0 0 20px 0; padding: 0; background-position: left top; }
+.star-rating li { display: inline; }
+.star-rating a, .star-rating .current-rating { position: absolute; top: 0; left: 0; text-indent: -1000em; height: 25px; line-height: 25px; outline: none; overflow: hidden; border: none; }
+.star-rating a:hover, .star-rating a:active, .star-rating a:focus { background-position: left bottom; }
+.star-rating a.one-star { width: 20%; z-index: 6; }
+.star-rating a.two-stars { width: 40%; z-index: 5; }
+.star-rating a.three-stars { width: 60%; z-index: 4; }
+.star-rating a.four-stars { width: 80%; z-index: 3; }
+.star-rating a.five-stars { width: 100%; z-index: 2; }
+.star-rating .current-rating { z-index: 1; background-position: left center; margin: 0px; }
+
+/* smaller star */
+.small-star { width: 50px; height: 10px; }
+.small-star, .small-star a:hover, .small-star a:active, .small-star a:focus, .small-star .current-rating { background-image: url(../../pics/star_small.gif); line-height: 10px; height: 10px; }
+
+/* Search page */
+.searchresult { margin-bottom: 20px; }
+.searchresult a { font-weight: bold; }
+.searchresult span.text { clear: both; display: block; margin: 3px 0; }
+.searchresult span.type { display: block; }
+.searchresult span.url { }
+.searchpage { padding: 2px; }
+.searchpage ul.paging { list-style-type: none; margin:0px; margin-bottom: 20px; padding:0px; }
+.searchpage ul.paging li { display: inline; margin-right: 5px; }
+.searchpage ul.paging li a { padding: 5px 8px; }
+.searchpage ul.paging li.active { }
+
+/* contact */
+#contact { padding: 10px; }
+#contact h1 { margin-top: 0; }
+#contact label { display: block; padding-top: 5px; }
+#contact input.field { width: 200px; }
+#contact textarea { display: block; overflow: auto; width: 75%; height: 150px; margin: 0; }
+
+/* page */
+#page { padding: 10px; }
+#page h1 { margin-top: 0; }
+
+/* code styles for CodeFormatter Extension*/
+.csharpcode, .csharpcode pre { background-color: #ffffff; /*white-space: pre;*/ }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt { background-color: #f4f4f4; width: 100%; margin: 0em; }
+.csharpcode .lnum { color: #606060; }
+
+/* syntax highlighter */
+.code { color: black; background-color: #F1F1F1; }
+.code .rem { color: #008000; }
+.code .kwrd { color: #0000ff; }
+.code .str { color: #006080; }
+.code .op { color: #0000c0; }
+.code .preproc { color: #0000ff; }
+.code .asp { background-color: #ffff00; }
+.code .html { color: #800000; }
+.code .attr { color: #ff0000; }
+.code .alt { background-color: #f4f4f4; }
+.code .lnum { color: #606060;}
+
+#footer { background: #343321; color: #e2ded4; padding: 5px 0px 5px 0px; text-align: center; }
+#footer a { color: #e2ded4; }
+

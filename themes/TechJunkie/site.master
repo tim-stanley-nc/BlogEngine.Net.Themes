@@ -1,0 +1,121 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+<%@ Register Src="~/admin/menu.ascx" TagName="menu" TagPrefix="uc1" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server" profile="http://gmpg.org/xfn/11">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="shortcut icon" href="~/pics/blogengine.ico" type="image/x-icon"/>
+</head>
+<body>
+<form runat="server">
+
+<!-- wrap starts here -->
+<div id="wrap">
+
+	<!--header -->
+	<div id="header">			
+				
+		<h1 id="logo-text"><a href="<%=Utils.AbsoluteWebRoot %>" title=""><%=BlogSettings.Instance.Name %></a></h1>		
+		<p id="slogan"><%=BlogSettings.Instance.Description %></p>		
+			
+	<!--header ends-->					
+	</div>
+		
+	<!-- navigation starts-->	
+	<div  id="nav">
+		<ul>
+<%if (Request.QueryString.Count == 0 && Request.RawUrl.ToLowerInvariant().EndsWith("/default.aspx"))
+  {%>
+			<li class="current">
+<%}
+  else
+  {%>
+			<li>
+<%} %>
+			<a href="<%=Utils.AbsoluteWebRoot %>"><%=Resources.labels.home %></a></li>
+			
+<%if (Request.RawUrl.ToLowerInvariant().EndsWith("/contact.aspx"))
+  {%>
+			<li class="current">
+<%}
+  else
+  {%>
+			<li>
+<%} %>
+			<a href="<%=Utils.AbsoluteWebRoot %>contact.aspx"><%=Resources.labels.contact %></a></li>
+			
+<%if (Request.RawUrl.ToLowerInvariant().EndsWith("/archive.aspx"))
+  {%>
+			<li class="current">
+<%}
+  else
+  {%>
+			<li>
+<%} %>
+			<a href="<%=Utils.AbsoluteWebRoot %>archive.aspx"><%=Resources.labels.archive %></a></li>
+			<li><a href="<%=Utils.AbsoluteWebRoot %>syndication.axd"><%=Resources.labels.subscribe %></a></li>
+			<li><asp:LoginStatus ID="LoginStatus1" runat="Server" LoginText="Sign in" LogoutText="Sign out" EnableViewState="false" /></li>
+		</ul>
+	<!-- navigation ends-->	
+	</div>					
+			
+	<!-- content-wrap starts -->
+	<div id="content-wrap">
+	
+		<div id="main">
+				
+			<blog:SearchOnSearch runat="server" MaxResults="3" Headline="You searched for" Text="Here are some results for the search term on this website" />
+			
+			<asp:ContentPlaceHolder ID="cphBody" runat="server" />
+
+		<!-- main ends -->	
+		</div>
+				
+		<div id="sidebar">
+			
+				<blog:WidgetZone runat="server" ID="rightzone" />
+				
+				<h1>Wise Words</h1>
+				<div class="sidebox">
+					<p>&quot;When I have fully decided that a result 
+					is worth getting I go ahead of it and 
+					make trial after trial until it comes.&quot; </p>
+							
+					<p class="align-right">- Thomas A. Edison</p>
+				</div>
+				
+						
+		<!-- sidebar ends -->		
+		</div>		
+		
+	<!-- content-wrap ends-->	
+	</div>
+		
+	<!-- footer starts -->		
+	<div id="footer-wrap"><div id="footer-content">
+	
+		<div id="footer-bottom">				
+			<p>
+			Powered by <a href="http://www.dotnetblogengine.net/" target="_blank">BlogEngine.NET</a> <%=BlogSettings.Instance.Version() %> |
+			Design by: <a href="http://www.styleshout.com/">styleshout</a> | 
+			Adapted by: <a href="http://www.insidercoding.com">InsiderCoding</a>
+			
+   		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			
+		<a href="<%=Utils.AbsoluteWebRoot %>">Home</a>&nbsp;|&nbsp;
+   		<a href="<%=Utils.AbsoluteWebRoot %>syndication.axd">RSS Feed</a>
+   		</p>					
+		</div>	
+
+<!-- footer ends-->
+</div></div>
+
+<!-- wrap ends here -->
+</div>
+
+</form>
+
+</body>
+</html>

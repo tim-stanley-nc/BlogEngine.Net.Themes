@@ -1,0 +1,6 @@
+div#container{width:900px;margin:0 auto}
+div#wrapper{float:left;width:100%}
+div#content{margin-right: 300px}
+div#sidebarOne{float:left;width:150px;margin-left:-150px}
+div#sidebarTwo{float:left;width:150px;margin-left:-300px}
+div#footer{clear:left;width:100%}

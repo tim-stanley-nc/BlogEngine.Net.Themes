@@ -1,0 +1,107 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+<%@ Register Src="~/admin/menu.ascx" TagName="menu" TagPrefix="uc1" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+<%--
+        Name:  ThemeEngine.LayoutGala 1.0
+        Date:  2008.01.19
+      Author:  Jesse Foster | jf26028 (http://www.gravitycube.net/)
+ Description:  More experimentation with dynamic stylesheets in a single theme.  This time, the source for the
+               structure is from the Layout Gala (http://blog.html.it/layoutgala/) which is a collection of 
+               40 layouts based on the same html structure.  This theme is an evolution from ThemeEngine.NFL, 
+               which can also be downloaded for free from http://www.gravitycube.net/.
+     License:  BSD License - Copyright (c) 2008, http://www.gravitycube.net/.  See License.txt for full license.
+     Credits:  Structure mostly taken from http://blog.html.it/layoutgala/.
+--%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+	<head runat="server">
+		<meta name="author" content="Jesse Foster | jf26028 (http://www.gravitycube.net/)" />
+		<link rel="stylesheet" href="styles/style.css" type="text/css" />
+		<link rel="shortcut icon" href="~/pics/blogengine.ico" type="image/x-icon" />
+	</head>
+	<body>
+		<form id="Form1" runat="server">
+			<div id="container">
+				<div id="header">
+					<div class="style">
+						<h1 id="sitename"><a href="~/" runat="server"><%=BlogSettings.Instance.Name %></a></h1>
+						<div id="slogan"><%=BlogSettings.Instance.Description %></div>
+						<div id="layoutSelection">
+							<asp:DropDownList ID="ddlThemeEngine" runat="server" AutoPostBack="true" CssClass="ddlThemeEngineSelection"></asp:DropDownList>
+						</div>
+					</div>
+				</div>
+				<div id="wrapper">
+					<div id="content">
+						<!-- jes - style this up -->
+						<blog:SearchOnSearch ID="SearchOnSearch1" runat="server" MaxResults="3" Headline="You searched for" Text="Here are some results for the search term on this website" />
+						<asp:ContentPlaceHolder ID="cphBody" runat="server" />
+					</div>
+				</div>
+
+				<div id="sidebarOne">
+					<div id="boxNavigation" class="box">
+						<h2>Navigation</h2>
+						<ul>
+							<li><asp:HyperLink ID="HlHome" NavigateUrl="~/default.aspx" runat="server">Home</asp:HyperLink></li>
+							<li class="page_item"><asp:HyperLink ID="HlArchive" NavigateUrl="~/archive.aspx" runat="server">Archive</asp:HyperLink></li>
+							<li class="page_item"><asp:HyperLink ID="hlContact" NavigateUrl="~/contact.aspx" runat="server">Contact</asp:HyperLink></li>
+							<li class="page_item"><a href='<%=Utils.FeedUrl %>'>Feed</a></li>
+						</ul>					
+					</div>
+										
+					<div id="boxTags" class="box">
+						<h2>Tags</h2>
+						<blog:TagCloud ID="TagCloud1" runat="server" />
+					</div>
+
+					<div id="boxCategories" class="box">
+						<h2>Categories</h2>
+						<blog:CategoryList ID="CategoryList1" ShowRssIcon="true" runat="Server" />
+					</div>
+					
+					<div id="boxPages" class="box">
+						<h2>Pages</h2>
+						<blog:PageList ID="PageList1" runat="Server" />
+					</div>
+					
+					<div id="boxDisclaimer" class="box">
+						<h2>Disclaimer</h2>
+						<p>The opinions expressed herein are my own personal opinions and do not represent my employer's view in anyway.</p>
+						<p>&copy; Copyright <%=DateTime.Now.Year %></p>
+					</div>
+				</div>
+
+				<div id="sidebarTwo">
+					<% if (Page.User.Identity.IsAuthenticated) { %>
+					<div class="box">
+						<h2>Administration</h2>
+						<uc1:menu ID="Menu1" runat="server" />
+					</div>
+					<%} %>
+					
+					<div id="boxSearch" class="box">
+						<h2>Search</h2>
+						<blog:SearchBox ID="SearchBox1" runat="server" />
+					</div>
+					
+					<div id="boxArchive" class="box">
+						<h2>Archive</h2>
+						<blog:MonthList ID="MonthList1" runat="Server" />
+					</div>
+					
+					<div id="boxBlogroll" class="box">
+						<h2>Blogroll</h2>
+						<blog:Blogroll ID="Blogroll1" runat="server" />
+					</div>
+					
+				</div>
+
+				<div id="footer">
+					Powered by <a href="http://www.dotnetblogengine.net/" target="_blank">BlogEngine.NET</a> | Designed by <a href="http://www.gravitycube.net/blog/" target="_blank">GravityCube.net</a>
+				</div>
+			</div>
+		</form>
+	</body>
+</html>

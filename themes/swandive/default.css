@@ -1,0 +1,523 @@
+/*#############################################################
+Name: Swan Dive
+Date: 2007-07-25
+Description: "Calm and cool. Peaceful and uplifting. Flying free."
+Author: Homefront Studios and James Skemp
+URL: http://www.homefrontstudios.com/ and http://strivinglife.com/
+
+#############################################################*/
+
+/* standard elements */
+
+body, html {
+	background:#d5dfef url(img/body_bg.jpg);
+	margin:0;
+	padding:0;
+}
+body {
+	min-width:800px;
+	max-width:1200px;
+	font:0.8em/1.4em Arial, Helvetica, sans-serif;
+}
+
+a:link {
+	color:#69ffd7;
+	text-decoration:none;
+}
+
+a:visited {
+	color:#ffb880;
+	text-decoration:none;
+}
+
+a:hover,a:active {
+	text-decoration:underline;
+}
+a img, img {
+	border:none;
+	margin-right:.5em;
+}
+ul {
+	list-style-type:none;
+	margin:0 0 1.5em;
+	padding:0;
+}
+
+li {
+	padding-left:1.5em;
+	background: transparent url(img/bullet.gif) no-repeat 0 50%;
+}
+#blogroll ul li {
+	background:none;
+}
+#blogroll ul li ul li {
+	padding-left:1.5em;
+	background: transparent url(img/bullet.gif) no-repeat 0 50%;
+}
+
+
+
+
+
+/* structure */
+.inner-container {
+	background:#354a82 url(img/cloud_bg.jpg) repeat-x top left;
+	color:#d5dfef;
+	width:80%;
+	margin:0 auto;
+	padding:0;
+}
+.header {
+	margin:0;
+	padding:0;
+}
+.header img {
+	float:left;
+	padding:0;
+}
+.header .title {
+	color:#d5dfef;
+	text-align:right;
+	margin:0;
+	padding:.5em;
+}
+.header .title .sitename {
+	font: normal 4.5em Pristina, 'Rage Italic', 'Brush Script MT', 'Georgia Italic', 'Times New Roman Italic', serif;
+}
+.sitename a, a.postheader {
+	color:#d5dfef;
+	text-decoration:none;
+}
+.header .title .slogan {
+	font: normal 2em Pristina, 'Rage Italic', 'Brush Script MT', 'Georgia Italic', 'Times New Roman Italic', serif;
+}
+#main {
+	clear:both;
+}
+#content {
+	background:transparent;
+	color:#d5dfef;
+	float:left;
+	width:65%;
+	margin:0;
+	padding:1em;
+}
+#content h1 {
+	color: #d5dfef;
+	font: normal 3.25em Pristina, 'Rage Italic', 'Brush Script MT', 'Georgia Italic', 'Times New Roman Italic', serif;
+	margin:0;
+}
+#content h2 {
+	color: #d5dfef;
+	font: normal 3em Pristina, 'Rage Italic', 'Brush Script MT', 'Georgia Italic', 'Times New Roman Italic', serif;
+	margin:0;
+}
+
+#content h3 {
+	color: #d5dfef;
+	font: normal 2em Pristina, 'Rage Italic', 'Brush Script MT', 'Georgia Italic', 'Times New Roman Italic', serif;
+	margin:0;
+}
+
+#content h4 {
+	color: #d5dfef;
+	font: normal 1.8em Pristina, 'Rage Italic', 'Brush Script MT', 'Georgia Italic', 'Times New Roman Italic', serif;
+	margin:0;
+}
+
+.post {
+	margin-bottom:2em;
+}
+
+
+
+blockquote {
+	background: transparent url(img/blockquote_bg.gif) top left;
+	font:1em/1.2em 'Trebuchet MS', Helvetica, sans-serif;
+	margin: 1em;
+	padding: 1em;
+}
+sup,sub {
+	margin:0;
+	padding:0;
+}
+
+
+
+
+#navigation {
+	float:right;
+	width:25%;
+	font-size:95%;
+	margin:0;
+	padding:110px 1em 1em 1em;
+	background:transparent url(img/1swan.gif) no-repeat top center;
+	color:#d5dfef;
+}
+#navigation h2 {
+	color:#d5dfef;
+	font:normal 2.1em Pristina, 'Rage Italic', 'Brush Script MT', 'Georgia Italic', 'Times New Roman Italic', serif;
+	margin:.6em 0 .2em 0;
+	padding:0 0 .3em 0;
+	background:transparent url(img/divider_sm.gif) no-repeat bottom left;
+}
+#navigation p {
+	margin:.2em 0 .6em 0;
+	padding:0;
+}
+
+#footer {
+	clear:both;
+	color:#d5dfef;
+	background:transparent url(img/divider_lg.gif) no-repeat top center;
+	padding:24px 0;
+	font-size:0.8em;
+	text-align:center;
+}
+#footer p {
+	margin:0;
+	padding:0;
+}
+
+
+
+
+
+
+/* comments */
+.comment {
+	border-top:1px solid #d5dfef;
+	border-left:1px solid #d5dfef;
+	padding:5px;
+	margin-bottom:5px;
+}
+
+.comment .date {
+	text-align:left;
+	margin:0;
+	padding:3px 0;
+}
+.comment .author {
+	margin:0;
+	text-align:left;
+	padding-top:3px;
+	margin:5px 0 3px 0;
+	clear:both;
+}
+.comment .gravatar {
+	float:left;
+	width:80px;
+	margin:0 5px 5px 0;
+}
+.comment .gravatar img {
+	height:80px;
+	width:80px;
+}
+.comment .content {
+	float:left;
+	min-height:85px;
+	width:440px;
+	margin:5px 0 0 0;
+}
+.commentForm, #contact {
+	padding:5px;
+}
+.commentForm label, #contact label {
+	float:left;
+	display:block;
+	width:80px;
+}
+.commentForm input, #contact input {
+	width:130px;
+}
+.commentForm textarea, #contact textarea {
+	width:100%;
+	height:150px;
+}
+
+#tagcloud li {
+	display: inline;
+	line-height:1.5em;
+}
+
+#tagcloud a.biggest {
+	font-size:1.4em;
+}
+
+#tagcloud a.big {
+	font-size:1.2em;
+}
+
+#tagcloud a.medium {
+	font-size:1.1em;
+}
+
+#tagcloud a.small {
+	font-size:1em;
+}
+
+#tagcloud a.smallest {
+	font-size:.9em;
+}
+
+#archive table{
+	background: transparent url(img/blockquote_bg.gif) top left;
+	width: 100%;	
+	border-collapse: collapse;
+}
+#archive table td, #archive table th{
+	text-align:left;
+}
+
+#archive table td{
+	border-bottom: 1px dashed #d5dfef;
+	padding: 2px 0;
+}
+
+#archive .date{
+	width: 70px;
+}
+
+#archive .comments{
+	width: 70px;
+	text-align: center;
+}
+
+#archive .rating{
+	width: 70px;
+	text-align: center;
+}
+
+
+
+.rating p {
+	display: inline;
+	position: relative;
+	top: 14px;
+	left: 55px;
+}
+.rating ul li, .star-rating ul li {
+	background-image:none;
+}
+
+.star-rating {
+	position: relative;
+	width: 125px;
+	height: 25px;
+	overflow: hidden;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background-position: left top;
+}
+
+.star-rating li {
+	display: inline;
+}
+
+.star-rating a, .star-rating .current-rating {
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-indent: -1000em;
+	height: 25px;
+	line-height: 25px;
+	outline: none;
+	overflow: hidden;
+	border: none;
+}
+
+.star-rating a:hover, .star-rating a:active, .star-rating a:focus {
+	background-position: left bottom;
+}
+
+.star-rating a.one-star {
+	width: 20%;
+	z-index: 6;
+}
+
+.star-rating a.two-stars {
+	width: 40%;
+	z-index: 5;
+}
+
+.star-rating a.three-stars {
+	width: 60%;
+	z-index: 4;
+}
+.star-rating a.four-stars {
+	width: 80%;
+	z-index: 3;
+}
+.star-rating a.five-stars {
+	width: 100%;
+	z-index: 2;
+}
+.star-rating .current-rating {
+	z-index: 1;
+	background-position: left center;
+	margin: 0;
+}
+
+/* smaller star */
+.small-star {
+	width: 50px;
+	height: 10px;
+}
+.small-star, .small-star a:hover, .small-star a:active, .small-star a:focus, .small-star .current-rating {
+	background-image: url(img/star_small_transparent.gif); /*Raminloo*/
+	line-height: 10px;
+	height: 10px;
+}
+
+
+/*----------------------------
+				Search page
+----------------------------*/
+
+#searchpage{
+	margin-bottom: 30px;
+}
+
+#searchpage input#q{
+	width: 300px;
+}
+
+#searchpage input#comment{
+	clear: both;
+}
+
+.searchresult{
+	margin-bottom: 20px;
+}
+
+.searchresult a{
+	font-weight: bold;
+}
+
+.searchresult span.text{
+	clear: both;
+	display: block;
+	margin: 3px 0;
+}
+
+.searchresult span.type{
+	display: block;
+}
+
+.searchresult span.url{
+}
+
+.searchpage ul.paging{
+ list-style-type: none;
+ margin:0px;
+ margin-bottom: 20px;
+ padding:0px;
+}
+
+.searchpage ul.paging li{
+ display: inline;
+ border: 1px solid gray; 
+ background: #f1f1f1;
+ margin-right: 5px;
+}
+
+.searchpage ul.paging li a {
+ padding: 5px 8px;
+}
+
+.searchpage ul.paging li.active{
+ background: #f1f1f1;
+ border: 1px solid black;
+}
+
+/*----------------------------
+			Syntax highlighter
+----------------------------*/
+
+.code
+{
+	font-size: 12px;
+	color: black;
+	font-family: Consolas, "Courier New", Courier, Monospace;
+	background-color: #F1F1F1;
+  line-height: normal;
+}
+
+.code p{
+	padding: 5px;
+}
+
+.code .rem { color: #008000; }
+
+.code .kwrd { color: #0000ff; }
+
+.code .str { color: #006080; }
+
+.code .op { color: #0000c0; }
+
+.code .preproc { color: #0000ff; }
+
+.code .asp { background-color: #ffff00; }
+
+.code .html { color: #800000; }
+
+.code .attr { color: #ff0000; }
+
+.code .alt {	background-color: #f4f4f4; }
+
+.code .lnum { color: #606060;}
+
+/*----------------------------
+					XFN tags
+----------------------------*/
+
+div.post .text a[rel] {
+	padding-right:11px;
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+div.post .text a[rel="me"] {	
+	background-image:url('../../pics/xfn/me.gif');
+}
+
+/*-------- [ These should cascade to pick the correct icon for the contact ]--*/
+
+/*-------- [ Normal contacts ]--*/
+div.post .text a[rel~="contact"] ,
+div.post .text a[rel~="acquaintance"],
+div.post .text a[rel~="friend"] {
+	background-image:url('../../pics/xfn/contact.gif');
+}
+/*-------- [ Normal contacts youve met ]--*/
+div.post .text a[rel~="contact"][rel~="met"] ,
+div.post .text a[rel~="acquaintance"][rel~="met"] ,
+div.post .text a[rel~="friend"][rel~="met"] {
+	background-image:url('../../pics/xfn/contactMet.gif');
+}
+
+/*-------- [ Colleague and co worker icon more important than contact ]--*/
+div.post .text a[rel~="colleague"] ,
+div.post .text a[rel~="co-worker"] {
+	background-image:url('../../pics/xfn/colleague.gif');
+}
+/*-------- [ Colleague and co worker icon when met ]--*/
+div.post .text a[rel~="colleague"][rel~="met"] ,
+div.post .text a[rel~="co-worker"][rel~="met"] {
+	background-image:url('../../pics/xfn/colleagueMet.gif');
+}
+
+/*-------- [ Sweethearts are more important than work!!! ]--*/
+div.post .text a[rel~="muse"] ,
+div.post .text a[rel~="crush"] ,  
+div.post .text a[rel~="date"] ,
+a[rel~="sweetheart"] {
+	background-image:url('../../pics/xfn/sweet.gif');
+}
+/*-------- [ ...and if youve met them thats even better ]--*/
+div.post .text a[rel~="muse"][rel~="met"] ,
+div.post .text a[rel~="crush"][rel~="met"] ,  
+div.post .text a[rel~="date"][rel~="met"] ,
+div.post .text a[rel~="sweetheart"][rel~="met"] {
+	background-image:url('../../pics/xfn/sweetMet.gif');
+}

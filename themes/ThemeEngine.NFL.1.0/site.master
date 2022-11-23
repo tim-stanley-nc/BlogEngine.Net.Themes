@@ -1,0 +1,120 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+<%@ Register Src="~/admin/menu.ascx" TagName="menu" TagPrefix="uc1" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+<%--
+        Name:  ThemeEngine.NFL 1.0
+        Date:  2008.01.14
+      Author:  Jesse Foster | jf26028 (http://www.gravitycube.net/)
+ Description:  An experiment with dynamic templates inside a single template in blogengine.  
+               Colors (unfortunately in some cases) were taken from NFL team color schemes.
+     License:  BSD License - Copyright (c) 2008, http://www.gravitycube.net/.  See License.txt for full license.
+               All NFL & Team Logos owned by the National Football League and the respective teams.
+     Credits:  Original theme based on CoffeeHouse by Michael Sivers (http://michael.sivers.co.uk).
+               CoffeeHouse is loosly based on the Dirtylicious by Viktor Persson (http://templates.arcsin.se).
+               Dirtylicious was ported to BlogEngine.NET by RazorAnt (http://www.nyveldt.com/blog).
+--%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+	<head runat="server">
+		<link rel="stylesheet" href="structure.css" type="text/css" />
+		<link rel="shortcut icon" href="~/pics/blogengine.ico" type="image/x-icon" />
+		<script type="text/javascript" language="javascript">
+			function EqualColumns()
+			{
+				if (document.getElementById)
+				{
+					var column2 = document.getElementById('column2');
+					var column1 = document.getElementById('column1');
+					
+					if (column2 && column1)
+					{
+						column1.offsetHeight >= column2.offsetHeight ? column2.style.height = column1.offsetHeight + "px" : column1.style.height = column2.offsetHeight + "px";
+					}
+				}
+			}
+		</script>
+	</head>
+	<body onload="EqualColumns();">
+		<form id="Form1" runat="server">
+			<div class="container">
+				<div class="header">
+					<div class="title">
+						<div class="sitename"><a href="~/" runat="server"><%=BlogSettings.Instance.Name %></a></div>
+						<div class="sitenameshadow"><%=BlogSettings.Instance.Name %></div>
+						<div class="slogan"><%=BlogSettings.Instance.Description %></div>
+					</div>
+				</div>
+				<div class="menu">
+					<div class="left">
+						<ul>
+							<li><asp:HyperLink ID="HlHome" NavigateUrl="~/default.aspx" runat="server">Home</asp:HyperLink></li>
+							<li class="page_item"><asp:HyperLink ID="HlArchive" NavigateUrl="~/archive.aspx" runat="server">Archive</asp:HyperLink></li>
+							<li class="page_item"><asp:HyperLink ID="hlContact" NavigateUrl="~/contact.aspx" runat="server">Contact</asp:HyperLink></li>
+							<li class="page_item"><a href='<%=Utils.FeedUrl %>'>Feed</a></li>
+						</ul>
+					</div>
+					<div class="right">
+						<asp:DropDownList ID="ddlThemeEngine" runat="server" AutoPostBack="true"></asp:DropDownList>
+					</div>
+					<div class="clearer"></div>
+				</div>
+				<% if (Page.User.Identity.IsAuthenticated) { %>
+				<div class="menu adminpath">
+					<uc1:menu ID="Menu1" runat="server" />
+				</div>
+				<%} %>
+				<div class="main">
+					<div class="content" id="column1">
+						<asp:ContentPlaceHolder ID="cphBody" runat="server" />
+					</div>
+					<div class="sidebar" id="column2">
+						<blog:SearchOnSearch ID="SearchOnSearch1" runat="server" MaxResults="3" Headline="You searched for" Text="Here are some results for the search term on this website" />
+						<div class="block">
+							<h2>Search</h2>
+							<blog:SearchBox ID="SearchBox1" runat="server" />
+						</div>
+						<div class="block">
+							<h2>Tags</h2>
+							<blog:TagCloud ID="TagCloud1" runat="server" />
+						</div>
+						<div class="block">
+							<h2>Categories</h2>
+							<blog:CategoryList ID="CategoryList1" ShowRssIcon="true" runat="Server" />
+						</div>
+						<div class="block">
+							<h2>Pages</h2>
+							<blog:PageList ID="PageList1" runat="Server" />
+						</div>
+						<div class="block">
+							<h2>Archive</h2>
+							<blog:MonthList ID="MonthList1" runat="Server" />
+						</div>
+						<div class="block">
+							<h2>Blogroll</h2>
+							<blog:Blogroll ID="Blogroll1" runat="server" />
+						</div>
+						<div class="block">
+							<h2>Disclaimer</h2>
+							<p>The opinions expressed herein are my own personal opinions and do not represent my employer's view in anyway.</p>
+							<p>&copy; Copyright <%=DateTime.Now.Year %></p>
+							<p>All NFL & Team Logos owned by the National Football League and the respective teams.</p>
+						</div>
+					</div>
+					<div class="clearer">&nbsp;</div>
+				</div>
+				<div class="footer">
+					<div class="left">
+						<div>
+							Powered by <a href="http://www.dotnetblogengine.net/" target="_blank">BlogEngine.NET</a> | Enhanced by <a href="http://www.gravitycube.net/blog/" target="_blank">GravityCube.net</a>
+						</div>
+					</div>
+					<div class="right">
+						&nbsp;
+					</div>
+					<div class="clearer"></div>
+				</div>
+			</div>
+		</form>
+	</body>
+</html>

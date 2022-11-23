@@ -1,0 +1,5 @@
+div#wrapper{float:left;width:100%}
+div#content{margin-right: 50%}
+div#sidebarOne{float:left;width:25%;margin-left:-25%}
+div#sidebarTwo{float:left;width:25%;margin-left:-50%}
+div#footer{clear:left;width:100%}

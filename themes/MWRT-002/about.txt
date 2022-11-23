@@ -1,0 +1,10 @@
+Name: MWRT-002
+Description:
+	The MWRT-002 Website Template is a clean, fast design that only uses 3 graphics to enhance its look. The design employs a simple two column w/ text header layout with many accessiblility and search engine optimization techniques used throughout. Regardless of your application, you will appreciate the flexibility of this design.
+	Converted for BlogEngine.NET.
+Author: MyWebResource and James Skemp
+URL: http://mywebresource.com/ and http://strivinglife.com/
+
+Changes:
+
+2007.10.13	J.Skemp		Created for BlogEngine.NET 1.2.0.0.

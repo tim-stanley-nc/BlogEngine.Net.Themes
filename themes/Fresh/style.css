@@ -1,0 +1,615 @@
+/*
+Theme Name: Fresh
+Theme URI: http://www.antoniowells.com/2008/11/11/fresh-theme-for-blogenginenet/
+Description: Fresh is a clean and minimalistic 3 Column BlogEngine.Net Theme suitable for resource blogs or even a company website. Built for BlogEngine.Net 1.4.5.0+ and Widget Ready. <a href="http://www.antoniowells.com/2008/11/11/fresh-theme-for-blogenginenet/" target="_blank">Fresh</a> Theme by <a href="http://www.antoniowells.com" target="_blank">Antonio Wells.com</a>.
+Version: 1.0
+Author: <a href="http://www.antoniowells.com/">Antonio Wells.com</a>
+Author URI: http://www.antoniowells.com/
+Tags: 3 columns, clean, widget ready, widgets, Gravatar, right sidebar, valid CSS, valid XHTML, BlogEngine.Net themes, fixed width, fresh
+For the BlogEngine.Net community (GPL).
+*/
+
+/*** GENERAL TAGS ***/
+
+body
+{
+	margin: 0px;
+	padding: 0px;
+	background: #fff;
+	font-family: 'Tahoma', 'Arial', 'Verdana', 'Trebuchet MS', sans-serif;
+	font-size: 0.9em;
+	color: #000;
+}
+
+h1, h2, h3, h4, h5
+{
+	font-weight: normal;
+	margin: 0px;
+}
+
+a, a:link, a:active
+{
+	color: #2c97ba;
+}
+
+img
+{
+	border: 0px;
+}
+
+blockquote
+{
+	padding: 10px;
+	background: #f0f9fc url(images/bg_blockquote.gif) no-repeat 0.6em 0.4em;
+	border: 1px solid #CCDDE4;
+	border-left: 6px solid #CCDDE4;
+}
+
+
+/* Start Page Structure IDs */
+
+#Wrapper {
+	width: 960px;
+	margin: 0 auto;
+}
+
+#Header {
+	height: 105px;
+}
+
+	#BlogTitle {
+	float: left;
+	width: 60%;
+	margin-bottom: 5px;
+	;
+	}
+	
+		#BlogTitle h1 {
+			font-family: Georgia, "Times New Roman", Times, serif;
+			font-size: 1.8em;
+			color: #666666;
+			line-height: 1.8em;
+		}
+		
+		
+		/* If you would like to use an image logo in the header versus text:
+		1. Comment out the section above and uncomment the section below
+		2. Create your logo (I recommend 300px Width x 25px Height, Maximum 500px Width x 125px Height) 
+		3. Swap the image location with your logo image below
+		4. Adjust your Width and Height Below accordingly
+		5. Oh... you lose the ability to link to the homepage by clicking the logo :-(
+		#BlogTitle h1 {
+			background: url(images/logo_antonio-wells.gif) no-repeat;
+			text-indent: -9999px;
+			width: 300px;
+			height: 25px;
+			margin-top: 20px;
+			display: block;
+		} */
+		 
+		
+			#BlogTitle h1 a {
+				text-decoration: none;
+			}
+		
+		#BlogTitle .Description {
+			font-family: Georgia, "Times New Roman", Times, serif;
+			font-size: 1.0em;
+			color: #666666;
+		}
+	
+	#SearchBox {
+		float: right;
+		width: 35%;
+		padding-top: 25px;
+	}
+	
+		#SearchBox .SearchField {
+			background: url(images/field_search.gif) no-repeat;
+			width: 172px;
+			height: 23px;
+			border: 0px;
+			padding: 8px 4px 4px 20px;
+			font-size: 1em;
+		}
+		
+		#SearchBox .SearchButton {
+			background: url(images/btn_search.gif) no-repeat;
+			width: 60px;
+			height: 33px;
+			border: 0px;
+			margin-top: 1px; /* IE Specific Style to make the Search Button behave */
+			_margin-top: 3px; /* IE only Style Hack */
+			vertical-align: top;
+		}
+		
+		#SearchBox .SearchButton:hover {
+			background: url(images/btn_search-hover.gif) no-repeat;
+		}
+	
+	#NavPanel {
+		background: #d7f4fd;
+		height: 36px;
+		padding: 5px 5px 0px 10px;
+		
+	}
+
+#Body {
+	padding: 10px 0px;
+}
+
+#Footer {
+	background: #1cb4e7 url(images/bg_footer.gif) repeat-x;
+	padding: 30px 0px 10px 0px;
+	color: #FFFFFF;
+	font-size: 0.9em;
+	line-height: 1.4em;
+}
+	
+	#Footer a {
+		color: #FFFFFF;
+		font-weight: bold;
+	}
+	
+		#Footer a:hover {
+			color: #000000;
+		}
+
+/* End Page Structure IDs */
+
+
+/* Start Common Classes */
+
+.LeftContent {
+	float: left;
+	width: 650px;
+}
+
+.LeftSideBar {
+	float: left;
+	width: 145px;
+}
+
+.RightSideBar {
+	float: right;
+	width: 145px;
+}
+
+.CommonPanel {
+	margin: 10px;
+}
+
+.Clear
+{
+	clear: both;
+}
+
+.Ads {
+	text-align: center;
+}
+
+.RSS
+{
+	margin-top: 10px;
+	float: right;
+}
+
+	.RSS a
+	{
+		background: url(images/rss.gif) no-repeat center right;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 1.1em;
+		font-weight: bold;
+		padding: 6px 28px 6px 0px;
+	}
+
+.aligncenter
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignleft
+{
+	float: left;
+}
+
+.alignright
+{
+	float: right;
+}
+
+img.centered
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright
+{
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft
+{
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.wp-caption {
+	background: #f3f3f3;
+	border: 1px solid #dddddd;
+	padding: 5px;
+	margin: 5px;
+	font-size: 0.8em;
+	text-align: center;
+}
+
+/* End Common Classes */
+
+
+
+/* Start Menu: Categories, Archives, etc. */
+
+.Menu {
+	width: 725px;
+	float: left;
+}
+
+	.Menu ul
+	{
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		
+	}
+	
+		.Menu ul li
+		{
+			display: inline;
+			
+		}
+
+			.Menu ul li a
+			{
+				display: block;
+				float: left;
+				font-size: 1.4em;
+				font-family: Georgia, "Times New Roman", Times, serif;
+				background: url(images/btn_nav.gif) no-repeat top right;		
+				color: #666666;
+				text-decoration: none;				
+				text-align: center;
+				margin: 0px 6px;
+				padding-top: 12px;
+				width: 100px;
+			}
+			
+				.Menu ul li a:hover
+				{
+					color: #000;
+				}
+				
+				.Menu ul li.current_page_item a
+				{
+					color: #CE0000;
+				}
+	
+/* End Menu: Categories, Archives, etc. */
+
+
+
+/* Start Articles */
+
+.Article
+{
+	padding-bottom: 30px;
+	border-bottom: 1px solid #d7f4fd;
+	margin-bottom: 20px;
+}
+
+	.Article h2
+	{
+		font-size: 30px;
+		font-family: Georgia, "Times New Roman", Times, serif;
+		margin: 0px 0px 6px 0px;
+	}
+	
+		.Article h2 a
+		{
+			color: #2c97ba;	
+		}
+		
+	.Article .meta
+	{
+		font-size: 11px;
+		display: block;
+		color: #BF835F;
+	}
+	
+		.Article .meta a
+		{
+			color: #006633;
+		}
+	
+			.Article .meta .Author {
+				color: #CE0000;
+				font-weight: bold;
+			}
+
+.CalendarGroup {
+	float: left;
+	width: 49px;
+}
+
+	.CalendarGroup .Calendar {
+		text-align: center;
+		background: url(images/date-calendar.gif) no-repeat;	
+		height: 51px;
+		padding: 2px;
+	}
+	
+	.CalendarGroup .Month {
+		text-transform: uppercase;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 0.8em;
+		color: #FFFFFF;
+	}
+	
+	.CalendarGroup .Day {
+		font-family: Georgia, "Times New Roman", Times, serif;
+		font-size: 1.7em;
+	}
+	
+	.CalendarGroup .Year {
+		display: none;
+		visibility: hidden;
+	}
+
+.TitleGroup {
+	float: right;
+	width: 565px;
+}
+
+.PostContent
+{
+	line-height: 18px;
+	margin: 20px 0px;
+	padding-bottom: 20px;
+	border-top: dashed 1px #BFCCD2;
+}
+
+	.PostContent a, .PostContent a:link, .PostContent a:active
+	{
+		border-bottom: 1px dotted #006633;
+		text-decoration: none;
+	}
+	
+	.PostContent a:hover
+	{
+		border-bottom: 1px dotted #CC6633;
+		color: #CC6633;
+	}
+
+.more-link
+{
+	font-weight: bold;
+	padding: 10px 14px;
+	background-color: #d7f4fd;
+	border: 1px solid #0099cc;
+	border-bottom: 1px solid #0099cc!important;
+}
+
+	a.more-link, a.more-link:active
+	{
+		color: #CE0000!important;
+	}
+
+/* End Articles */
+
+
+
+/* Start Sidebar */
+
+.Sidebar
+{
+	width: 300px;
+	float: right;
+}
+
+	.Sidebar h2, .Sidebar h3, .Sidebar h4
+	{
+		font-size: 18px;
+		font-family: 'Gerogia' , 'Times New Roman';
+		text-transform: uppercase;
+		letter-spacing: -1px;
+		color: #244C5D;
+		padding-top: 20px;
+	}
+	
+	.Sidebar ul
+	{
+		padding: 0px;
+		margin: 4px 0px 200px 0px;
+		list-style: none;
+		border-top: solid 1px #CEDDE4;
+		margin: 4px 0px 20px 0px;
+	}
+
+		.Sidebar ul li
+		{
+			padding: 6px 0 6px 0;
+			border-bottom: 1px dotted #CEDAE0;
+		}
+		
+			.Sidebar ul li a
+			{
+				font-size: 13px;
+			}
+
+	.Sidebar .children
+	{
+		padding-left: 10px;
+	}
+	
+	.Sidebar h2#cat
+	{
+	}
+	
+	.Sidebar h2#arh
+	{
+	}
+
+
+/* Start Comments */
+
+.CommentsGroup {
+	text-align: right;
+}
+
+.CommentsCloud {
+	background: url(images/comments.gif) no-repeat;
+	padding: 0px 20px 8px 20px;
+	margin-right: 5px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 1.8em;
+	text-align: center;
+	border-bottom: none !important;
+	color: #CE0000 !important;
+	text-decoration: none;
+}
+
+.CommentsText {
+	color: #ce6b00;
+}
+
+.Comments
+{
+	padding-top: 10px;
+	margin-top: -5px;
+}
+
+	.Comments h2
+	{
+		margin-bottom: 15px;
+	}
+
+.Comment
+{
+	display: block;
+	padding: 10px;	
+	
+}
+
+.Alt
+{
+	background: #E7F8FF;
+	border-top: 1px solid #69b4da;
+	border-bottom: 1px solid #69b4da;
+}
+
+.CommentMeta
+{
+	color: #92A8B1;
+	border-bottom: solid 1px #CCE3EB;
+	padding-bottom: 4px;
+}
+
+	.CommentMeta span
+	{
+		font-size: 14px;
+		font-weight: bold;
+	}
+	
+	.CommentMeta .Gravatar {
+		float: left;
+		padding-right: 10px;
+	}
+	
+	.CommentMeta .GravatarDate {
+		float: left;
+		padding-top: 5px;
+	}
+
+.commentForm
+{
+	background: #ecf8fc url(images/bg_comments.gif) repeat-x;
+	display: block;
+	padding: 10px;
+	margin-top: 10px;
+	border: 1px solid #69b4da;
+}
+
+	.CommentForm span
+	{
+		font-size: 16px;
+		display: block;
+		color: #FFF;
+		margin-bottom: 4px;
+	}
+
+	.CommentForm input, .CommentForm textarea
+	{
+		width: 350px;
+		background: #ffffff;
+		border: 1px solid #69b4da;
+		padding: 4px;
+		margin-bottom: 10px;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	
+	.commentForm input#btnSaveAjax
+	{
+		width: 136px;
+		height: 37px;
+		background: url(images/btn_submit.gif) no-repeat top left;
+		display: block;
+		border: 0px;
+		color: #FFFFFF;
+		font-size: 1.0em;
+		font-weight: bold;
+	}
+
+	.CommentForm input#btnSaveAjax:hover
+	{
+		background: url(images/btn_submit-hover.gif) no-repeat bottom left;
+	}
+
+/* Start Comments */
+
+
+
+/* Start Standard Widget Styles */
+
+div.widget a.edit{
+	font-size: 10px;
+	font-weight: normal;
+	float: right;
+	z-index: 1;
+}
+
+div.widget a.delete{
+	font-weight: bold;
+	color: #999999;
+	float: right;
+	margin-left: 5px;
+	z-index: 1;
+	text-decoration: none;
+}
+
+div.widget a.delete:hover{
+	color: black;
+}
+
+div.widget {
+	margin-bottom: 20px;
+	z-index: 1;
+	min-width: 1px;
+}
+
+/* End Standard Widget Styles */

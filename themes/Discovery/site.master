@@ -1,0 +1,120 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="themes_Discovery_Site" %>
+<%@ Register Src="~/admin/menu.ascx" TagName="menu" TagPrefix="uc1" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link type="text/css" href="Discovery.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="~/pics/blogengine.ico" type="image/x-icon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="menu">
+            <ul>
+                <li>
+                    <asp:HyperLink ID="hypHome" runat="server" NavigateUrl="~/default.aspx">Home</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="hypArchive" runat="server" NavigateUrl="~/archive.aspx">Archive</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="hypContact" runat="server" NavigateUrl="~/contact.aspx">Contact</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="hypSearch" runat="server" NavigateUrl="~/search.aspx">Search</asp:HyperLink>
+                </li>
+                <li class="page_item"><a href="<%=Utils.FeedUrl %>">Feed</a> </li>
+                <li>
+                    <asp:LoginStatus ID="lsSignIn" runat="Server" LoginText="Sign in" LogoutText="Sign out"
+                        EnableViewState="false" />
+                </li>
+            </ul>
+        </div>
+        <div id="logo">
+            <h1 id="logo-text">
+                <%--ToolTip='<%= BlogSettings.Instance.Name %>'--%>
+                    <asp:hyperlink ID="lnkTitle" runat="server" NavigateUrl="~/default.aspx"><%= BlogSettings.Instance.Name %></asp:hyperlink></h1>
+                <h2 id="slogan">
+                    <%= BlogSettings.Instance.Description %></h2>
+        </div>
+        <div id="page">
+            <div id="content">
+                <div>
+                    <asp:ContentPlaceHolder ID="cphBody" runat="server" />
+                </div>
+                <div>
+                    &nbsp;</div>
+            </div>
+            <!-- end content -->
+            <div id="sidebar">
+                <div id="search" class="boxed">
+                    <div class="content">
+                        <blog:SearchBox ID="SearchBox1" runat="server" />
+                    </div>
+                </div>
+                <% if (Utils.IsAuthenticated)
+                   { %>
+                <div id="admin" class="boxed">
+                    <h2 class="title">
+                        Admin</h2>
+                    <div class="content">
+                        <uc1:menu ID="Menu1" runat="server" />
+                    </div>
+                </div>
+                <%} %>
+                <div id="pages" class="boxed">
+                    <h2 class="title">
+                        <%=Resources.labels.pages %>
+                    </h2>
+                    <div class="content">
+                        <blog:PageList ID="pageList" runat="Server" />
+                    </div>
+                </div>
+                <div id="categories" class="boxed">
+                    <h2 class="title">
+                        <%= Resources.labels.categories %>
+                    </h2>
+                    <div class="content">
+                        <blog:CategoryList ID="categoryList" ShowRssIcon="true" runat="Server" />
+                    </div>
+                </div>
+                <div id="tagcloud" class="boxed">
+                    <h2 class="title">
+                        Tags</h2>
+                    <div>
+                        <blog:TagCloud ID="tagCloud1" runat="server" />
+                    </div>
+                </div>
+                <div id="disclaimer">&nbsp;&nbsp;
+                <h2 class="title">
+                    Disclaimer</h2>
+                    <blockquote>
+                        The opinions expressed herein are my own personal opinions and do not represent
+                        my employer's view in anyway.<br /><br />
+                        &copy; Copyright
+                        <%=DateTime.Now.Year %></blockquote>
+                    <br />
+                    <!-- sidebar ends -->
+                </div>
+            </div>
+            <!-- end sidebar -->
+            <div style="clear: both;">
+                &nbsp;</div>
+        </div>
+        <!-- end page -->
+        <div id="footer">
+            <p id="legal">
+                Designed by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>&nbsp|&nbsp;adapted
+                for BlogeEngine.Net by <a href="http://www.adamzastawski.com" target="_blank">AdamZastawski.com</a>
+            </p>
+            <p id="links">
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/default.aspx">Home</asp:HyperLink>&nbsp;
+                |&nbsp;&nbsp;<asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/archive.aspx">Archive</asp:HyperLink>&nbsp;&nbsp;
+                |&nbsp;&nbsp;<asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/contact.aspx">Contact</asp:HyperLink>&nbsp;&nbsp;
+                |&nbsp;&nbsp;<asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Search.aspx">Search</asp:HyperLink>&nbsp;&nbsp;
+                |&nbsp;<a href="<%=Utils.FeedUrl %>">Feed</a></p>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="themes_WildNature_site" %>
+
+<%@ Import Namespace="BlogEngine.Core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server" profile="http://gmpg.org/xfn/11">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="shortcut icon" href="~/pics/blogengine.ico" type="image/x-icon" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="main">
+        <div id="header">
+            <div id="right">
+                <div id="menu">
+                    <ul>
+                        <li><a href="<%=Utils.AbsoluteWebRoot %>" rel="home">
+                            <%=Resources.labels.home %></a></li>
+                        <li><a href="<%=Utils.AbsoluteWebRoot %>archive.aspx">
+                            <%=Resources.labels.archive %></a></li>
+                        <blog:PageList ID="PageList1" runat="server" />
+                        <li><a href="<%=Utils.AbsoluteWebRoot %>contact.aspx">
+                            <%=Resources.labels.contact %></a></li>
+                    </ul>
+                </div>
+                <div id="subscribe">
+                    <a href="<%=Utils.FeedUrl %>">
+                        <img src="<%=Utils.AbsoluteWebRoot %>themes/WildNature/img/rss.png" alt="Subscribe" />Subscribe</a>
+                </div>
+            </div>
+            <div id="left">
+                <h1>
+                    <a href="<%=Utils.AbsoluteWebRoot %>">
+                        <%=BlogSettings.Instance.Name %></a></h1>
+                <h2>
+                    <%=BlogSettings.Instance.Description %></h2>
+            </div>
+        </div>
+        <div id="maincontent">
+            <div id="postcontent">
+                <asp:ContentPlaceHolder ID="cphBody" runat="server" />
+            </div>
+            <div id="sidebar">
+                <blog:WidgetZone runat="server" ID="rightzone" />
+                <asp:LoginStatus ID="LoginStatus1" runat="Server" LoginText="Sign in" LogoutText="Sign out"
+                    EnableViewState="false" />
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="footerContent">
+            <div id="footerScape">
+            </div>
+            <div id="credits">
+            Powered by <a href="http://www.dotnetblogengine.net">BlogEngine.NET</a>
+            <%=BlogSettings.Instance.Version() %><br />
+            Theme by <a href="http://www.jankoatwarpspeed.com">Janko Jovanovic</a>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+<%@ Register Src="~/admin/menu.ascx" TagName="menu" TagPrefix="uc1" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+<%--
+        Name:  Envision 1.0
+        Date:  2008.01.23
+      Author:  Jesse Foster | jf26028 (http://www.gravitycube.net/)
+ Description:  2 column light layout.
+     License:  Originally released under the Creative Commons Attribution 2.5 by Erwin Aligam.
+               Enhancements released by GravityCube.net under the BSD license - Copyright (c) 2008, http://www.gravitycube.net/.
+               See License.txt for full license.
+     Credits:  Original theme based on Envision by Erwin Aligam (http://www.styleshout.com/) under the Creative Commons Attribution 2.5 license.
+--%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head runat="server">
+	    <title>Envision 1.0 Master Page Title</title>
+		<link rel="shortcut icon" href="~/pics/blogengine.ico" type="image/x-icon" />
+	    <link href="style.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<form id="Form1" runat="server">
+			<div id="container">
+				<div id="header">
+					<div>
+						<h1 id="sitename"><a href="<%=Utils.AbsoluteWebRoot %>"><%=BlogSettings.Instance.Name %></a></h1>
+						<div id="slogan"><%=BlogSettings.Instance.Description %></div>
+					</div>
+				</div>
+				
+				<div id="menu">
+					<ul>
+<%-- 						<li><asp:HyperLink ID="HlHome" NavigateUrl="~/default.aspx" runat="server">Home</asp:HyperLink></li>
+						<li><asp:HyperLink ID="HlArchive" NavigateUrl="~/archive.aspx" runat="server">Archive</asp:HyperLink></li>
+						<li><asp:HyperLink ID="hlContact" NavigateUrl="~/contact.aspx" runat="server">Contact</asp:HyperLink></li> --%>
+						<li><a href="<%=Utils.AbsoluteWebRoot %>" rel="home"><%=Resources.labels.home %></a></li>
+                        <li><a href="<%=Utils.AbsoluteWebRoot %>archive.aspx"><%=Resources.labels.archive %></a></li>
+                        <li><a href="<%=Utils.AbsoluteWebRoot %>contact.aspx"><%=Resources.labels.contact %></a></li>
+    				    <li><a href="<%=Utils.FeedUrl %>" class="feed"><img src="<%=Utils.AbsoluteWebRoot %>pics/rssButton.gif" alt="Feed" /><%=Resources.labels.subscribe %></a></li>
+						<li><asp:LoginStatus ID="LoginStatus2" runat="Server" LoginText="Sign in" LogoutText="Sign out" EnableViewState="false" CssClass="user" /></li>
+					</ul>
+				</div>
+
+				<div id="wrapper">
+					<div id="content">
+						<blog:SearchOnSearch ID="SearchOnSearch1" runat="server" MaxResults="3" Headline="You searched for" Text="Here are some results for the search term on this website" />
+						<asp:ContentPlaceHolder ID="cphBody" runat="server" />
+					</div>
+				</div>
+
+                <div id="sidebarOne" class="sidebar"> 
+                  <blog:WidgetZone runat="server" ID="TagCloud1" />
+                </div>
+                
+				<div id="footer">
+					Powered by <a href="http://www.dotnetblogengine.net/" target="_blank">BlogEngine.NET <%=BlogSettings.Instance.Version() %></a> | Design by <a href="http://www.styleshout.com/" target="_blank">styleshout</a> | Enhanced by <a href="http://www.gravitycube.net/blog/" target="_blank">GravityCube.net</a> | 1.4.5 Changes by <a href="http://www.zembian.com" target="_blank">zembian.com</a>
+				</div>
+			</div>
+		</form>
+	</body>
+</html>

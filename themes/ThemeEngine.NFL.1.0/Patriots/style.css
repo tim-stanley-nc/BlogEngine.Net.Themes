@@ -1,0 +1,67 @@
+/*
+Generated for the ThemeEngine.NFL 1.0, a theme for BlogEngine.net by GravityCube.net.
+*/
+/* generic html elements */
+a { color: #00305B; }
+a:hover { color: #00305B; }
+body { background: #00305B none; color: #00305B; background-image: none; } /* #71738E is the default color of all the text in the posts. */
+	code { background: #ffffff; border: 1px solid #eeeeee; border-left: 6px; color: #666666; }
+	blockquote { background: url(../images/quote.gif) no-repeat; }
+h1,h2,h3,h4,h5 { color: #00305B; }
+
+/* structure */
+/* This is the outer border color, and the color in the gaps behind the different elements on the page. 
+	To change the border size, change the padding attribute.
+	Use this with the content and sidebar classes to change the widths.
+*/
+.container { background: #ffffff none; padding: 10px; width: 780px; } 
+
+/* header & title */
+.header { background: #00305B url(header.jpg); height: 160px; }
+.header .title { color: #AEAEAE; }
+.header .title .sitename a { color: #AEAEAE; }
+.header .title .sitenameshadow { color: #AEAEAE; }
+
+/* menu - the horizontal navigation under the header */
+.menu { background: #00305B; color: #AEAEAE; border: solid 1px #AEAEAE; }
+.menu a { color: #AEAEAE; }
+.menu a:hover { color: #AEAEAE; }
+
+/* main - main is the main content area of the site */
+.main { background: inherit; color: inherit; } /* This is the default background color of the main content area.  If it is not specified, the background comes from container */
+.main a { color: inherit; }
+.main a:hover { color: inherit; }
+
+/* sidebar */
+.sidebar { float: left; } /* Use this with the content class to change which side the sidebar is on. */
+.sidebar { background: #AEAEAE; border: solid 1px #00305B; width: 190px; } /* Use this with the container and content classes to change the widths. */
+.sidebar h2 { color: inherit; }
+.sidebar li { color: #00305B; }
+.sidebar li a { color: inherit; }
+.sidebar li a:hover { color: inherit; }
+
+/* content */
+.content { float: right; } /* Use this with the sidebar class to change which side the sidebar is on. */
+.content { width: 548px; } /* Use this with the container and sidebar classes to change the widths. */
+.content .descr { color: #AEAEAE; }
+
+/* posts */
+.post .info{ background: #AEAEAE; border: solid 1px #00305B; }
+
+
+
+
+/* comments */
+.comment { border: solid 1px #AEAEAE; background: inherit; }
+.self { background: #AEAEAE; border: inherit}
+
+/* Search page */
+.searchresult span.url { color: #AEAEAE; }
+	.searchpage ul.paging li { border: 1px solid #cccccc; background: #f1f1f1; }
+	.searchpage ul.paging li.active { background: #f1f1f1; border: 1px solid #000000;}
+
+/* footer */
+.footer { background: #00305B; color: #AEAEAE; }
+.footer a { color: #AEAEAE; }
+.footer a:hover { color: #AEAEAE; }
+

@@ -1,0 +1,485 @@
+﻿code
+{
+	margin: 5px 0;
+	padding: 10px;
+	text-align: left;
+	display: block;
+	overflow: auto;
+	font: 500 1em/1.5em "Lucida Console" , "courier new" , monospace; /* white-space: pre; */
+	background: #FAFAFA;
+	border: 1px solid #f2f2f2;
+}
+acronym
+{
+	cursor: help;
+	border-bottom: 1px solid #777;
+}
+blockquote
+{
+	margin: 10px;
+	padding: 0 0 0 28px;
+	border: 1px solid #f2f2f2;
+	background: #FAFAFA url(images/quote.gif) no-repeat 5px 5px;
+}
+
+
+input.button
+{
+	margin: 0;
+	font: bolder 12px Arial, Sans-serif;
+	border: 1px solid #CCC;
+	padding: 2px 3px;
+	background: #FFF;
+	color: #88ac0b;
+}
+
+.post-body
+{
+	margin-left: 25px;
+}
+
+.post-text
+{
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.post-text a
+{
+	border-bottom: dashed 1px;
+}
+.post-text a:hover
+{
+	border-bottom: solid 1px;
+}
+
+.post-footer
+{
+	background-color: #FAFAFA;
+	padding: 5px;
+	margin: 20px 10px 0 10px;
+	border: 1px solid #f2f2f2;
+}
+.post-footer .date
+{
+	background: url(images/clock.gif) no-repeat left center;
+	padding-left: 20px;
+	margin: 0 10px 0 5px;
+}
+.post-footer .comments
+{
+	background: url(images/comment.gif) no-repeat left center;
+	padding-left: 20px;
+	margin: 0 10px 0 5px;
+}
+.post-footer .readmore
+{
+	background: url(images/page.gif) no-repeat left center;
+	padding-left: 20px;
+	margin: 0 10px 0 5px;
+}
+.post-footer .rsscomments
+{
+	background: url(images/rsscomment.gif) no-repeat left center;
+	padding-left: 20px;
+	margin: 0 10px 0 5px;
+}
+
+/* Tag cloud */
+
+#tagcloud
+{
+	margin-bottom: 10px;
+	white-space: normal;
+}
+
+#tagcloud li
+{
+	display: inline;
+	background: none;
+	border: none;
+	padding: 2px 1px 2px 1px;
+}
+
+#tagcloud a
+{
+	margin-right: 3px;
+	display: inline;
+}
+
+#tagcloud a.biggest
+{
+	font-size: 20px;
+}
+
+#tagcloud a.big
+{
+	font-size: 17px;
+}
+
+#tagcloud a.medium
+{
+	font-size: 13px;
+}
+
+#tagcloud a.small
+{
+	font-size: 12px;
+}
+
+#tagcloud a.smallest
+{
+	font-size: 10px;
+}
+
+
+/* Comments */
+.comment
+{
+	border-bottom: 1px solid #DDDDDD;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.comment .author
+{
+	padding-left: 25px;
+	font-weight: bold;
+	background: url(images/Comments.gif) no-repeat 0px 3px;
+}
+.comment .content
+{
+	background: url(images/EntryGradient.jpg) no-repeat 0px 0px;
+	min-height: 45px;
+	padding-left: 10px;
+}
+.comment .monsterid
+{
+	float: right;
+	margin: 5px 5px 5px 5px;
+}
+.comment .monsterid img
+{
+	border: none;
+}
+
+.self
+{
+	background-color: #F5F5F5;
+}
+.commentForm
+{
+	padding: 0px;
+}
+
+
+.commentForm label
+{
+	/*float: left; 	display: block;*/
+}
+.commentForm input
+{
+	width: 200px;
+}
+.commentForm textarea
+{
+	width: 90%;
+	height: 80px;
+}
+.commentForm #btnSave
+{
+	margin: 0;
+	font: bolder 12px Arial, Sans-serif;
+	border: 1px solid #CCC;
+	padding: 2px 3px;
+	background: #FFF;
+	color: #88ac0b;
+}
+
+#gravatarmsg
+{
+	display: none;
+}
+
+/* Contact */
+
+#contact
+{
+	background-color: #FAFAFA;
+}
+
+#ctl00_cphBody_btnSend
+{
+	margin: 0;
+	font: bolder 12px Arial, Sans-serif;
+	border: 1px solid #CCC;
+	padding: 2px 3px;
+	background: #FFF;
+	color: #88ac0b;
+}
+
+/* Archive */
+
+#archive
+{
+	background-color: white;
+	border: 0px;
+	padding: 10px;
+}
+#archive h1
+{
+	color: #333333;
+	margin: 0px 0 2px;
+	padding-bottom: 4px;
+	font: normal 150%/100% "Lucida Grande" , Arial, sans-serif;
+	border-bottom: dotted 1px #CCCCCC;
+}
+#archive h2
+{
+	padding-bottom: 4px;
+	padding-top: 15px;
+	font: normal 120%/100% "Lucida Grande" , Arial, sans-serif;
+}
+#archive h2 img
+{
+	margin-right: 3px;
+	border: none;
+}
+#archive ul
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 15px;
+}
+#archive ul li
+{
+	background: url(images/bullet-orange.gif) no-repeat;
+	padding-left: 18px;
+}
+
+#archive table
+{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+#archive table td, #archive table th
+{
+	text-align: left;
+}
+
+#archive table td
+{
+	text-align: left;
+	border-bottom: 1px solid #D8D8D8;
+	padding: 2px 0;
+}
+
+#archive .date
+{
+	width: 70px;
+}
+
+#archive .comments
+{
+	width: 70px;
+	text-align: center;
+}
+
+#archive .rating
+{
+	width: 70px;
+	text-align: center;
+}
+
+#searchpage
+{
+	margin-bottom: 30px;
+}
+
+#searchpage input#q
+{
+	width: 300px;
+}
+
+#searchpage input#comment
+{
+	clear: both;
+}
+
+.searchresult
+{
+	margin-bottom: 20px;
+}
+
+.searchresult a
+{
+	font-weight: bold;
+}
+
+.searchresult span.text
+{
+	clear: both;
+	display: block;
+	margin: 3px 0;
+}
+
+.searchresult span.type
+{
+	display: block;
+}
+
+.searchresult span.url
+{
+	color: Gray;
+}
+
+.searchpage ul.paging
+{
+	list-style-type: none;
+	margin: 0px;
+	margin-bottom: 20px;
+	padding: 0px;
+}
+
+.searchpage ul.paging li
+{
+	display: inline;
+	border: 1px solid gray;
+	background: #f1f1f1;
+	margin-right: 5px;
+}
+
+.searchpage ul.paging li a
+{
+	padding: 5px 8px;
+}
+
+.searchpage ul.paging li.active
+{
+	background: #f1f1f1;
+	border: 1px solid black;
+}
+
+.adminpath
+{
+	background: #9f9487;
+	color: #FFF;
+	font: normal 1.1em Verdana,sans-serif;
+	padding: 8px 12px;
+	border: 1px solid #ddd5d0;
+}
+.adminpath h2
+{
+	font-weight: normal;
+	font-size: 1em;
+	color: white;
+	display: inline;
+	margin-right: 15px;
+}
+.adminpath li, .adminpath ul
+{
+	display: inline;
+}
+.adminpath a
+{
+	color: white;
+	margin-right: 16px;
+}
+.adminpath a:hover
+{
+	color: white;
+}
+
+/*----------------------------
+			Syntax highlighter
+----------------------------*/
+
+.code
+{
+	font-size: 12px;
+	color: black;
+	font-family: Consolas, "Courier New" , Courier, Monospace;
+	background-color: #F1F1F1;
+	line-height: normal;
+}
+
+.code p
+{
+	padding: 5px;
+}
+
+.code .rem
+{
+	color: #008000;
+}
+
+.code .kwrd
+{
+	color: #0000ff;
+}
+
+.code .str
+{
+	color: #006080;
+}
+
+.code .op
+{
+	color: #0000c0;
+}
+
+.code .preproc
+{
+	color: #0000ff;
+}
+
+.code .asp
+{
+	background-color: #ffff00;
+}
+
+.code .html
+{
+	color: #800000;
+}
+
+.code .attr
+{
+	color: #ff0000;
+}
+
+.code .alt
+{
+	background-color: #f4f4f4;
+}
+
+.code .lnum
+{
+	color: #606060;
+}
+
+/*----------------------------
+			Related Posts
+----------------------------*/
+
+#relatedPosts
+{
+	background: white;
+	padding: 5px 15px 5px 0px;
+	margin: 5px 15px 5px 0px;
+}
+
+#relatedPosts h1
+{
+}
+
+#relatedPosts a
+{
+	padding-right: 5px;
+}
+
+#relatedPosts span
+{
+	padding-right: 5px;
+}

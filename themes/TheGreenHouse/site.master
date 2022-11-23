@@ -1,0 +1,67 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+<%@ Register Src="~/themes/thegreenhouse/SidePanel.ascx" TagName="InfoBox" TagPrefix="uc1" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server" profile="http://gmpg.org/xfn/11">
+    <link rel="stylesheet" href="default.css" type="text/css" />
+    <link rel="shortcut icon" href="~/pics/blogengine.ico" type="image/x-icon" />
+</head>
+<body>
+    <form id="Form1" runat="Server">
+        <div id="menu">
+            <ul>
+                <li><a id="A1" href="~/" runat="server" rel="home">
+                    <%=Resources.labels.home %>
+                </a></li>
+                <li><a id="A2" href="~/archive.aspx" runat="server">
+                    <%=Resources.labels.archive %>
+                </a></li>
+                <li><a id="A3" href="~/contact.aspx" runat="server">
+                    <%=Resources.labels.contact %>
+                </a></li>
+                <li><a href="<%=Utils.FeedUrl %>" class="feed">
+                    <img src="<%=Utils.RelativeWebRoot %>pics/rssButton.gif" alt="Feed" />
+                    <%=Resources.labels.subscribe %>
+                </a></li>
+            </ul>
+        </div>
+        <div id="header">
+            <h1>
+                <a id="A4" href="~/" runat="server">
+                    <%=BlogSettings.Instance.Name %>
+                </a>
+            </h1>
+            <h2>
+                <%=BlogSettings.Instance.Description %>
+            </h2>
+        </div>
+        <div id="wrapper">
+            <div id="content">
+             <!-- begin #posts -->
+                <div id="posts">
+                    <blog:SearchOnSearch ID="SearchOnSearch1" runat="server" MaxResults="3" Headline="You searched for"
+                        Text="Here are some results for the search term on this website" />
+                    <asp:ContentPlaceHolder ID="cphBody" runat="server" />
+                </div>
+                <!-- end #posts -->
+                <div id="links">
+                    <uc1:InfoBox ID="InfoBox2" runat="server" />
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <p id="legal">
+               Copyright &copy; 2007 Roman D. Clarkson. Powered by <a href="http://www.dotnetblogengine.net">BlogEngine.NET</a><%=BlogSettings.Instance.Version() %></p>
+            <p id="brand">
+                Roman D. Clarkson
+            </p>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server" profile="http://gmpg.org/xfn/11">
+    <link rel="stylesheet" href="default.css" type="text/css" />
+    <link rel="shortcut icon" href="~/pics/sjmdev.ico" type="image/x-icon" />
+    <meta name="language" http-equiv="content-language" content="English" lang="en-gb" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <!--[if lte IE 6]>
+		<link rel="stylesheet" href="ie6.css" type="text/css" media="screen" />
+	<![endif]-->
+</head>
+<body>
+    <form id="Form1" runat="Server">
+        <div id="header">
+            <div id="logo">
+                <p class="sitename"><a href="<%=Utils.AbsoluteWebRoot %>">
+                    <%=BlogSettings.Instance.Name %></a></p>
+                <p class="strapline">
+                    <%=BlogSettings.Instance.Description %></p>
+            </div>
+            <%--                
+            <blog:SearchBox ID="SearchBox1" runat="server" />
+            --%>
+            <!-- Menu Tabs -->
+            <div id="menu">
+                <%--                
+                <a href="javascript:void(filterByAPML())" class="apmlfilter">
+                    <%=Resources.labels.filterByApml %></a>--%>
+                <blog:PageMenu ID="PageMenu1" runat="Server" />
+            </div>
+        </div>
+        <hr />
+        <!-- start page -->
+        <div id="wrapper">
+            <div id="page">
+                <!-- start content -->
+                <div id="content">
+                    <blog:SearchOnSearch runat="server" MaxResults="3" Headline="You searched for" Text="Here are some results for the search term on this website" />
+                    <asp:ContentPlaceHolder ID="cphBody" runat="server" />
+                </div>
+                <!-- /content -->
+                <div id="sidebar">
+                    <blog:WidgetZone runat="server" ID="rightzone" />
+                </div>
+                <!-- end sidebar -->
+            </div>
+            <div style="clear: both;">
+                &nbsp;</div>
+            <!-- end page -->
+        </div>
+        <div id="wrapper2">
+            <div id="footer">
+                <ul>
+                    <li class="first">
+                        <h2>Resources</h2>
+                        <ul>
+                            <li><a href="http://www.asp.net/">ASP.NET - <span>All your essential ASP.NET needs</span></a></li>
+                            <li><a href="http://www.codeplex.com/">CodePlex - <span>Open Source Project Community</span></a></li>
+                            <li><a href="http://delicious.com/">Delicious - <span>Social bookmarking</span></a></li>
+                            <li><a href="http://www.iis.net/">IIS.net - <span>Internet Information Services</span></a></li>
+                            <li><a href="http://www.jquery.com/">jQuery - <span>The best javascript framework</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>Something Else</h2>
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>About</h2>
+                        <p></p>
+                        <p>Powered by <a href="http://www.dotnetblogengine.net">BlogEngine.NET</a><%=BlogSettings.Instance.Version() %> | <a runat="server" id="aLogin" /></p>
+                    </li>
+                </ul>                
+            </div>
+            <p id="legal">&copy;2007 Interlude. All Rights Reserved. Adapted by <a href="http://www.sjmdev.com/">Simon Martin</a> &bull; Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a> &bull; Icons by <a href="http://famfamfam.com/">FAMFAMFAM</a>. <a href="http://validator.w3.org/check/referer" class="xhtml" title="This page validates as XHTML">Valid <abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> &bull; <a href="http://jigsaw.w3.org/css-validator/check/referer" class="css" title="This page validates as CSS"> Valid <abbr title="Cascading Style Sheets">CSS</abbr></a> </p>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            dp.SyntaxHighlighter.ClipboardSwf = 'http://www.sjmdev.com/SyntaxHighlighter/Scripts/clipboard.swf';
+            dp.SyntaxHighlighter.HighlightAll('code');
+        };
+    </script>
+
+</body>
+</html>

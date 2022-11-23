@@ -1,0 +1,84 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="themes_StarGazer_site" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+<%@ Register Src="~/admin/menu.ascx" TagName="menu" TagPrefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <link rel="stylesheet" href="default.css" type="text/css" />
+    <link rel="shortcut icon" href="~/pics/blogengine.ico" type="image/x-icon" />
+</head>
+<body>
+    <form id="form1" runat="server">
+
+
+        <div id="header">
+	        <h1><%=BlogSettings.Instance.Name %></h1>
+	        <h2><%=BlogSettings.Instance.Description %></h2>
+        </div>
+        <div id="menu">
+	        <ul>
+		        <li><asp:HyperLink ID="HyperLink1" NavigateUrl="~/default.aspx" runat="server">Home</asp:HyperLink></li>
+		        <li><a href="#">About Me</a></li>
+		        <li><asp:HyperLink ID="HyperLink2" NavigateUrl="~/archive.aspx" runat="server">Blog Archive</asp:HyperLink></li>
+		        <li><asp:HyperLink ID="HyperLink3" NavigateUrl="~/contact.aspx" runat="server">Contact Me</asp:HyperLink></li>
+		        <li><asp:LoginStatus ID="LoginStatus1" runat="server" LoginText="Sign In" LogoutText="Sign Out" EnableViewState="false" /></li>
+	        </ul>
+        </div>
+        <hr />
+        <div id="mainpage">
+	        <div id="content">
+	            <blog:SearchOnSearch ID="SearchOnSearch1" runat="server" MaxResults="3" Headline="You searched for" Text="Here are some results for the search term on this website" />
+	            <asp:ContentPlaceHolder ID="cphBody" runat="server" />
+	        </div>
+	        <!-- end #content -->
+	        <div id="sidebar">
+		        <ul>
+		            <li id="search">
+		                <blog:SearchBox ID="SearchBox1" runat="server" />
+		            </li>
+	            	<% if (Page.User.Identity.IsAuthenticated) { %>
+		                <li>
+			                <h2>Administration</h2>
+			                <uc1:menu ID="Menu1" runat="server" />
+		                </li>
+                    <%} %>
+			        <li>
+				        <h2>Tags</h2>
+				        <blog:TagCloud ID="TagCloud1" runat="server" />
+			        </li>
+			        <li>
+				        <h2>Categories</h2>
+				        <blog:CategoryList ID="CategoryList1" ShowRssIcon="false" runat="server" />
+			        </li>
+			        <li>
+                        <h2>Blogroll</h2>
+                        <blog:Blogroll ID="Blogroll1" runat="server" />
+			        </li>
+			        <li>
+                        <h2>Disclaimer</h2>
+                        <div class="disclaimer">The opinions expressed herein are my own personal opinions and do not represent my employer's view in anyway.</div>
+                        <div class="disclaimer"><center>&copy; Copyright <%=DateTime.Now.Year %></center></div>
+			        </li>
+		        </ul>
+		        <!-- <div style="clear: both; height: 40px;">&nbsp;</div> -->
+	        </div>
+	        <!-- end #sidebar -->
+	        <div style="clear: both;">&nbsp;</div>
+        </div>
+        <!-- end #page -->
+        <hr />
+        <div id="footer">
+            <p>
+            Powered by <a href="http://www.dotnetblogengine.net/" target="_blank">BlogEngine.NET</a> <%=BlogSettings.Instance.Version() %>. | 
+	        Original Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>. | 
+	        Adapted by <a href="http://www.jasonlay.net/" target="_blank">Jason Lay</a>.
+	        </p>
+        </div>
+
+
+
+    </form>
+</body>
+</html>

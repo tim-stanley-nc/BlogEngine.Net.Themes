@@ -1,0 +1,4 @@
+div#container{width:900px;margin:0 auto}
+div#sidebarOne{float:right;width:450px; clear: both;}
+div#sidebarTwo{float:left;width:450px; }
+div#footer{clear:both;width:100%}

@@ -1,0 +1,94 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="themes_BrightSide_site" %>
+<%@ Register Src="~/admin/menu.ascx" TagName="menu" TagPrefix="uc1" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="wrap">
+    <div id="header">				
+		
+		
+		<h1 id="logo"><%=GetColoredHeading(BlogSettings.Instance.Name)%></h1>
+		<h2 id="slogan"><%=BlogSettings.Instance.Description %></h2> 
+		
+        <div class="SearchBox"><blog:SearchBox ID="SearchBox1" runat="server" /></div>
+			
+		<!-- Menu Tabs -->
+		<ul>
+		    <!--<li id="current">-->
+			<li><a href="~/default.aspx" runat="server"><span>Home</span></a></li>
+
+			<li><a href="~/archive.aspx" runat="server"><span>Archive</span></a></li>
+			<li><a href="~/syndication.axd" runat="server"><span>Feed</span></a></li>
+			<!--<li><a href="~/page/your-page-here.aspx" runat="server"><span>Your link</span></a></li>-->
+		</ul>	
+													
+	</div>	
+	<!-- content-wrap starts here -->
+	<div id="content-wrap">	
+<%if (Request.QueryString.Count == 0 && Request.RawUrl.ToLowerInvariant().EndsWith("/default.aspx")) {%>
+<div id="headerphoto" ></div>
+<%} %>
+		<div id="sidebar" >							
+			<% if (Utils.IsAuthenticated) { %>
+			<h1>Admin Menu</h1>
+			<div class="adminpath">
+				<uc1:menu ID="Menu1" runat="server" />
+			</div>
+			<%} %>	
+
+            <h1>Categories</h1>
+            <div id="Categories">
+            <blog:CategoryList ID="CategoryList1" ShowRssIcon="false" runat="Server" /><br />
+            </div>
+
+            <h1>Tags</h1>
+            <blog:TagCloud ID="TagCloud1" runat="server" />
+                        
+            <h1>Blogroll</h1>
+            <blog:Blogroll ID="Blogroll1" runat="server" />
+	
+			
+			<h1>Wise Words</h1>
+			<p>&quot;Men are disturbed, not by the things that happen,
+			but by their opinion of the things that happen.&quot;</p>		
+				
+			<p class="align-right">- Epictetus</p>					
+		
+		</div>	
+    <div id="main">	
+        <asp:contentplaceholder id="cphBody" runat="server">
+        </asp:contentplaceholder>
+    </div> 
+    </div><!-- content-wrap starts here -->
+    
+    <!-- footer starts here -->	
+<div id="footer">
+	
+	<div class="footer-left">
+	    
+		<p class="align-left">			
+		Powered by <a href="http://www.dotnetblogengine.net/" target="_blank">BlogEngine.NET</a> <%=BlogSettings.Instance.Version() %> | 
+		
+		<asp:LoginStatus ID="LoginStatus1" runat="Server" LoginText="Sign in" LogoutText="Sign out" EnableViewState="false" />
+		</p>		
+	</div>
+	
+	<div class="footer-right">
+		<p class="align-right">
+		Original Design by <a href="http://www.styleshout.com/">styleshout</a>, Adapted by <a href="http://www.onesoft.dk/">onesoft</a>
+		</p>
+	</div>
+	
+</div>
+<!-- footer ends here -->
+    </div>
+    </form>
+</body>
+</html>
+

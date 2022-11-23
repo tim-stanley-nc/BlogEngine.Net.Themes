@@ -1,0 +1,146 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+
+<%@ Register Src="~/admin/menu.ascx" TagName="menu" TagPrefix="uc1" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server" profile="http://gmpg.org/xfn/11">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="shortcut icon" href="img/bromham.ico" type="image/x-icon" />
+</head>
+<body>
+<form id="Form1" runat="server">
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <div id="box">
+        <div id="feed">
+            <a href="#">
+                <img src="/themes/triathlon/images/feed-icon.png" alt="Subscribe" style="border: 0" />
+                Subscribe</a>
+        </div>
+        <!-- end feed -->
+        <div id="top">
+            <div id="header">
+                <h1>
+                    <a href="~/" runat="server"><%=BlogSettings.Instance.Name %></a></h1>
+            </div>
+            <div id="description">
+                <%=BlogSettings.Instance.Description %></div>
+        </div>
+        <!-- end top -->
+        <div id="navbox">
+            <div id="nav">
+                <ul class="nav">
+                    <li class="current_page_item"><a href="/default.aspx">Home</a></li>
+                </ul>
+            </div>
+            <!-- end nav -->
+        </div>
+        <!-- end navbox -->
+        <div id="content">
+            <asp:ContentPlaceHolder ID="cphBody" runat="server" />
+        </div>
+        <!-- end content -->
+        <div id="sidebar">
+            <div class="lsidebar">
+                <ul>
+                    <li>
+                        <h2>
+                            Pages</h2>
+                        <ul>
+                            <blog:PageList ID="PageList1" runat="Server" />
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>
+                            Categories</h2>
+                        <ul>
+                            <blog:CategoryList runat="server" ID="uxCategoryList" />
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>
+                            Archives</h2>
+                        <ul>
+                            <blog:MonthList ID="MonthList1" runat="Server" />
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>
+                            Blogrole</h2>
+                        <ul>
+                            <blog:Blogroll ID="BlogRole1" runat="Server" />
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- end sidebar-left -->
+            <div class="rsidebar">
+                <ul>
+                    <li>
+                        <h2>
+                            Search</h2>
+                        <ul>
+                            <blog:SearchBox ID="SearchBox1" runat="server" />
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>
+                            Recent Comments</h2>
+                        <ul>
+                            <blog:RecentComments ID="RecentComments2" runat="Server" />
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>
+                            Recent Post</h2>
+                        <ul>
+                            <blog:RecentPosts ID="RecentPosts1" runat="server" />
+                        </ul>
+                    </li>
+                    <% if (Page.User.Identity.IsAuthenticated)
+                       { %>
+                    <li>
+                        <h2>
+                            Administration</h2>
+                        <ul>
+                            <uc1:menu ID="Menu1" runat="server" />
+                        </ul>
+                    </li>
+                    <%} %>
+                    <li>
+                        <h2>
+                            Meta</h2>
+                        <ul>
+                            <li>
+                                <asp:LoginStatus ID="LoginStatus1" runat="Server" LoginText="Sign in" LogoutText="Sign out"
+                                    EnableViewState="false" />
+                            </li>
+                            <li><a href="http://validator.w3.org/check?uri=referer" title="This page validates as XHTML 1.0 Transitional">
+                                Valid
+                                <abbr title="eXtensible HyperText Markup Language">
+                                    XHTML</abbr></a></li>
+                            <li><a href="http://gmpg.org/xfn/">
+                                <abbr title="XHTML Friends Network">
+                                    XFN</abbr></a></li>
+                            <li><a href="http://www.dotnetblogengine.net/" title="Powered by BlogEngine.">BlogEngine</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+            </div>
+            <!-- end sidebar-right -->
+        </div>
+        <!-- end sidebar -->
+        <div id="footer">
+            <p>
+                &copy; 2008 Powered by <a href="http://www.dotnetblogengine.net/" target="_blank">BlogEngine.NET</a>
+                <%=BlogSettings.Instance.Version() %><br />
+                Original Design by <a href="https://www.usasportstraining.com/" title="Triathlon Training">
+                    Triathlon Training</a>, Adapted by <a href="http://www.bryanavery.co.uk">Bryan Avery</a></p>
+        </div>
+        <!-- end footer -->
+    </div>
+    <!-- end box -->
+    </form>
+</body>
+</html>

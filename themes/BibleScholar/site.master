@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Bible Scholar Theme</title>
+        <link rel="shortcut icon" href="~/themes/BibleScholar/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="~/themes/BibleScholar/style.css" media="all" />
+    </head>
+
+    <body>
+    <form id="Form1" runat="Server" class="body">
+        <div id="container">
+    	    <div id="topnav">
+        	    <div class="left">
+        	        <ul>
+        		        <li><a href="<%=Utils.AbsoluteWebRoot %>">home</a></li>
+        		        <li><a href="<%=Utils.AbsoluteWebRoot %>archive.aspx">Archive</a></li>
+			            <li><a href="<%=Utils.AbsoluteWebRoot %>contact.aspx">Contact</a></li>
+    	            </ul>
+    	        </div>
+            
+                <div class="right">
+        	        <p>subscribe to the <a href="<%=Utils.FeedUrl %>" title="Read all of our latest posts in your favorite feed reader." >RSS Feed</a>
+                </div>
+            </div><!--/topnav-->
+            <div id="header">
+                <p class="site-title"><a href="<%=Utils.AbsoluteWebRoot %>"><%=BlogSettings.Instance.Name %></a></p>
+                <p class="site-slogan"><%=BlogSettings.Instance.Description %></p>
+            </div><!--/header-->
+            <div id="slogan">
+                <p class="right"><%=DateTime.Now.ToLongDateString() %></p>
+            </div><!--/slogan-->
+            <div id="wrapper">
+                <div id="content">
+            	    <blog:SearchOnSearch ID="SearchOnSearch" runat="server" MaxResults="3" Headline="You searched for" Text="Here are some results for the search term on this website" />
+                    <asp:ContentPlaceHolder ID="cphBody" runat="server" />
+                
+   	        
+                </div><!--/content-->
+
+
+	            <div id="sidebar-wrapper">
+        	        <div class="ad-blocks">
+                        <img src="<%=Utils.AbsoluteWebRoot %>themes/BibleScholar/images/125-ad.png" alt="" />
+                        <img src="<%=Utils.AbsoluteWebRoot %>themes/BibleScholar/images/125-ad.png" alt="" />
+                        <img src="<%=Utils.AbsoluteWebRoot %>themes/BibleScholar/images/125-ad.png" alt="" />
+                    </div>
+
+                    <div id="sidebar-left"> 
+    	                <div class="widget">
+                            <h4>About The Theme</h4>
+                            <p>A sleek and very clean looking theme named Bible Scholar for BlogEngine.net 1.4.5.  Originally designed by <a href="http://www.egracecreative.com/">eGrace Creative</a> and subsequently modified for BlogEngine by <a href="http://www.waynejohn.com">Wayne John</a></p>
+                            
+                        </div>
+                    
+                    </div><!--/sidebar-left-->
+                
+                    <div id="sidebar-right">
+                    	
+                        <blog:WidgetZone runat="server" ID="rightzone" />
+                    </div><!--/sidebar-right-->
+                
+                    <div style="clear: both;"></div>
+                
+                    <div class="widgeet">
+                        <h4>More Information Can Go Here</h4>
+                        The 2 sidebars have been placed within an element so that you can enter information here at the bottom or up at the top that exists outside the 2 sidebars.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <!-- Please support open source! -->
+    	    <p>&copy; <%=DateTime.Now.Year.ToString() %> <%=BlogSettings.Instance.Name %><br />
+        	    <a href="http://www.egracecreative.com/bible-scholar">Bible Scholar</a> originally designed by <a href="http://www.egracecreative.com">eGrace Creative</a> and modified for <a href="http://www.dotnetblogengine.net">BlogEngine</a> by <a href="http://www.waynejohn.com">Wayne John</a>. <a href="~/login.aspx" runat="server">Log in</a>
+            </p>
+        </div>
+       </form>
+    </body>
+</html>

@@ -1,0 +1,83 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+<%@ Register Src="~/admin/menu.ascx" TagName="menu" TagPrefix="uc1" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server" profile="http://gmpg.org/xfn/11">
+  <link rel="stylesheet" href="default.css" type="text/css" />
+  <link rel="shortcut icon" href="~/pics/blogengine.ico" type="image/x-icon"/>
+</head>
+
+
+<body>
+
+    <form id="Form1" runat="server">
+    <div id="outer">
+    <div id="upbg"></div>
+
+	<div id="inner">
+    
+
+	    <div id="header">
+            <h1><a href="~/" runat="server"><%=BlogSettings.Instance.Name %></a></h1>
+            <p><%=BlogSettings.Instance.Description %></p>
+        </div>
+        
+        
+        <div id="splash"></div>
+
+	
+		<div id="menu">                
+		    <ul id="navlist">
+			    <li><asp:HyperLink ID="HlHome" NavigateUrl="~/default.aspx" runat="server">Home</asp:HyperLink></li>
+			    <li><asp:HyperLink ID="HlArchive" NavigateUrl="~/archive.aspx" runat="server">Archive</asp:HyperLink></li>
+			    <li><asp:HyperLink ID="hlContact" NavigateUrl="~/contact.aspx" runat="server">Contact</asp:HyperLink></li>
+			    <li><a href="<%=Utils.FeedUrl %>">Feed</a></li>
+
+		    </ul>
+		    
+		</div>
+		
+		
+		
+       <div id="secondarycontent">
+       <div class="content">       
+             
+            
+            <asp:LoginStatus ID="LoginStatus1" runat="Server" LoginText="Sign in" LogoutText="Sign out" EnableViewState="false" />  
+                   
+            <% if (Page.User.Identity.IsAuthenticated){ %>
+            <h3>Administration</h3>
+            <uc1:menu ID="Menu1" runat="server" />
+            <%} %>
+
+ 
+            
+            <h3>Tags</h3>
+            <blog:TagCloud ID="TagCloud1" runat="server" /><br />
+
+            
+            <h3>Blogroll</h3>
+            <blog:Blogroll ID="Blogroll1" runat="server" /><br />
+            
+        <blog:SearchOnSearch ID="SearchOnSearch2" runat="server" MaxResults="3" Headline="You searched for" Text="Here are some results for the search term on this website" />
+
+            </div>
+	    </div>
+	  
+	  <div id="primarycontent">
+            <blog:SearchOnSearch ID="SearchOnSearch1" runat="server" MaxResults="3" Headline="You searched for" Text="Here are some results for the search term on this website" />
+            <asp:ContentPlaceHolder ID="cphBody" runat="server" />
+        </div>
+        <div id="footer">
+	        <p>Powered by <a href="http://www.codeplex.com/blogengine" target="_blank">BlogEngine.NET</a> <%=BlogSettings.Instance.Version() %> | 
+            Original Design by <a href="http://www.nodethirtythree.com">nodethirtythree</a>, Adapted by <a href="http://www.rivero.org">Víctor</a></p>
+        </div>
+
+    </div>
+    </div>    
+            </form>
+</body>
+
+</html>

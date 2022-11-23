@@ -1,0 +1,12 @@
+Name: Swan Dive
+Description:
+	"Calm and cool. Peaceful and uplifting. Flying free."
+	Converted for BlogEngine.NET.
+Author: Homefront Studios and James Skemp
+URL: http://www.homefrontstudios.com/ and http://strivinglife.com/
+
+Changes:
+
+2007.07.25	J.Skemp		Created for BlogEngine.NET 1.1.
+2007.09.05	J.Skemp		Updated for BlogEngine.NET 1.2 (tested using 1.1.1.8, 4300).
+2007.09.30	J.Skemp		Updated for BlogEngine.NET 1.2.0.0.

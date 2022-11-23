@@ -1,0 +1,73 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+<%@ Register Src="~/admin/menu.ascx" TagName="menu" TagPrefix="uc1" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server" profile="http://gmpg.org/xfn/11">
+    <link rel="stylesheet" href="default.css" type="text/css" />
+    <link rel="shortcut icon" href="~/pics/blogengine.ico" type="image/x-icon"/>
+</head>
+
+<body>
+	<form id="Form1" runat="server">
+	<div class="outer-container">
+		<div class="inner-container">
+			<div class="header">
+				<asp:Image ID="HeaderImage1" runat="Server" Width="222px" Height="181px" AlternateText=" " />
+				<div class="title">
+					<span class="sitename"><a href="~/" runat="server"><%=BlogSettings.Instance.Name %></a></span>
+					<div class="slogan"><%=BlogSettings.Instance.Description %></div>
+				</div>
+			</div>
+            
+            <div id="main">
+		        <div id="content">
+                    <blog:SearchOnSearch ID="SearchOnSearch1" runat="server" MaxResults="3" Headline="You searched for" Text="Here are some results for the search term on this website" />
+                    <asp:ContentPlaceHolder ID="cphBody" runat="server" />
+                </div>
+                <div id="navigation">
+
+					<div class="path">
+						<ul>
+							<li class="page_item"><asp:HyperLink ID="HlHome" NavigateUrl="~/" runat="server"><%=Resources.labels.home %></asp:HyperLink></li>
+							<li class="page_item"><asp:HyperLink ID="HlArchive" NavigateUrl="~/archive.aspx" runat="server"><%=Resources.labels.archive %></asp:HyperLink></li>
+							<li class="page_item"><asp:HyperLink ID="hlContact" NavigateUrl="~/contact.aspx" runat="server"><%=Resources.labels.contact %></asp:HyperLink></li>
+							<li class="page_item"><a href="<%=Utils.FeedUrl %>"><%=Resources.labels.subscribe %></a></li>
+							<li class="page_item"><asp:LoginStatus runat="Server" LoginText="Sign in" LogoutText="Sign out" EnableViewState="false" /></li>
+						</ul>
+					</div>
+
+					<h2>Search</h2>
+						<blog:SearchBox ID="SearchBox1" runat="server"  />
+                    
+					<% if (Page.User.Identity.IsAuthenticated){ %>
+					<h2>Administration</h2>
+					<uc1:menu ID="Menu1" runat="server" />
+					<%} %>
+                                        
+					<h2>Tags</h2>
+						<blog:TagCloud ID="TagCloud1" runat="server" />
+
+					<h2><%=Resources.labels.categories %></h2>
+						<blog:CategoryList ID="CategoryList1" ShowRssIcon="false" runat="Server" />
+                    
+					<h2><%=Resources.labels.blogroll %></h2>
+						<blog:Blogroll runat="server" />
+                    
+					<h2>Disclaimer</h2>
+					<p>The opinions expressed herein are my own personal opinions and do not represent my employer's view in anyway.</p>
+					<p>&copy; Copyright <%=DateTime.Now.Year %></p>
+                  
+                </div>
+            </div>
+                  
+			<div id="footer">
+				<p>Powered by <a href="http://www.dotnetblogengine.net/" target="_blank">BlogEngine.NET</a> <%=BlogSettings.Instance.Version() %> |
+				Original Design by <a href="http://www.homefrontstudios.com">Homefront Studios</a>, Adapted by <a href="http://strivinglife.com/">James Skemp</a></p>
+            </div>
+        </div>
+    </div>
+    </form>   
+</body>
+</html>
